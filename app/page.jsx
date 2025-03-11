@@ -66,14 +66,24 @@ const Home = () => {
 
 
       {/* Section 2 */}
-      <section id='section2' className='h-screen pt-16 lg:flex gap-8 px-[1rem] md:px-[3rem] font-poppins'>
+      <section data-aos="fade-up"
+        data-aos-duration="1000" id='section2' className='h-screen pt-16 lg:flex gap-8 px-[1rem] md:px-[3rem] font-poppins relative'>
         {/* div A */}
-        <div>
+        <div className=''>
           <Image src='/image/chair.png' width={700} height={700} alt='image' className='rounded'/>
         </div>
 
+        {/* display on big screen */}
+        <motion.div 
+        className='hidden lg:block absolute top-[38rem] left-[30rem] '
+        initial={{ x:-500, scale:0.5, opacity:0 }}
+        animate={{  x:0, scale: 1, opacity: 1 }}
+        transition={{ duration: 1.5,  }}
+        >
+          <video controls width="15%" autoPlay loop muted type='video/mp4' src='/video/sold.mp4' className='rounded-3xl'></video>
+        </motion.div>
 
-
+       
         {/* div B */}
         <div className='flex flex-col gap-5'>
           <h3 className='text-xl hvr-bubble-float-bottom px-3 py-1 bg-orange-200/60 text-orange-400 rounded w-fit'>About Us</h3>
@@ -83,18 +93,25 @@ const Home = () => {
           Today, <br /> TEHILJEM Nig. Ltd stands as a trusted name in Nigeria’s real <br /> estate sector, renowned for innovative housing solutions and <br /> a customer-first approach. Our commitment remains <br /> unwavering—building homes, shaping communities, and <br /> redefining excellence in real estate development.</p>
 
           <div className='grid grid-cols-2 gap-6'>
-            <p className='flex items-center gap-3 '><span className='bg-orange-400 tracking-wide p-3 rounded-full text-white font-bold text-2xl flip-vertical-left'><IoHomeOutline /></span>Smart Home Design</p>
-            <p className='flex items-center gap-3'><span  className='bg-orange-400 tracking-wide p-3 rounded-full text-white font-bold text-2xl flip-vertical-left'><IoFlowerOutline /></span>Beautiful Enviroment</p>
-            <p className='flex items-center gap-3'><span  className='bg-orange-400 tracking-wide p-3 rounded-full text-white font-bold text-2xl flip-vertical-left'><CgStyle /></span>Exceptional Lifestyle</p>
-            <p className='flex items-center gap-3'><span  className='bg-orange-400 v p-3 rounded-full text-white font-bold text-2xl flip-vertical-left'><MdMoreTime /></span>Complete 24/7 Security</p>
+
+            <p data-aos="zoom-in"
+              data-aos-duration="2000" className='flex items-center gap-3 '><span className='bg-orange-400 tracking-wide p-3 rounded-full text-white font-bold text-2xl flip-vertical-left'><IoHomeOutline /></span>Smart Home Design</p>
+            
+            <p data-aos="zoom-in"
+              data-aos-duration="2000" className='flex items-center gap-3'><span  className='bg-orange-400 tracking-wide p-3 rounded-full text-white font-bold text-2xl flip-vertical-left'><IoFlowerOutline /></span>Beautiful Enviroment</p>
+
+            <p data-aos="zoom-in"
+              data-aos-duration="3000" className='flex items-center gap-3'><span  className='bg-orange-400 tracking-wide p-3 rounded-full text-white font-bold text-2xl flip-vertical-left'><CgStyle /></span>Exceptional Lifestyle</p>
+
+            <p data-aos="zoom-in"
+              data-aos-duration="3000" className='flex items-center gap-3'><span  className='bg-orange-400 v p-3 rounded-full text-white font-bold text-2xl flip-vertical-left'><MdMoreTime /></span>Complete 24/7 Security</p>
           </div>
 
           <div>
-            <p className='tracking-wide'>"Enimad minim veniam quis nostrud exercitation
-            llamco laboris. Lorem ipsum dolor sit amet"</p>
+            <p className='w-fit px-5 py-3 bg-orange-100 text-sm rounded'>" TEHILJEM Nig. Ltd is a proud member of the Real Estate Developers Association of Nigeria <b>(REDAN)</b> "</p>
           </div>
 
-         <div className='flex items-center justify-center w-full'>
+         <div className='flex items-center justify-center w-full mt-5'>
           <button className='bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer  '>Our Services</button>
          </div>
         </div>
