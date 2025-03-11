@@ -69,7 +69,7 @@ const Navbar = () => {
             <div>
                 <Image src='/image/tjhomelogo.png' width={40} height={40} alt='tehiljems_logo' className=''/>
             </div>
-            <h1 className='text-sm font-semibold text-blue-900'>TehilJems Nig. Ltd</h1>
+            <h1 className='text-sm font-semibold text-blue-900'>TehilJem Nig. Ltd</h1>
             </Link>
         
             <div className='flex flex-col ml-auto'>
