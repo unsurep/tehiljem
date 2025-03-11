@@ -63,7 +63,7 @@ const Navbar = () => {
 
 
         {/* Phone View */}
-        <nav className='lg:hidden flex items-center px-[1rem] md:px-[3rem] py-3 font-montserrat shadow-[0_8px_30px_rgb(0,0,0,0.12)]'>
+        <nav className='lg:hidden flex items-center px-[1rem] md:px-[3rem] py-3 font-montserrat shadow-[0_8px_30px_rgb(0,0,0,0.12)] z-10'>
             <Link href={'/'} className='flex items-center justify-center'>
             <div>
                 <Image src='/image/tjhomelogo.png' width={40} height={40} alt='tehiljems_logo' className=''/>
@@ -76,7 +76,7 @@ const Navbar = () => {
                 <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content">
                     {/* Page content here */}
-                    <label htmlFor="my-drawer-4" className="drawer-button bt btn-primary"><IoMdMenu className='text-3xl text-blue-900' /></label>
+                    <label htmlFor="my-drawer-4" className="drawer-button bt btn-primary"><IoMdMenu className='text-2xl text-blue-700 hover:text-blue-900 transition-color duration-300' /></label>
                 </div>
                 <div className="drawer-side">
 
