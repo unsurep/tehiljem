@@ -126,10 +126,23 @@ const Home = () => {
 
 
 
-      {/* ChatBot */}
-      <div>
+      {/* 1st ChatBot */}
+      {/* 50 messages already used up */}
+      {/* <div>
         <script defer src="https://app.fastbots.ai/embed.js" data-bot-id="cm80z7tmc0gkxrik6bjufxcuu"></script>
+      </div> */}
+
+
+      {/* 2nd ChatBot */}
+      <div>
+      <script defer src="https://app.fastbots.ai/embed.js" data-bot-id="cm86ym9i40txwrik9ubvobt41"></script>
       </div>
+
+
+
+
+
+
     </div>
   )
 }

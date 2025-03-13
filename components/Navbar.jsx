@@ -58,11 +58,6 @@ const Navbar = () => {
 
         </nav>
 
-
-
-
-
-
         {/* Phone View */}
         <nav className='lg:hidden flex items-center px-[1rem] md:px-[3rem] py-3 font-montserrat shadow-[0_8px_30px_rgb(0,0,0,0.12)] z-10'>
             <Link href={'/'} className='flex items-center justify-center'>
