@@ -8,9 +8,34 @@ import { IoHomeOutline } from "react-icons/io5";
 import { IoFlowerOutline } from "react-icons/io5";
 import { CgStyle } from "react-icons/cg";
 import { MdMoreTime } from "react-icons/md";
+import { PiArrowBendRightUpFill } from "react-icons/pi";
+import { PiArrowBendRightDownFill } from "react-icons/pi";
+import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 
+// AOS animations
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
+
+// swiper import
+import { useRef, useState } from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-flip';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+// import required modules
+import { EffectFlip, Pagination, Navigation } from 'swiper/modules';
+
+
+
+
+
+
+
 
 
 
@@ -41,7 +66,7 @@ const Home = () => {
   return (
     <div>
 
-      {/* Section 1 */}
+      {/* Section 1  */}
       <section id='section1' className='h-[85vh] md:h-screen text-white bg-cover bg-center bg-no-repeat flex items-cente  px-[1rem] md:px-[3rem] font-poppins' style={{ backgroundImage: "url('/image/hbg.png')" }}>
         <div  className='flex flex-col gap-4 text-center md:justify-center items-center pt-10'>
           <h1 data-aos="zoom-in"
@@ -65,9 +90,9 @@ const Home = () => {
       </section>
 
 
-      {/* Section 2 */}
+      {/* Section 2 house & key*/}
       <section data-aos="fade-up"
-        data-aos-duration="1000" id='section2' className='h-screen pt-16 lg:flex gap-8 px-[1rem] md:px-[3rem] font-poppins relative'>
+        data-aos-duration="1000" id='section2' className='bg-gray-300  pt-16 lg:flex gap-8 px-[1rem] md:px-[3rem] font-poppins relative'>
         {/* div A */}
         <div className=''>
           <Image src='/image/chair.png' width={700} height={700} alt='image' className='rounded'/>
@@ -111,11 +136,138 @@ const Home = () => {
             <p className='w-fit px-5 py-3 bg-orange-100 text-sm rounded'>" TEHILJEM Nig. Ltd is a proud member of the Real Estate Developers Association of Nigeria <b>(REDAN)</b> "</p>
           </div>
 
-         <div className='flex items-center justify-center w-full mt-5'>
+         <div className='flex items-center justify-center w-full my-5'>
           <button className='bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer  '>Our Services</button>
          </div>
         </div>
       </section>
+
+      {/* section 3 swiper */}
+      <div className='grid grid-cols-1 md:flex gap-5 bg-gray-200 px-[1rem] md:px-[3rem] font-poppins mt-10'>
+        <div className=' py-5 md:py-16'>
+          <h1 className='md:text-2xl md:text-center font-semibold'>
+            Tehiljem is a premier real estate <br /> platform in Nigeria, offering  an <br /> extensive range of property <br /> listings for sale, rent, and short-let.
+          </h1>
+
+          <p className='py-6 text-base md:text-center'>
+          Land ownership is not just about buying property. It is about <br /> investing in your future, creating generational wealth, and <br /> securing financial stability. For years, smart investors have <br />understood the power of real estate, using land as a wealth <br /> -building tool that appreciates over time. With Tehiljem Nig Ltd, <br /> you are not just purchasing a land, you are making a strategic <br /> investment in prime locations with high growth potential.
+          </p>
+
+          <div className='flex items-center justify-center w-full my-3 md:my-5'>
+            <button className='bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer  '>EXPLORE THE OFFERS</button>
+          </div>
+
+        </div>
+
+        
+        <div className=' flex flex-col mx-auto md:py-16'>
+          {/* swiper js */}
+          <div>
+            <Swiper
+              effect={'flip'}
+              grabCursor={true}
+              pagination={true}
+              navigation={true}
+              modules={[EffectFlip, Pagination, Navigation]}
+              className="mySwiper">
+              <SwiperSlide>
+                <img src="/image/eccvilla-kuje.jpg" alt='image of eccvilla-kuje' className='rounded-lg ring ring-orange-300/40' />
+              </SwiperSlide>
+              
+              <SwiperSlide>
+                <img src="/image/eccvilla2.jpg" alt='image of eccvilla1' className='rounded-lg ring ring-orange-300/40' />
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <img src="/image/rio.jpg" alt='image of primesite' className='rounded-lg ring ring-orange-300/40' />
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <img src="/image/scepter.jpg" alt='image of primesite' className='rounded-lg ring ring-orange-300/40' />
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <img src="/image/primesite.jpg" alt='image of primesite' className='rounded-lg ring ring-orange-300/40' />
+              </SwiperSlide>
+
+              {/* <SwiperSlide>
+                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+              </SwiperSlide> */}
+            </Swiper>  
+          </div>
+
+          {/* <div>video from youtube</div> */}
+        </div>
+      </div>
+
+      {/* section 4 Our services provided*/}
+      <div className='bg-gray-100 my-10 px-[1rem] md:px-[3rem] font-poppins pb-10'>
+        <div className='flex flex-col items-center justify-center py-16'>
+          <h3 className='text-base tracking-[5px] text-center'>HOUSES | LAND | CONSTRUCTION</h3>
+          <h1 className='tracking-wide font-bold text-xl md:text-4xl pt-3 text-center'>The Future of Housing in Nigeria is Here.</h1>
+        </div>
+
+        <div className='block md:grid md:grid-cols-3 gap-6'>
+          <div className='hvr-float-shadow'>
+            <Image src='/image/img3.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
+            <h3 className='flex items-center gap-3 py-3 justify-center cursor-pointer font-semibold text-blue-900/40 hover:text-blue-900'>Explore Our Homes <span className='animate-bounce text-xl '><PiArrowBendRightUpFill /></span></h3>
+          </div>
+
+          <div className='hvr-float-shadow'>
+            <Image src='/image/land.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
+            <h3 className='flex items-center gap-3 py-3 justify-center cursor-pointer font-semibold text-blue-900/40 hover:text-blue-900'>Our Landed Properties <span className='animate-bounce text-xl '><PiArrowBendRightUpFill /></span></h3>
+          </div>
+
+
+          <div className='hvr-float-shadow'>
+            <Image src='/image/land2.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
+            <h3 className='flex items-center gap-3 py-3 justify-center cursor-pointer font-semibold text-blue-900/40 hover:text-blue-900'>Learn About Our Construction <span className='animate-bounce text-xl '><PiArrowBendRightUpFill /></span></h3>
+          </div>
+        </div>
+
+
+
+
+
+      </div>
+
+      {/* ssection 5 our featured properties */}
+      {/* <div className='bg-gray-50 my-10 px-[1rem] md:px-[3rem] font-poppins pb-10'>
+        <div className='flex flex-col items-center justify-center py-5 md:py-16'>
+          <h1 className='flex text-3xl font-bold items-center gap-3'>Our Featured Properties <span className='animate-bounce text-xl '><PiArrowBendRightDownFill /></span></h1>
+          
+        </div>
+
+        <div className='grid grid-cols-3 gap-6'>
+          <div>
+            <Image src='/image/img3.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
+
+        
+            
+          </div>
+
+          
+        </div>
+      </div> */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
