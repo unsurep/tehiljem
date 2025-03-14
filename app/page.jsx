@@ -213,7 +213,7 @@ const Home = () => {
             <h3 className='flex items-center gap-3 py-3 justify-center cursor-pointer font-semibold text-blue-900/40 hover:text-blue-900'>Explore Our Homes <span className='animate-bounce text-xl '><PiArrowBendRightUpFill /></span></h3>
           </div>
 
-          <div className='hvr-float-shadow'>
+          <div className='hvr-float-shadow py-8 md:py-0'>
             <Image src='/image/land.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
             <h3 className='flex items-center gap-3 py-3 justify-center cursor-pointer font-semibold text-blue-900/40 hover:text-blue-900'>Our Landed Properties <span className='animate-bounce text-xl '><PiArrowBendRightUpFill /></span></h3>
           </div>
@@ -232,23 +232,244 @@ const Home = () => {
       </div>
 
       {/* ssection 5 our featured properties */}
-      {/* <div className='bg-gray-50 my-10 px-[1rem] md:px-[3rem] font-poppins pb-10'>
+      <div className='bg-gray-50 my-10 px-[1rem] md:px-[3rem] font-poppins pb-10'>
         <div className='flex flex-col items-center justify-center py-5 md:py-16'>
-          <h1 className='flex text-3xl font-bold items-center gap-3'>Our Featured Properties <span className='animate-bounce text-xl '><PiArrowBendRightDownFill /></span></h1>
+          <h1 className='flex text-base md:text-3xl font-bold items-center gap-3'>Our Featured Properties <span className='animate-bounce text-xl '><PiArrowBendRightDownFill /></span></h1>
           
         </div>
-
-        <div className='grid grid-cols-3 gap-6'>
+        
+        {/* upside */}
+        <div className='lg:flex  gap-8'>
+          {/* 1 */}
           <div>
             <Image src='/image/img3.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
 
-        
-            
+            <div className='flex flex-col items-center py-5'>
+              <h1 className='text-xl md:text-3xl text-blue-900 font-bold'>Scepter City</h1>
+              <p className='text-base'>Location: IDU, Abuja</p>
+            </div>
+
+
+            <div className='flex'>
+              <ul className='text-sm md:text-base'>
+                <li>250sqm - N3.5M</li>
+                <li>400sqm - 5.5M</li>
+                <li>500sqm - N6M</li>
+              </ul>
+
+
+
+              <ul className='ml-auto text-sm md:text-base'>
+                <li>Features</li>
+                <li>Perimeter Fencing</li>
+                <li>Security</li>
+                <li>CCTV</li>
+                <li>Asphalt Road</li>
+              </ul>
+            </div>
+
+
+            <div className='flex items-center justify-center py-4'>
+              <button className='text-sm'>View</button>
+            </div>
+
+            <p className='text-xs md:text-sm text-center'>Landmark: Opposite Nig. Army Estate IDU</p>
           </div>
 
-          
+          {/* 2 */}
+          <div className='py-16 lg:py-0'>
+            <Image src='/image/img3.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
+
+            <div className='flex flex-col items-center py-5'>
+              <h1 className='text-xl md:text-3xl text-blue-900 font-bold'>Villa Ecclesia</h1>
+              <p className='text-base'>Location: Kuje Phase I, Abuja</p>
+            </div>
+
+
+            <div className='flex'>
+              <ul className='text-sm md:text-base'>
+                <li>200sqm - N2.5M</li>
+                <li>250sqm - 3.125M</li>
+                <li>300sqm - N3.750M</li>
+                <li>350sqm - N4.375M</li>
+                <li>450sqm - N5.625M</li>
+                <li>500sqm - N5.250M</li>
+              </ul>
+
+
+
+              <ul className='ml-auto text-sm md:text-base'>
+                <li>Features</li>
+                <li>Perimeter Fencing</li>
+                <li>Security</li>
+                <li>CCTV</li>
+                <li>Asphalt Road</li>
+              </ul>
+            </div>
+
+
+            <div className='flex items-center justify-center py-4'>
+              <button className='text-sm'>View</button>
+            </div>
+
+            <p className='text-xs md:text-sm text-center'>Site Location: Beside Govt. sec sch, AA3 Kuje</p>
+          </div>
+
+          {/* 3 */}
+          <div>
+            <Image src='/image/img3.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
+
+            <div className='flex flex-col items-center py-5'>
+              <h1 className='text-xl md:text-3xl text-blue-900 font-bold'>Villa Ecclesia</h1>
+              <p className='text-base'>Location: Kuje Phase II, Abuja</p>
+            </div>
+
+
+            <div className='flex'>
+              <ul className='text-sm md:text-base'>
+                <li>250sqm - N1.925M</li>
+                <li>400sqm - N3.080M</li>
+                <li>500sqm - N3.850M</li>
+              </ul>
+
+
+
+              <ul className='ml-auto text-sm md:text-base'>
+                <li>Features</li>
+                <li>Perimeter Fencing</li>
+                <li>Security</li>
+                <li>CCTV</li>
+                <li>Asphalt Road</li>
+              </ul>
+            </div>
+
+
+            <div className='flex items-center justify-center py-4'>
+              <button className='text-sm'>View</button>
+            </div>
+
+            <p className='text-xs md:text-sm text-center'>Site Location: Beside SS Simon and Jude Seminary Sch Kuje</p>
+          </div>
         </div>
-      </div> */}
+      </div>
+
+      {/* downside */}
+      <div className='lg:flex gap-8 px-[1rem] md:px-[3rem]'>
+        {/* 4 */}
+        <div>
+            <Image src='/image/img3.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
+
+            <div className='flex flex-col items-center py-5'>
+              <h1 className='text-xl md:text-3xl text-blue-900 font-bold'>Villa Ecclesia</h1>
+              <p className='text-base'>Location: Kuje Phase III, Abuja</p>
+            </div>
+
+
+            <div className='flex'>
+              <ul className='text-sm md:text-base'>
+                <li>250sqm - N3M</li>
+                <li>350sqm - N4M</li>
+                <li>450sqm - N6M</li>
+              </ul>
+
+
+
+              <ul className='ml-auto text-sm md:text-base'>
+                <li>Features</li>
+                <li>Perimeter Fencing</li>
+                <li>Security</li>
+                <li>CCTV</li>
+                <li>Asphalt Road</li>
+              </ul>
+            </div>
+
+
+            <div className='flex items-center justify-center py-4'>
+              <button className='text-sm'>View</button>
+            </div>
+
+            <p className='text-xs md:text-sm text-center'>Location: Chikakoree Kubwa</p>
+        </div>
+
+
+        {/* 5 */}
+        <div className='py-16 lg:py-0'>
+            <Image src='/image/img3.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
+
+            <div className='flex flex-col items-center py-5'>
+              <h1 className='text-xl md:text-3xl text-blue-900 font-bold'>Rio Dominion Estate</h1>
+              <p className='text-base'>Location: Lugbe, Abuja</p>
+            </div>
+
+
+            <div className='flex'>
+              <p className='text-sm md:text-base'>
+                Own a 3 Bedroom <br />
+                Semi-detached carcass <br />
+                duplex with initial payment <br />
+                of N5,000,000.00
+              </p>
+
+
+
+              <ul className='ml-auto text-sm md:text-base'>
+                <li>Features</li>
+                <li>Perimeter Fencing</li>
+                <li>Security</li>
+                <li>CCTV</li>
+                <li>Asphalt Road</li>
+              </ul>
+            </div>
+
+
+            <div className='flex items-center justify-center py-4'>
+              <button className='text-sm'>View</button>
+            </div>
+
+            <p className='text-xs md:text-sm text-center'>Location: Behind AMAC Marke FHA <br />
+            Lugbe close to Living Faith Church</p>
+        </div>
+
+
+        {/* 6 */}
+        <div className='pb-10'>
+            <Image src='/image/img3.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
+
+            <div className='flex flex-col items-center py-5'>
+              <h1 className='text-xl md:text-3xl text-blue-900 font-bold'>The Havens</h1>
+              <p className='text-base'>Location:?????????</p>
+            </div>
+
+
+            <div className='flex'>
+              <ul className='text-sm md:text-base'>
+                <li>250sqm - N36M</li>
+                <li>350sqm - N44M</li>
+                <li>400sqm - N50M</li>
+                <li>450sqm - N60M</li>
+                <li>500sqm - N70M</li>
+                <li>700sqm - N90M</li>
+              </ul>
+
+
+
+              <ul className='ml-auto text-sm md:text-base'>
+                <li>Perimeter Fencing</li>
+                <li>Security</li>
+                <li>CCTV</li>
+                <li>Asphalt Road</li>
+
+              </ul>
+            </div>
+
+
+            <div className='flex items-center justify-center'>
+              <button className='text-sm'>View</button>
+            </div>
+
+            <p className='text-xs md:text-sm text-center'>Location: ?????????</p>
+        </div>
+      </div>
 
 
 
