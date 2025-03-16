@@ -12,6 +12,7 @@ import { PiArrowBendRightUpFill } from "react-icons/pi";
 import { PiArrowBendRightDownFill } from "react-icons/pi";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 
+
 // AOS animations
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
@@ -159,7 +160,7 @@ const Home = () => {
 
         </div>
 
-        
+        {/* SWIPER JS */}
         <div className=' flex flex-col mx-auto md:py-16'>
           {/* swiper js */}
           <div>
@@ -190,9 +191,15 @@ const Home = () => {
                 <img src="/image/primesite.jpg" alt='image of primesite' className='rounded-lg ring ring-orange-300/40' />
               </SwiperSlide>
 
-              {/* <SwiperSlide>
-                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-              </SwiperSlide> */}
+              <SwiperSlide>
+                <img src="/image/kp1.jpg" alt='image of primesite' className='rounded-lg ring ring-orange-300/40' />
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <img src="/image/kp2.jpg" alt='image of primesite' className='rounded-lg ring ring-orange-300/40' />
+              </SwiperSlide>
+
+
             </Swiper>  
           </div>
 
@@ -234,14 +241,14 @@ const Home = () => {
       {/* ssection 5 our featured properties */}
       <div className='bg-gray-50 my-10 px-[1rem] md:px-[3rem] font-poppins pb-10'>
         <div className='flex flex-col items-center justify-center py-5 md:py-16'>
-          <h1 className='flex text-base md:text-3xl font-bold items-center gap-3'>Our Featured Properties <span className='animate-bounce text-xl '><PiArrowBendRightDownFill /></span></h1>
+          <h1 className='flex text-base md:text-3xl font-bold tracking-wide items-center gap-3'>Our Featured Properties <span className='animate-bounce text-xl '><PiArrowBendRightDownFill /></span></h1>
           
         </div>
         
         {/* upside */}
         <div className='lg:flex  gap-8'>
           {/* 1 */}
-          <div>
+          <div className='flex flex-col items-center'>
             <Image src='/image/img3.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
 
             <div className='flex flex-col items-center py-5'>
@@ -250,7 +257,7 @@ const Home = () => {
             </div>
 
 
-            <div className='flex'>
+            <div className='flex items-center justify-center'>
               <ul className='text-sm md:text-base'>
                 <li>250sqm - N3.5M</li>
                 <li>400sqm - 5.5M</li>
@@ -259,25 +266,25 @@ const Home = () => {
 
 
 
-              <ul className='ml-auto text-sm md:text-base'>
+              {/* <ul className='ml-auto text-sm md:text-base'>
                 <li>Features</li>
                 <li>Perimeter Fencing</li>
                 <li>Security</li>
                 <li>CCTV</li>
                 <li>Asphalt Road</li>
-              </ul>
+              </ul> */}
             </div>
 
 
             <div className='flex items-center justify-center py-4'>
-              <button className='text-sm'>View</button>
+              <button className='bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer text-sm '>View more</button>
             </div>
 
-            <p className='text-xs md:text-sm text-center'>Landmark: Opposite Nig. Army Estate IDU</p>
+            {/* <p className='text-xs md:text-sm text-center'>Landmark: Opposite Nig. Army Estate IDU</p> */}
           </div>
 
           {/* 2 */}
-          <div className='py-16 lg:py-0'>
+          <div className='py-16 lg:py-0 flex flex-col items-center'>
             <Image src='/image/img3.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
 
             <div className='flex flex-col items-center py-5'>
@@ -286,37 +293,37 @@ const Home = () => {
             </div>
 
 
-            <div className='flex'>
+            <div className='flex items-center justify-center'>
               <ul className='text-sm md:text-base'>
                 <li>200sqm - N2.5M</li>
-                <li>250sqm - 3.125M</li>
+                {/* <li>250sqm - 3.125M</li> */}
                 <li>300sqm - N3.750M</li>
-                <li>350sqm - N4.375M</li>
-                <li>450sqm - N5.625M</li>
+                {/* <li>350sqm - N4.375M</li> */}
+                {/* <li>450sqm - N5.625M</li> */}
                 <li>500sqm - N5.250M</li>
               </ul>
 
 
 
-              <ul className='ml-auto text-sm md:text-base'>
+              {/* <ul className='ml-auto text-sm md:text-base'>
                 <li>Features</li>
                 <li>Perimeter Fencing</li>
                 <li>Security</li>
                 <li>CCTV</li>
                 <li>Asphalt Road</li>
-              </ul>
+              </ul> */}
             </div>
 
 
             <div className='flex items-center justify-center py-4'>
-              <button className='text-sm'>View</button>
+              <button className='bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer text-sm'>View more</button>
             </div>
 
-            <p className='text-xs md:text-sm text-center'>Site Location: Beside Govt. sec sch, AA3 Kuje</p>
+            {/* <p className='text-xs md:text-sm text-center'>Site Location: Beside Govt. sec sch, AA3 Kuje</p> */}
           </div>
 
           {/* 3 */}
-          <div>
+          <div className='flex flex-col items-center'>
             <Image src='/image/img3.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
 
             <div className='flex flex-col items-center py-5'>
@@ -325,7 +332,7 @@ const Home = () => {
             </div>
 
 
-            <div className='flex'>
+            <div className='flex items-center justify-center'>
               <ul className='text-sm md:text-base'>
                 <li>250sqm - N1.925M</li>
                 <li>400sqm - N3.080M</li>
@@ -333,30 +340,30 @@ const Home = () => {
               </ul>
 
 
-
+              {/* 
               <ul className='ml-auto text-sm md:text-base'>
                 <li>Features</li>
                 <li>Perimeter Fencing</li>
                 <li>Security</li>
                 <li>CCTV</li>
                 <li>Asphalt Road</li>
-              </ul>
+              </ul> */}
             </div>
 
 
             <div className='flex items-center justify-center py-4'>
-              <button className='text-sm'>View</button>
+              <button className='bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer text-sm '>View more</button>
             </div>
 
-            <p className='text-xs md:text-sm text-center'>Site Location: Beside SS Simon and Jude Seminary Sch Kuje</p>
+            {/* <p className='text-xs md:text-sm text-center'>Site Location: Beside SS Simon and Jude Seminary Sch Kuje</p> */}
           </div>
         </div>
       </div>
 
-      {/* downside */}
+      {/* downside of featured properties */}
       <div className='lg:flex gap-8 px-[1rem] md:px-[3rem]'>
         {/* 4 */}
-        <div>
+        <div className='flex flex-col items-center'>
             <Image src='/image/img3.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
 
             <div className='flex flex-col items-center py-5'>
@@ -365,7 +372,7 @@ const Home = () => {
             </div>
 
 
-            <div className='flex'>
+            <div className='flex items-center justify-center'>
               <ul className='text-sm md:text-base'>
                 <li>250sqm - N3M</li>
                 <li>350sqm - N4M</li>
@@ -374,26 +381,26 @@ const Home = () => {
 
 
 
-              <ul className='ml-auto text-sm md:text-base'>
+              {/* <ul className='ml-auto text-sm md:text-base'>
                 <li>Features</li>
                 <li>Perimeter Fencing</li>
                 <li>Security</li>
                 <li>CCTV</li>
                 <li>Asphalt Road</li>
-              </ul>
+              </ul> */}
             </div>
 
 
             <div className='flex items-center justify-center py-4'>
-              <button className='text-sm'>View</button>
+              <button className='bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer text-sm'>View more</button>
             </div>
 
-            <p className='text-xs md:text-sm text-center'>Location: Chikakoree Kubwa</p>
+            {/* <p className='text-xs md:text-sm text-center'>Location: Chikakoree Kubwa</p> */}
         </div>
 
 
         {/* 5 */}
-        <div className='py-16 lg:py-0'>
+        <div className='py-16 lg:py-0 flex flex-col items-center'>
             <Image src='/image/img3.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
 
             <div className='flex flex-col items-center py-5'>
@@ -402,8 +409,8 @@ const Home = () => {
             </div>
 
 
-            <div className='flex'>
-              <p className='text-sm md:text-base'>
+            <div className='flex items-center justify-center'>
+              <p className='text-sm md:text-base items-center justify-center'>
                 Own a 3 Bedroom <br />
                 Semi-detached carcass <br />
                 duplex with initial payment <br />
@@ -412,63 +419,83 @@ const Home = () => {
 
 
 
-              <ul className='ml-auto text-sm md:text-base'>
+              {/* <ul className='ml-auto text-sm md:text-base'>
                 <li>Features</li>
                 <li>Perimeter Fencing</li>
                 <li>Security</li>
                 <li>CCTV</li>
                 <li>Asphalt Road</li>
-              </ul>
+              </ul> */}
             </div>
 
 
             <div className='flex items-center justify-center py-4'>
-              <button className='text-sm'>View</button>
+              <button className='bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer text-sm'>View more</button>
             </div>
 
-            <p className='text-xs md:text-sm text-center'>Location: Behind AMAC Marke FHA <br />
-            Lugbe close to Living Faith Church</p>
+            {/* <p className='text-xs md:text-sm text-center'>Location: Behind AMAC Marke FHA <br />
+            Lugbe close to Living Faith Church</p> */}
         </div>
 
 
         {/* 6 */}
-        <div className='pb-10'>
+        <div className='pb-10 flex flex-col items-center'>
             <Image src='/image/img3.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
 
             <div className='flex flex-col items-center py-5'>
               <h1 className='text-xl md:text-3xl text-blue-900 font-bold'>The Havens</h1>
-              <p className='text-base'>Location:?????????</p>
+              <p className='text-base'>Location: Katampe</p>
             </div>
 
 
-            <div className='flex'>
+            <div className='flex items-center justify-center'>
               <ul className='text-sm md:text-base'>
                 <li>250sqm - N36M</li>
-                <li>350sqm - N44M</li>
+                {/* <li>350sqm - N44M</li> */}
                 <li>400sqm - N50M</li>
-                <li>450sqm - N60M</li>
-                <li>500sqm - N70M</li>
+                {/* <li>450sqm - N60M</li> */}
+                {/* <li>500sqm - N70M</li> */}
                 <li>700sqm - N90M</li>
               </ul>
 
 
-
+                  {/* 
               <ul className='ml-auto text-sm md:text-base'>
                 <li>Perimeter Fencing</li>
                 <li>Security</li>
                 <li>CCTV</li>
                 <li>Asphalt Road</li>
 
-              </ul>
+              </ul> */}
             </div>
 
 
-            <div className='flex items-center justify-center'>
-              <button className='text-sm'>View</button>
+            <div className='flex items-center justify-center py-4'>
+              <button className='bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer text-sm'>View more</button>
             </div>
 
-            <p className='text-xs md:text-sm text-center'>Location: ?????????</p>
+            {/* <p className='text-xs md:text-sm text-center'>Location: ?????????</p> */}
         </div>
+      </div>
+
+      {/* Our Mission & Vision */}
+      <div className='bg-gray-50 h-screen px-[1rem] md:px-[3rem]  font-poppins'>
+        <h1 className='text-center text-base md:text-3xl font-bold tracking-wide py-5 md:py-16'>WHY CHOOSE US ?</h1>
+
+        <div className='flex '>
+          <div>
+            <h2>Why Choose TehilJem Nig. Ltd?</h2>
+
+            <p>For over a decade, Tehiljem Nig Ltd has been a pillar of <br /> excellence in the real estate industry, built on a <br /> foundation of integrity, innovation, and expertise. With <br /> a highly experienced team, we provide top-tier real <br /> estate solutions, ensuring quality, reliability, and value <br /> in every project. Whether residential, commercial, or <br /> investment properties, we are committed to delivering <br /> tailored services that meet and exceed our <br /> clients' expectations.</p>
+          </div>
+
+
+
+
+
+          <div className='ml-auto'>Video</div>
+        </div>
+
       </div>
 
 
