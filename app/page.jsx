@@ -12,7 +12,6 @@ import { PiArrowBendRightUpFill } from "react-icons/pi";
 import { PiArrowBendRightDownFill } from "react-icons/pi";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 
-
 // AOS animations
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
@@ -29,7 +28,12 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 // import required modules
-import { EffectFlip, Pagination, Navigation } from 'swiper/modules';
+import { EffectFlip, Pagination, Navigation, Autoplay } from 'swiper/modules';
+
+
+import YouTube from 'react-youtube';
+
+
 
 
 
@@ -41,6 +45,15 @@ import { EffectFlip, Pagination, Navigation } from 'swiper/modules';
 
 
 const Home = () => {
+
+  const opts = {
+    playerVars: {
+      autoplay: 1,  // Autoplay enabled
+      modestbranding: 1, // Hides YouTube logo
+      rel: 0, // Prevents showing related videos
+      vq: "hd1080", // Forces HD playback
+    },
+  }
 
   useEffect(() =>{
     AOS.init({
@@ -61,6 +74,22 @@ const Home = () => {
     loop: 2, 
     onLoopDone: () => console.log(`loop completed after 2 runs.`)
   })
+
+  const [show1, setShow1] = useState(false);
+  const [show2, setShow2] = useState(false);
+  const [show3, setShow3] = useState(false);
+
+  const toggle1=()=>{
+    setShow1(show1)
+  }
+
+  const toggle2 =()=>{
+    setShow2(show2)
+  }
+
+  const toggle3 =()=>{
+    setShow3(show3)
+  }
 
 
 
@@ -483,17 +512,40 @@ const Home = () => {
         <h1 className='text-center text-base md:text-3xl font-bold tracking-wide py-5 md:py-16'>WHY CHOOSE US ?</h1>
 
         <div className='flex '>
-          <div>
-            <h2>Why Choose TehilJem Nig. Ltd?</h2>
+          <div className='flex flex-col gap-8'>
+            <h2 className='text-2xl font-bold'>Why Choose TehilJem Nig. Ltd?</h2>
 
             <p>For over a decade, Tehiljem Nig Ltd has been a pillar of <br /> excellence in the real estate industry, built on a <br /> foundation of integrity, innovation, and expertise. With <br /> a highly experienced team, we provide top-tier real <br /> estate solutions, ensuring quality, reliability, and value <br /> in every project. Whether residential, commercial, or <br /> investment properties, we are committed to delivering <br /> tailored services that meet and exceed our <br /> clients' expectations.</p>
+
+
+            <div className='flex justify-between'>
+              <p onClick={toggle1} className='font-bold text-4xl px-6 py-4 bg-orange-300/50 hover:bg-orange-400 border border-black cursor-pointer text-white rounded'>1</p>
+
+              <p onClick={toggle2} className='font-bold text-4xl px-6 py-4 bg-orange-300/50 hover:bg-orange-400 border border-black cursor-pointer text-white rounded'>2</p>
+
+              <p className='font-bold text-4xl px-6 py-4 bg-orange-300/50 hover:bg-orange-400 border border-black cursor-pointer text-white rounded'>3</p>
+            </div>
           </div>
 
 
 
 
 
-          <div className='ml-auto'>Video</div>
+          <div className='ml-auto shadow'>
+            {
+              show1=== true ? ''
+              : <YouTube videoId='oWgpYmVxaUY' opts={opts} className='rounded-lg shadow-lg '/>
+            },
+
+            {
+              show2=== true ? <YouTube videoId='oWgpYmVxaUY' opts={opts} className='rounded-lg shadow-lg '/>
+              : ''
+            },
+
+
+
+            
+          </div>
         </div>
 
       </div>

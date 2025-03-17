@@ -216,3 +216,11 @@ body {
   transform: translateY(5px);
   /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
 }
+
+
+.shadow {
+  -webkit-box-shadow: -49px -50px 0px -19px rgba(254,215,170,1);
+  -moz-box-shadow: -49px -50px 0px -19px rgba(254,215,170,1);
+  box-shadow: -49px -50px 0px -19px rgba(254,215,170,1);
+  
+}
