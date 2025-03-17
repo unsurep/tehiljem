@@ -32,13 +32,7 @@ import { EffectFlip, Pagination, Navigation, Autoplay } from 'swiper/modules';
 
 
 import YouTube from 'react-youtube';
-
-
-
-
-
-
-
+import { FaDoorClosed } from 'react-icons/fa';
 
 
 
@@ -75,20 +69,26 @@ const Home = () => {
     onLoopDone: () => console.log(`loop completed after 2 runs.`)
   })
 
-  const [show1, setShow1] = useState(false);
+  const [show1, setShow1] = useState(true);
   const [show2, setShow2] = useState(false);
   const [show3, setShow3] = useState(false);
 
   const toggle1=()=>{
-    setShow1(show1)
+    setShow1(!show1)
+    setShow2(false)
+    setShow3(false)
   }
 
   const toggle2 =()=>{
-    setShow2(show2)
+    setShow2(!show2)
+    setShow1(false)
+    setShow3(false)
   }
 
   const toggle3 =()=>{
-    setShow3(show3)
+    setShow3(!show3)
+    setShow2(false)
+    setShow1(false)
   }
 
 
@@ -270,7 +270,7 @@ const Home = () => {
       {/* ssection 5 our featured properties */}
       <div className='bg-gray-50 my-10 px-[1rem] md:px-[3rem] font-poppins pb-10'>
         <div className='flex flex-col items-center justify-center py-5 md:py-16'>
-          <h1 className='flex text-base md:text-3xl font-bold tracking-wide items-center gap-3'>Our Featured Properties <span className='animate-bounce text-xl '><PiArrowBendRightDownFill /></span></h1>
+          <h1 className='flex text-base md:text-3xl font-bold tracking-[5px] items-center gap-3'>Our Featured Properties <span className='animate-bounce text-xl '><PiArrowBendRightDownFill /></span></h1>
           
         </div>
         
@@ -389,7 +389,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* downside of featured properties */}
+      {/* section 6 downside of featured properties */}
       <div className='lg:flex gap-8 px-[1rem] md:px-[3rem]'>
         {/* 4 */}
         <div className='flex flex-col items-center'>
@@ -507,23 +507,32 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Our Mission & Vision */}
-      <div className='bg-gray-50 h-screen px-[1rem] md:px-[3rem]  font-poppins'>
-        <h1 className='text-center text-base md:text-3xl font-bold tracking-wide py-5 md:py-16'>WHY CHOOSE US ?</h1>
+      {/* Section 7 why choose us / youtube videos*/}
+      <div className='bg-gray-50  px-[1rem] md:px-[3rem] pb-12 font-poppins'>
+        <h1 className='text-center text-base md:text-3xl font-bold tracking-[5px] py-5 md:py-16'>WHY CHOOSE US ?</h1>
 
-        <div className='flex '>
+        <div className='lg:flex '>
           <div className='flex flex-col gap-8'>
             <h2 className='text-2xl font-bold'>Why Choose TehilJem Nig. Ltd?</h2>
 
-            <p>For over a decade, Tehiljem Nig Ltd has been a pillar of <br /> excellence in the real estate industry, built on a <br /> foundation of integrity, innovation, and expertise. With <br /> a highly experienced team, we provide top-tier real <br /> estate solutions, ensuring quality, reliability, and value <br /> in every project. Whether residential, commercial, or <br /> investment properties, we are committed to delivering <br /> tailored services that meet and exceed our <br /> clients' expectations.</p>
+            <p className='tracking-wide'>For over a decade, Tehiljem Nig Ltd has been a pillar of <br /> excellence in the real estate industry, built on a <br /> foundation of integrity, innovation, and expertise. With <br /> a highly experienced team, we provide top-tier real <br /> estate solutions, ensuring quality, reliability, and value <br /> in every project. Whether residential, commercial, or <br /> investment properties, we are committed to delivering <br /> tailored services that meet and exceed our <br /> clients' expectations.</p>
 
 
             <div className='flex justify-between'>
-              <p onClick={toggle1} className='font-bold text-4xl px-6 py-4 bg-orange-300/50 hover:bg-orange-400 border border-black cursor-pointer text-white rounded'>1</p>
+              <p onClick={toggle1} className={`font-bold text-4xl px-6 py-4 ${
+                show1 ? "bg-orange-400" : "bg-orange-300/50"
+                } hover:bg-orange-400 border border-black cursor-pointer text-white rounded`}>1
+              </p>
 
-              <p onClick={toggle2} className='font-bold text-4xl px-6 py-4 bg-orange-300/50 hover:bg-orange-400 border border-black cursor-pointer text-white rounded'>2</p>
+              <p onClick={toggle2} className={`font-bold text-4xl px-6 py-4 ${
+                show1 ? "bg-orange-400" : "bg-orange-300/50"
+                } hover:bg-orange-400 border border-black cursor-pointer text-white rounded`}>2
+              </p>
 
-              <p className='font-bold text-4xl px-6 py-4 bg-orange-300/50 hover:bg-orange-400 border border-black cursor-pointer text-white rounded'>3</p>
+              <p onClick={toggle3} className={`font-bold text-4xl px-6 py-4 ${
+                show1 ? "bg-orange-400" : "bg-orange-300/50"
+                } hover:bg-orange-400 border border-black cursor-pointer text-white rounded`}>3
+              </p>
             </div>
           </div>
 
@@ -531,22 +540,89 @@ const Home = () => {
 
 
 
-          <div className='ml-auto shadow'>
+          <div className='ml-auto shadow overflow-hidden'>
             {
-              show1=== true ? ''
-              : <YouTube videoId='oWgpYmVxaUY' opts={opts} className='rounded-lg shadow-lg '/>
-            },
+              show1  && <YouTube videoId='oWgpYmVxaUY' opts={opts} className='rounded-lg shadow-lg '/>
+            }
 
             {
-              show2=== true ? <YouTube videoId='oWgpYmVxaUY' opts={opts} className='rounded-lg shadow-lg '/>
-              : ''
-            },
+              show2 && <YouTube videoId='qPlzKnDX30M' opts={opts} className='rounded-lg shadow-lg '/>
+            }
 
+            {
+              show3 && <YouTube videoId='XCsmyQBcOCg' opts={opts} className='rounded-lg shadow-lg '/>
+            }
 
-
-            
           </div>
         </div>
+
+      </div>
+
+      {/* Section 8 Team Members */}
+      <div className='bg-gray-50 font-poppins px-[1rem] py-16 md:px-[3rem]'>
+        <div className='flex flex-col gap-6'>
+          <h3 className='text-center text-base md:text-2xl font-bold tracking-[5px]'>TEAM MEMBERS</h3>
+          <h1 className='text-center text-2xl md:text-4xl font-bold tracking-[5px]'>TehilJem Management Team</h1>
+        </div>
+
+
+        {/* Members of Tehiljem */}
+        <div className='grid grid-cols-1 md:flex gap-12 justify-between py-16'>
+          {/* MD */}
+          <div className='flex flex-col items-center justify-center shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]'>
+            <div className='bg-purple-200'>
+              <Image src='/image/unknown.svg' width={200} height={200} alt='image' className='rounded'/>
+            </div>
+
+            <div>
+              <h3>Leo RD.</h3>
+              <h2>MD/CEO</h2>
+            </div>
+            
+          </div>
+          
+          {/* Manager */}
+          <div className='flex flex-col items-center justify-center shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]'>
+            <div className='bg-gray-200'>
+              <Image src='/image/unknown.svg' width={200} height={200} alt='image' className='rounded'/>
+            </div>
+
+            <div>
+              <h3>Korofo Q.</h3>
+              <h2>CFO</h2>
+            </div>
+            
+          </div>
+
+          {/* Marketer 1 */}
+          <div className='flex flex-col items-center justify-center shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]'>
+            <div className='bg-orange-200'>
+              <Image src='/image/unknown.svg' width={200} height={200} alt='image' className='rounded'/>
+            </div>
+
+            <div>
+              <h3>Toro RD.</h3>
+              <h2>Marketer</h2>
+            </div>
+            
+          </div>
+
+          {/* Agent */}
+          <div className='flex flex-col items-center justify-center shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]'>
+            <div className='bg-cyan-200'>
+              <Image src='/image/unknown.svg' width={200} height={200} alt='image' className='rounded'/>
+            </div>
+
+            <div>
+              <h3>Zoro RD.</h3>
+              <h2>Agent</h2>
+            </div>
+            
+          </div>
+
+        </div>
+
+
 
       </div>
 
