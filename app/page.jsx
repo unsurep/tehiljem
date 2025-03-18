@@ -651,7 +651,7 @@ const Home = () => {
 
       {/* API Blog / News n real estate & other related news */}
       <div className=' font-poppins py-16'>
-        <h1 className=" font-bold mb-6 font-poppins tracking-[5px] justify-self-center flex items-center gap-2 text-sm md:text-xl px-[1rem] md:px-[3rem]">Latest Real Estate News Around the World - <span><Image src='/image/news.svg' width={40} height={40} alt="new logo" className=""/></span></h1>
+        <h1 className=" font-bold mb-6 font-poppins tracking-[5px] justify-self-center flex items-center gap-2 text-base md:text-2xl px-[1rem] md:px-[3rem]">Lastest News Feed - <span><Image src='/image/news.svg' width={40} height={40} alt="new logo" className=""/></span></h1>
 
         {/* mapping */}
         <div className='  p-4 md:p-6">'>
@@ -670,8 +670,12 @@ const Home = () => {
                   className="w-full h-48 sm:h-64 object-cover rounded mb-4"
                 />
               )}
-              <h2 className="text-base md:text-lg font-semibold">{article.title}</h2>
-              <p className="mt-2 text-sm md:text-base text-gray-700">{article.description}</p>
+              <h2 className="text-base  font-semibold">{article.title}</h2>
+
+              {/* Date Added Below */}
+              {article.publishedAt && (<p className="text-xs md:text-sm text-gray-500 mb-2">Published on: {new Date(article.publishedAt).toLocaleDateString()}</p>)}
+
+              <p className="mt-4 text-sm md:text-base text-gray-700">{article.description}</p>
               <a
                 href={article.url}
                 target="_blank"

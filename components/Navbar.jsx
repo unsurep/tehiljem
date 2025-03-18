@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { FaRegUserCircle } from "react-icons/fa";
 import { IoMdMenu } from "react-icons/io";
+import { RiCustomerService2Fill } from "react-icons/ri";
 
 const Navbar = () => {
     const [activeElement, setActiveElement]= useState('');
@@ -15,8 +16,16 @@ const Navbar = () => {
    
   return (
     <>   
+        {/* small nav */}
+        <nav className='flex items-center justify-end bg-gray-400 w-full  font-montserrat px-[6rem]  fixed z-10'>
+            <ul className='flex items-center gap-5 font-bold text-sm text-gray-600'>
+                <li className='hover:text-black cursor-pointer'>Monday - Friday: 8:00am - 5:00pm</li>
+                <li>|</li>
+                <li className='flex items-center gap-2 hover:text-black cursor-pointer'><RiCustomerService2Fill className='animate-bounce' /> +234706-828-3250</li>
+            </ul>
+        </nav>
         {/* Desktop view */}
-        <nav className='hidden lg:flex items-center justify-between px-[1rem] md:px-[3rem] py-2 font-montserrat shadow-[0_8px_30px_rgb(0,0,0,0.12)] fixed z-50 bg-white/60 w-full bg-opacity-45 backdrop-blur-xl'>
+        <nav className='hidden lg:flex items-center justify-between px-[1rem] md:px-[3rem] py-2 font-montserrat shadow-[0_8px_30px_rgb(0,0,0,0.12)] fixed z-50 bg-white/60 w-full bg-opacity-45 backdrop-blur-xl mt-5'>
 
             <Link href={'/'} className='flex items-center justify-center gap-4'>
                 <div>
