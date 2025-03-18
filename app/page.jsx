@@ -11,6 +11,7 @@ import { MdMoreTime } from "react-icons/md";
 import { PiArrowBendRightUpFill } from "react-icons/pi";
 import { PiArrowBendRightDownFill } from "react-icons/pi";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
+import axios from 'axios';
 
 // AOS animations
 import AOS from 'aos';
@@ -40,6 +41,7 @@ import { FaDoorClosed } from 'react-icons/fa';
 
 const Home = () => {
 
+  // youtube player
   const opts = {
     playerVars: {
       autoplay: 1,  // Autoplay enabled
@@ -49,6 +51,8 @@ const Home = () => {
     },
   }
 
+
+  // AOS animation
   useEffect(() =>{
     AOS.init({
       disable: false,
@@ -62,13 +66,15 @@ const Home = () => {
   
   }, [])
 
-  
+  // use typewriter
   const [text] =useTypewriter({
     words: ['Paradise', 'Desires','Residence',],
     loop: 2, 
     onLoopDone: () => console.log(`loop completed after 2 runs.`)
   })
 
+
+  // Toggle youtube videos
   const [show1, setShow1] = useState(true);
   const [show2, setShow2] = useState(false);
   const [show3, setShow3] = useState(false);
@@ -91,6 +97,23 @@ const Home = () => {
     setShow1(false)
   }
 
+  // API real estate news fecth
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function fetchLiveData() {
+      try {
+        const response = await axios.get('/api/live');
+        setData(response.data);
+      } catch (err) {
+        console.error("Error fetching data:", err);
+        setError("Failed to load live data.");
+      }
+    }
+    fetchLiveData();
+  }, []);
+ 
 
 
   return (
@@ -559,7 +582,7 @@ const Home = () => {
       </div>
 
       {/* Section 8 Team Members */}
-      <div className='bg-gray-50 font-poppins px-[1rem] py-16 md:px-[3rem]'>
+      <div className='bg-gray-50 font-poppins px-[1rem] pt-16 md:px-[3rem]'>
         <div className='flex flex-col gap-6'>
           <h3 className='text-center text-base md:text-2xl font-bold tracking-[5px]'>TEAM MEMBERS</h3>
           <h1 className='text-center text-2xl md:text-4xl font-bold tracking-[5px]'>TehilJem Management Team</h1>
@@ -623,6 +646,50 @@ const Home = () => {
         </div>
 
 
+
+      </div>
+
+      {/* API Blog / News n real estate & other related news */}
+      <div className=' font-poppins py-16'>
+        <h1 className=" font-bold mb-6 font-poppins tracking-[5px] justify-self-center flex items-center gap-2 text-sm md:text-xl px-[1rem] md:px-[3rem]">Latest Real Estate News Around the World - <span><Image src='/image/news.svg' width={40} height={40} alt="new logo" className=""/></span></h1>
+
+        {/* mapping */}
+        <div className='  p-4 md:p-6">'>
+          <main className="min-h-screen font-poppinsgrid grid-cols-1 lg:flex gap-6">
+       
+          {error && <p className="text-red-500">{error}</p>}
+
+          {data ? 
+            (data.articles && data.articles.length > 0 ? 
+              (data.articles.map((article, index) => (
+            <div key={index} className="p-4 bg-white shadow-lg rounded-lg hover:bg-black/10 transition duration-300">
+              {article.urlToImage && (
+                <img
+                  src={article.urlToImage}
+                  alt={article.title}
+                  className="w-full h-48 sm:h-64 object-cover rounded mb-4"
+                />
+              )}
+              <h2 className="text-base md:text-lg font-semibold">{article.title}</h2>
+              <p className="mt-2 text-sm md:text-base text-gray-700">{article.description}</p>
+              <a
+                href={article.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-1 px-4 py-2 rounded bg-cyan-600/30 hover:bg-cyan-400/90 text-gray-700 hover:text-black transition-opacity duration-300 text-sm md:text-base"
+              >
+                Read more 
+              </a>
+            </div>))) : (<p className="text-center text-gray-600">No live articles found.</p>)) : 
+
+            <div className="w-full flex items-center justify-center">
+              <Image src='/image/spinner.gif' width={100} height={100} alt='loader' className='bg-transparent'/>
+            </div>
+          }
+          </main>
+        </div>
+
+    
 
       </div>
 
