@@ -706,7 +706,7 @@ const Home = () => {
         </div>
 
        {/* the three provided services */}
-        <div className='grid grid-cols-1 md:flex items-center justify-center md:gap-8 lg:gap-20'>
+        <div className='grid grid-cols-1 md:flex items-center justify-center gap-8 lg:gap-20'>
           {/* 1 buy a home */}
           <div className='flex flex-col items-center justify-center bg-gray-50 px-6 py-12 shadow drop-shadow-lg hvr-underline-from-left'>
             <div className='border-dashed border-4 border-orange-200/60 px-4 py-7 rounded-full w-fit flex mx-auto'>
