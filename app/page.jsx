@@ -12,6 +12,7 @@ import { PiArrowBendRightUpFill } from "react-icons/pi";
 import { PiArrowBendRightDownFill } from "react-icons/pi";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 import axios from 'axios';
+import { HiArrowLongRight } from "react-icons/hi2";
 
 // AOS animations
 import AOS from 'aos';
@@ -120,15 +121,15 @@ const Home = () => {
     <div>
 
       {/* Section 1  */}
-      <section id='section1' className='h-[85vh] md:h-screen text-white bg-cover bg-center bg-no-repeat flex items-cente  px-[1rem] md:px-[3rem] font-poppins' style={{ backgroundImage: "url('/image/hbg.png')" }}>
-        <div  className='flex flex-col gap-4 text-center md:justify-center items-center pt-10'>
+      <section id='section1' className='h-[85vh] md:h-screen text-white bg-cover bg-center bg-no-repeat flex items-center  px-[1rem] md:px-[3rem] font-poppins' style={{ backgroundImage: "url('/image/hbg.png')" }}>
+        <div  className='flex flex-col gap-4 text-center md:justify-center items-center pt-28'>
           <h1 data-aos="zoom-in"
-          data-aos-duration="1000" className='text-3xl md:text-5xl font-bold tracking-[5px] md:pt- '>Discover Your Dream Home <span className='text-red-500 tracking-wide font-extrabold'>{text} <Cursor cursorColor='red' /></span></h1>
+          data-aos-duration="1000" className='text-2xl md:text-5xl font-bold tracking-[5px] md:pt- '>Discover Your Dream Home <span className='text-red-500 tracking-wide font-extrabold'>{text} <Cursor cursorColor='red' /></span></h1>
 
           <p data-aos="zoom-in"
-          data-aos-duration="1500"  className=' text-white text-xl leading-relaxed tracking-wide opacity-90  md:pt-8'>Tehiljem Homes envisions a world where luxury meets affordability,  making exceptional living spaces accessible to all. Our mission  is to provide elegantly designed, high-quality homes that enhance  the lives of our clients and their families, ensuring comfort, style, and  long-term value. </p>
+          data-aos-duration="1500"  className=' text-white md:text-xl leading-relaxed tracking-wide opacity-90  md:pt-8'>Tehiljem Homes envisions a world where luxury meets affordability,  making exceptional living spaces accessible to all. Our mission  is to provide elegantly designed, high-quality homes that enhance  the lives of our clients and their families, ensuring comfort, style, and  long-term value. </p>
 
-          <div className='flex flex-col gap-2 items-center md:pt-8'>
+          <div className='flex flex-col gap-2 items-center pt-5 md:pt-8'>
             <motion.button 
             className="bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer"
             initial={{ x:500, scale:0.5, opacity:0 }}
@@ -164,7 +165,7 @@ const Home = () => {
        
         {/* div B */}
         <div className='flex flex-col gap-5'>
-          <h3 className='text-xl hvr-bubble-float-bottom px-3 py-1 bg-orange-200/60 text-orange-400 rounded w-fit'>About Us</h3>
+          <h3 className='text-xl hvr-bubble-float-bottom px-3 py-1 bg-orange-200/60 text-orange-400 rounded w-fit tracking-[5px]'>About Us</h3>
           <h1 className='text-4xl font-bold tracking-[5px]'>The Leading Real Estate <br /> Marketplace.</h1>
           <p className='text-base tracking-wide'>We started with a passionate team, focusing on residential <br /> developments in Abuja. As our vision grew, so did our reach, <br /> expanding into Edo State and diversifying into commercial <br /> projects. In 2015, we introduced TJ Homes, a brand dedicated <br /> to delivering excellence and affordability in real estate.
 
@@ -196,7 +197,7 @@ const Home = () => {
       </section>
 
       {/* section 3 swiper */}
-      <div className='grid grid-cols-1 md:flex gap-5 bg-gray-200 px-[1rem] md:px-[3rem] font-poppins mt-10'>
+      <div id='section3' className='grid grid-cols-1 md:flex gap-5 bg-gray-200 px-[1rem] md:px-[3rem] font-poppins mt-10'>
         <div className=' py-5 md:py-16'>
           <h1 className='md:text-2xl md:text-center font-semibold'>
             Tehiljem is a premier real estate <br /> platform in Nigeria, offering  an <br /> extensive range of property <br /> listings for sale, rent, and short-let.
@@ -260,7 +261,7 @@ const Home = () => {
       </div>
 
       {/* section 4 Our services provided*/}
-      <div className='bg-gray-100 my-10 px-[1rem] md:px-[3rem] font-poppins pb-10'>
+      <div id='section4' className='bg-gray-100 my-10 px-[1rem] md:px-[3rem] font-poppins pb-10'>
         <div className='flex flex-col items-center justify-center py-16'>
           <h3 className='text-base tracking-[5px] text-center'>HOUSES | LAND | CONSTRUCTION</h3>
           <h1 className='tracking-wide font-bold text-xl md:text-4xl pt-3 text-center'>The Future of Housing in Nigeria is Here.</h1>
@@ -291,7 +292,7 @@ const Home = () => {
       </div>
 
       {/* ssection 5 our featured properties */}
-      <div className='bg-gray-50 my-10 px-[1rem] md:px-[3rem] font-poppins pb-10'>
+      <div id='section5' className='bg-gray-50 my-10 px-[1rem] md:px-[3rem] font-poppins pb-10'>
         <div className='flex flex-col items-center justify-center py-5 md:py-16'>
           <h1 className='flex text-base md:text-3xl font-bold tracking-[5px] items-center gap-3'>Our Featured Properties <span className='animate-bounce text-xl '><PiArrowBendRightDownFill /></span></h1>
           
@@ -413,7 +414,7 @@ const Home = () => {
       </div>
 
       {/* section 6 downside of featured properties */}
-      <div className='lg:flex gap-8 px-[1rem] md:px-[3rem]'>
+      <div id='section6' className='lg:flex gap-8 px-[1rem] md:px-[3rem]'>
         {/* 4 */}
         <div className='flex flex-col items-center'>
             <Image src='/image/img3.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
@@ -531,7 +532,7 @@ const Home = () => {
       </div>
 
       {/* Section 7 why choose us / youtube videos*/}
-      <div className='bg-gray-50  px-[1rem] md:px-[3rem] pb-12 font-poppins'>
+      <div id='section7' className='bg-gray-50  px-[1rem] md:px-[3rem] pb-12 font-poppins'>
         <h1 className='text-center text-base md:text-3xl font-bold tracking-[5px] py-5 md:py-16'>WHY CHOOSE US ?</h1>
 
         <div className='lg:flex '>
@@ -582,7 +583,7 @@ const Home = () => {
       </div>
 
       {/* Section 8 Team Members */}
-      <div className='bg-gray-50 font-poppins px-[1rem] pt-16 md:px-[3rem]'>
+      <div id='section8' className='bg-gray-50 font-poppins px-[1rem] pt-16 md:px-[3rem]'>
         <div className='flex flex-col gap-6'>
           <h3 className='text-center text-base md:text-2xl font-bold tracking-[5px]'>TEAM MEMBERS</h3>
           <h1 className='text-center text-2xl md:text-4xl font-bold tracking-[5px]'>TehilJem Management Team</h1>
@@ -649,13 +650,13 @@ const Home = () => {
 
       </div>
 
-      {/* API Blog / News n real estate & other related news */}
-      <div className=' font-poppins py-16'>
+      {/* Section 9 API Blog / News n real estate & other related news */}
+      <div id='section9' className=' font-poppins pt-16'>
         <h1 className=" font-bold mb-6 font-poppins tracking-[5px] justify-self-center flex items-center gap-2 text-base md:text-2xl px-[1rem] md:px-[3rem]">Lastest News Feed - <span><Image src='/image/news.svg' width={40} height={40} alt="new logo" className=""/></span></h1>
 
         {/* mapping */}
         <div className='  p-4 md:p-6">'>
-          <main className="min-h-screen font-poppinsgrid grid-cols-1 lg:flex gap-6">
+          <main className="min-h-screen font-poppins grid grid-cols-1 lg:flex gap-6">
        
           {error && <p className="text-red-500">{error}</p>}
 
@@ -687,7 +688,7 @@ const Home = () => {
             </div>))) : (<p className="text-center text-gray-600">No live articles found.</p>)) : 
 
             <div className="w-full flex items-center justify-center">
-              <Image src='/image/spinner.gif' width={100} height={100} alt='loader' className='bg-transparent'/>
+              <Image src='/image/spinner.gif' width={100} height={100} alt='loader' className='bg-white-20'/>
             </div>
           }
           </main>
@@ -695,6 +696,58 @@ const Home = () => {
 
     
 
+      </div>
+
+      {/* section 10 Our services | Main focus */}
+      <div id='section10' className='font-poppins px-[1rem] md:px-[3rem] py-8'>
+        <div className='text-center py-8 flex flex-col gap-5'>
+          <h3 className='text-xl flex mx-auto hvr-bubble-float-bottom px-3 py-1 bg-orange-200/60 text-orange-400 rounded w-fit tracking-[5px]'>Our Services</h3>
+          <h1 className='text-base md:text-4xl font-bold tracking-[5px] font-poppins'>Our Main Focus</h1>
+        </div>
+
+       {/* the three provided services */}
+        <div className='grid grid-cols-1 md:flex items-center justify-center md:gap-8 lg:gap-20'>
+          {/* 1 buy a home */}
+          <div className='flex flex-col items-center justify-center bg-gray-50 px-6 py-12 shadow drop-shadow-lg hvr-underline-from-left'>
+            <div className='border-dashed border-4 border-orange-200/60 px-4 py-7 rounded-full w-fit flex mx-auto'>
+              <Image src='/image/house1.png' width={100} height={100} alt='buy a house image' className='animate-pulse'/>
+            </div>
+           
+            <div className='flex flex-col gap-3 pt-8 font-poppins'>
+              <h3 className=' text-center font-extrabold text-base md:text-2xl'>Buy a home</h3>
+              <p className='text-sm'>over 1 million+ homes for sale available on the website, <br /> we can match you with a house you will want to call home.</p>
+              <button className='flex items-center justify-center font-poppins pt-5 text-gray-400 hover:text-orange-600 cursor-pointer'>Find A Home <HiArrowLongRight /></button>
+            </div>
+          </div>
+
+
+          {/* 2 Buy a Land  */}
+          <div className='flex flex-col items-center justify-center bg-gray-50 px-6 py-12 shadow drop-shadow-lg hvr-underline-from-left'>
+            <div className='border-dashed border-4 border-orange-200/60 px-4 py-7 rounded-full w-fit flex mx-auto'>
+              <Image src='/image/house2.png' width={100} height={100} alt='buy a house image' className='animate-pulse'/>
+            </div>
+
+            <div className='flex flex-col gap-3 pt-8 font-poppins'>
+              <h3 className='font-extrabold text-center text-base md:text-2xl'>Buy a Land</h3>
+              <p className='text-sm'>over 1 million+ homes for sale available on the website, <br /> we can match you with a house you will want to call home.</p>
+              <button className='flex items-center justify-center font-poppins pt-5 text-gray-400 hover:text-orange-600 cursor-pointer'>Find A Home <HiArrowLongRight /></button>
+            </div>
+          </div>
+
+
+          {/* 3 Buy a Land & Build  */}
+          <div className='flex flex-col items-center justify-center bg-gray-50 px-6 py-12 shadow drop-shadow-lg hvr-underline-from-left'>
+            <div className='border-dashed border-4 border-orange-200/60 px-4 py-7 rounded-full w-fit flex mx-auto'>
+              <Image src='/image/house3.png' width={100} height={100} alt='buy a house image' className='animate-pulse'/>
+            </div>
+
+            <div className='flex flex-col gap-3 pt-8 font-poppins'>
+              <h3 className='font-extrabold text-center text-base md:text-2xl'>Buy a Land & Build</h3>
+              <p className='text-sm'>over 1 million+ homes for sale available on the website, <br /> we can match you with a house you will want to call home.</p>
+              <button className='flex items-center justify-center font-poppins pt-5 text-gray-400 hover:text-orange-600 cursor-pointer'>Find A Home <span><HiArrowLongRight /></span></button>
+            </div>
+          </div>
+        </div>
       </div>
 
 

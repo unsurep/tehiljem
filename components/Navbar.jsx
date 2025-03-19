@@ -17,12 +17,14 @@ const Navbar = () => {
   return (
     <>   
         {/* small nav */}
-        <nav className='flex items-center justify-end bg-gray-400 w-full  font-montserrat px-[6rem]  fixed z-10'>
-            <ul className='flex items-center gap-5 font-bold text-sm text-gray-600'>
-                <li className='hover:text-black cursor-pointer'>Monday - Friday: 8:00am - 5:00pm</li>
+        <nav className='flex items-center justify-end bg-gray-400 w-full  font-montserrat px-[1rem]  fixed z-10'>
+            <ul className='lg:flex items-center gap-5 font-bold text-xs md:text-sm text-gray-600 hidden'>
+                <li className='hover:text-black cursor-pointer '>Monday - Friday: 8:00am - 5:00pm</li>
                 <li>|</li>
                 <li className='flex items-center gap-2 hover:text-black cursor-pointer'><RiCustomerService2Fill className='animate-bounce' /> +234706-828-3250</li>
             </ul>
+
+           
         </nav>
         {/* Desktop view */}
         <nav className='hidden lg:flex items-center justify-between px-[1rem] md:px-[3rem] py-2 font-montserrat shadow-[0_8px_30px_rgb(0,0,0,0.12)] fixed z-50 bg-white/60 w-full bg-opacity-45 backdrop-blur-xl mt-5'>
@@ -66,9 +68,18 @@ const Navbar = () => {
             </div> */}
 
         </nav>
+        
+
+
+        {/* contact nav */}
+        <ul className='flex gap-3 font-bold text-[10px] justify-center md:text-sm text-black/90 lg:hidden z-10 bg-gray-400 w-full fixed'>
+            <li className=' cursor-pointer  '>Monday - Friday: 8:00am - 5:00pm</li>
+            <li>|</li>
+            <li className='flex items-center gap-2  cursor-pointer'><RiCustomerService2Fill className='animate-bounce' /> +234706-828-3250</li>
+        </ul>
 
         {/* Phone View */}
-        <nav className='lg:hidden flex items-center px-[1rem] md:px-[3rem] py-3 font-montserrat shadow-[0_8px_30px_rgb(0,0,0,0.12)] z-10'>
+        <nav className='lg:hidden flex items-center px-[1rem] md:px-[3rem] py-3 font-montserrat shadow-[0_8px_30px_rgb(0,0,0,0.12)] z-10 bg-gray-400 w-full fixed mt-3'>
             <Link href={'/'} className='flex items-center justify-center'>
             <div>
                 <Image src='/image/tjhomelogo.png' width={40} height={40} alt='tehiljems_logo' className=''/>
