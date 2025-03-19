@@ -564,7 +564,7 @@ const Home = () => {
 
 
 
-          <div className='ml-auto shadow overflow-hidden'>
+          {/* <div className='ml-auto shadow overflow-hidden'>
             {
               show1  && <YouTube videoId='oWgpYmVxaUY' opts={opts} className='rounded-lg shadow-lg '/>
             }
@@ -577,7 +577,7 @@ const Home = () => {
               show3 && <YouTube videoId='XCsmyQBcOCg' opts={opts} className='rounded-lg shadow-lg '/>
             }
 
-          </div>
+          </div> */}
         </div>
 
       </div>
