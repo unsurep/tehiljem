@@ -750,6 +750,23 @@ const Home = () => {
         </div>
       </div>
 
+      {/* section 11 Apartment plan & sketch */}
+      <div id='section10' className='font-poppins px-[1rem] md:px-[3rem] py-8'>
+        <div className='text-center py-8 flex flex-col gap-5'>
+          <h3 className='text-xl flex mx-auto hvr-bubble-float-bottom px-3 py-1 bg-orange-200/60 text-orange-400 rounded w-fit tracking-[5px]'>Apartment Sketch</h3>
+          <h1 className='text-base md:text-4xl font-bold tracking-[5px] font-poppins'>Apartments Plan</h1>
+        </div>
+
+        <ul className='grid grid-cols-2 gap-5 md:grid-cols-3 lg:flex items-center justify-center md:gap-12'>
+          <li className='cursor-pointer hvr-underline-from-center text-center'>Apartment 1</li>
+          <li className='cursor-pointer hvr-underline-from-center text-center'>Apartment 2</li>
+          <li className='cursor-pointer hvr-underline-from-center text-center'>Apartment 3</li>
+          <li className='cursor-pointer hvr-underline-from-center text-center'>Apartment 4</li>
+          <li className='cursor-pointer hvr-underline-from-center text-center'>Apartment 5</li>
+          <li className='cursor-pointer hvr-underline-from-center text-center'>Apartment 5</li>
+        </ul>
+      </div>
+
 
 
 
