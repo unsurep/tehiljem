@@ -803,9 +803,11 @@ const Home = () => {
 
 
       {/* 2nd ChatBot */}
-      <div>
+      {/* <div>
       <script defer src="https://app.fastbots.ai/embed.js" data-bot-id="cm86ym9i40txwrik9ubvobt41"></script>
-      </div>
+      </div> */}
+
+<elevenlabs-convai agent-id="whfruZeeMzvIgUehZ7py"></elevenlabs-convai><script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
 
 
 
