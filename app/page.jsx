@@ -121,15 +121,27 @@ const Home = () => {
     <div>
 
       {/* Section 1  */}
-      <section id='section1' className='h-[85vh] md:h-screen text-white bg-cover bg-center bg-no-repeat flex items-center  px-[1rem] md:px-[3rem] font-poppins' style={{ backgroundImage: "url('/image/hbg.png')" }}>
+      <section id='section1' className='h-[85vh] md:h-screen text-white bg-cover bg-center bg-no-repeat flex items-center  px-[1rem] md:px-[3rem] font-poppins relative'>
+        <video 
+          className="absolute top-0 left-0 w-full h-full object-cover"
+          autoPlay 
+          loop 
+          muted 
+          playsInline>
+          <source src="https://res.cloudinary.com/ddj0ticsg/video/upload/v1742509080/haven_kywwh2.mp4" type="video/mp4" />
+        </video>
+
+        {/* Overlay to make text readable */}
+        <div className="absolute top-0 left-0 w-full h-full bg-black/60"></div>
+        
         <div  className='flex flex-col gap-4 text-center md:justify-center items-center pt-28'>
           <h1 data-aos="zoom-in"
-          data-aos-duration="1000" className='text-2xl md:text-5xl font-bold tracking-[5px] md:pt- '>Discover Your Dream Home <span className='text-red-500 tracking-wide font-extrabold'>{text} <Cursor cursorColor='red' /></span></h1>
+          data-aos-duration="1000" className='text-2xl md:text-5xl font-extrabold tracking-[5px] md:pt- '>Discover Your Dream Home <span className='text-red-500 tracking-wide font-extrabold'>{text} <Cursor cursorColor='red' /></span></h1>
 
           <p data-aos="zoom-in"
-          data-aos-duration="1500"  className=' text-white md:text-xl leading-relaxed tracking-wide opacity-90  md:pt-8'>Tehiljem Homes envisions a world where luxury meets affordability,  making exceptional living spaces accessible to all. Our mission  is to provide elegantly designed, high-quality homes that enhance  the lives of our clients and their families, ensuring comfort, style, and  long-term value. </p>
+          data-aos-duration="1500"  className=' text-white md:text-xl leading-relaxed font-bold tracking-wide opacity-90  md:pt-8'>Tehiljem Homes envisions a world where luxury meets affordability,  making exceptional living spaces accessible to all. Our mission  is to provide elegantly designed, high-quality homes that enhance  the lives of our clients and their families, ensuring comfort, style, and  long-term value. </p>
 
-          <div className='flex flex-col gap-2 items-center pt-5 md:pt-8'>
+          <div className='flex flex-col gap-2 items-center pt-5 md:pt-8 z-10'>
             <motion.button 
             className="bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer"
             initial={{ x:500, scale:0.5, opacity:0 }}
@@ -803,11 +815,11 @@ const Home = () => {
 
 
       {/* 2nd ChatBot */}
-      {/* <div>
+      <div>
       <script defer src="https://app.fastbots.ai/embed.js" data-bot-id="cm86ym9i40txwrik9ubvobt41"></script>
-      </div> */}
+      </div>
 
-<elevenlabs-convai agent-id="whfruZeeMzvIgUehZ7py"></elevenlabs-convai><script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+{/* <elevenlabs-convai agent-id="whfruZeeMzvIgUehZ7py"></elevenlabs-convai><script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script> */}
 
 
 
