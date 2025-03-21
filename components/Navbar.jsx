@@ -26,6 +26,7 @@ const Navbar = () => {
 
            
         </nav>
+        
         {/* Desktop view */}
         <nav className='hidden lg:flex items-center justify-between px-[1rem] md:px-[3rem] py-2 font-montserrat shadow-[0_8px_30px_rgb(0,0,0,0.12)] fixed z-50 bg-white/60 w-full bg-opacity-45 backdrop-blur-xl mt-5'>
 

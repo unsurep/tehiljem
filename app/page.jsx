@@ -15,6 +15,11 @@ import axios from 'axios';
 import { HiArrowLongRight } from "react-icons/hi2";
 import { BiSolidQuoteAltLeft } from "react-icons/bi";
 import { BiSolidQuoteAltRight } from "react-icons/bi";
+import { IoLogoWhatsapp } from "react-icons/io";
+import { RiRobot3Line } from "react-icons/ri";
+import { BiSolidPhoneCall } from "react-icons/bi";
+import { ImLocation } from "react-icons/im";
+
 
 // AOS animations
 import AOS from 'aos';
@@ -211,7 +216,7 @@ const Home = () => {
           loop 
           muted 
           playsInline>
-          <source src="https://res.cloudinary.com/ddj0ticsg/video/upload/v1742509080/haven_kywwh2.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/ddj0ticsg/video/upload/v1742577444/tehiljem_q1jgml.mp4" type="video/mp4" />
         </video>
 
         {/* Overlay to make text readable */}
@@ -225,14 +230,44 @@ const Home = () => {
           data-aos-duration="1500"  className=' text-white md:text-xl leading-relaxed font-bold tracking-wide opacity-90  md:pt-8'>TehilJem owners of the brand TJ Homes, envisions a world where luxury meets affordability,  making exceptional living spaces accessible to all. Our mission  is to provide elegantly designed, high-quality homes that enhance  the lives of our clients and their families, ensuring comfort, style, and  long-term value. </p>
 
           <div className='flex flex-col gap-2 items-center pt-5 md:pt-8 z-10'>
-            <motion.button 
+            {/* <motion.button 
             onClick={() => window.open("https://wa.me/2347068283250", "_blank")}
             className="bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer"
             initial={{ x:500, scale:0.5, opacity:0 }}
             animate={{  x:0, scale: 1, opacity: 1 }}
             transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
             
-            >Make an Enquiry</motion.button>
+            >Make an Enquiry</motion.button> */}
+
+            {/* modals */}
+            {/* Open the modal using document.getElementById('ID').showModal() method */}
+            <button className="bt bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer" onClick={()=>document.getElementById('my_modal_1').showModal()}>Make an Enquiry</button>
+            <dialog id="my_modal_1" className="modal z-50 text-black">
+              <div className="modal-box">
+               <h3 className="font-bold text-lg">Hello! Select your mode of Enquiry</h3>
+                <ul className="space-y-4 pt-4">
+                  <li className='flex items-center gap-2'>Chat with our AI powered support bot 24/7 <RiRobot3Line className='text-blue-500 text-2xl'/></li>
+                  <li className='flex items-center gap-2'>Chat with us 24/7<IoLogoWhatsapp className='text-green-500 text-2xl' /></li>
+                  <li className='flex items-center gap-2'>Give us a call 24/7 <BiSolidPhoneCall className='text-green-500 text-2xl' /></li>
+                  <li className='flex items-center gap-2'>We are loacted at: <ImLocation className='text-red-500 text-2xl'/></li>
+                </ul>
+                {/* <h1>hello</h1> */}
+              <div className="modal-action">
+              <form method="dialog">
+              {/* if there is a button in form, it will close the modal */}
+              <button className="btn">Close</button>
+              </form>
+              </div>
+              </div>
+            </dialog>
+
+
+
+
+
+
+
+
 
             <i className='text-sm md:pt-3'>For swift enquiries, chat with our AI customer support bot now</i>
         </div>
@@ -392,11 +427,6 @@ const Home = () => {
             <h3 className='flex items-center gap-3 py-3 justify-center cursor-pointer font-semibold text-blue-900/40 hover:text-blue-900'>Learn About Our Construction <span className='animate-bounce text-xl '><PiArrowBendRightUpFill /></span></h3>
           </div>
         </div>
-
-
-
-
-
       </div>
 
       {/* section 5 our featured properties */}
@@ -430,8 +460,6 @@ const Home = () => {
             <div className='flex items-center justify-center py-4'>
               <button className='bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer text-sm '>View more</button>
             </div>
-
-            {/* <p className='text-xs md:text-sm text-center'>Landmark: Opposite Nig. Army Estate IDU</p> */}
           </div>
 
           {/* 2 */}
@@ -456,8 +484,6 @@ const Home = () => {
             <div className='flex items-center justify-center py-4'>
               <button className='bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer text-sm'>View more</button>
             </div>
-
-            {/* <p className='text-xs md:text-sm text-center'>Site Location: Beside Govt. sec sch, AA3 Kuje</p> */}
           </div>
 
           {/* 3 */}
@@ -476,24 +502,12 @@ const Home = () => {
                 <li>400sqm - N3.080M</li>
                 <li>500sqm - N3.850M</li>
               </ul>
-
-
-              {/* 
-              <ul className='ml-auto text-sm md:text-base'>
-                <li>Features</li>
-                <li>Perimeter Fencing</li>
-                <li>Security</li>
-                <li>CCTV</li>
-                <li>Asphalt Road</li>
-              </ul> */}
             </div>
 
 
             <div className='flex items-center justify-center py-4'>
               <button className='bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer text-sm '>View more</button>
             </div>
-
-            {/* <p className='text-xs md:text-sm text-center'>Site Location: Beside SS Simon and Jude Seminary Sch Kuje</p> */}
           </div>
         </div>
       </div>
@@ -987,14 +1001,14 @@ const Home = () => {
           </div>
 
 
-          <div className='w-fit py-8 shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] mx-[2rem] md:px-[3rem]'>
+          <div className='w-fit py-8 shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] bg-orange-200/60 palncolor mx-[2rem] md:px-[3rem]'>
             <Swiper
               spaceBetween={30}
               centeredSlides={true}
-              autoplay={{
-              delay: 4000,
-              disableOnInteraction: false,
-            }}
+            //   autoplay={{
+            //   delay: 4000,
+            //   disableOnInteraction: false,
+            // }}
             // pagination={{
             // clickable: true,
             // }}
@@ -1091,6 +1105,28 @@ const Home = () => {
 
         </div>
         
+
+
+      </div>
+
+      {/* Section 13 Some of our big clients */}
+      <div id='section13'  className='py-8'>
+
+        <div className='text-center py-8 flex flex-col gap-5'>
+          <h3 className='text-xl flex mx-auto hvr-bubble-float-bottom px-3 py-1 bg-orange-200/60 text-orange-400 rounded w-fit tracking-[5px]'>Our Trusted Clients</h3>
+          {/* <h1 className='text-base md:text-4xl font-bold tracking-[5px] font-poppins'>What our clients says..</h1> */}
+        </div>
+
+        <div className='flex items-center justify-evenly'>
+          <Image src='/image/2.jpg' width={100} height={100} alt='company logo'/>
+          <Image src='/image/3.jpg' width={100} height={100} alt='company logo'/>
+          <Image src='/image/4.jpg' width={100} height={100} alt='company logo'/>
+          <Image src='/image/5.jpg' width={100} height={100} alt='company logo'/>
+          <Image src='/image/2.jpg' width={100} height={100} alt='company logo'/>
+          <Image src='/image/3.jpg' width={100} height={100} alt='company logo'/>
+          <Image src='/image/4.jpg' width={100} height={100} alt='company logo'/>
+          <Image src='/image/5.jpg' width={100} height={100} alt='company logo'/>
+        </div>
 
 
       </div>
