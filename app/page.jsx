@@ -98,6 +98,9 @@ const Home = () => {
     setShow1(false)
   }
 
+  // show sketch on toggle
+  
+
   // API real estate news fecth
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
@@ -139,10 +142,11 @@ const Home = () => {
           data-aos-duration="1000" className='text-2xl md:text-5xl font-extrabold tracking-[5px] md:pt- '>Discover Your Dream Home <span className='text-red-500 tracking-wide font-extrabold'>{text} <Cursor cursorColor='red' /></span></h1>
 
           <p data-aos="zoom-in"
-          data-aos-duration="1500"  className=' text-white md:text-xl leading-relaxed font-bold tracking-wide opacity-90  md:pt-8'>Tehiljem Homes envisions a world where luxury meets affordability,  making exceptional living spaces accessible to all. Our mission  is to provide elegantly designed, high-quality homes that enhance  the lives of our clients and their families, ensuring comfort, style, and  long-term value. </p>
+          data-aos-duration="1500"  className=' text-white md:text-xl leading-relaxed font-bold tracking-wide opacity-90  md:pt-8'>TehilJem owners of the brand TJ Homes, envisions a world where luxury meets affordability,  making exceptional living spaces accessible to all. Our mission  is to provide elegantly designed, high-quality homes that enhance  the lives of our clients and their families, ensuring comfort, style, and  long-term value. </p>
 
           <div className='flex flex-col gap-2 items-center pt-5 md:pt-8 z-10'>
             <motion.button 
+            onClick={() => window.open("https://wa.me/2347068283250", "_blank")}
             className="bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer"
             initial={{ x:500, scale:0.5, opacity:0 }}
             animate={{  x:0, scale: 1, opacity: 1 }}
@@ -166,12 +170,24 @@ const Home = () => {
 
         {/* display on big screen */}
         <motion.div 
-        className='hidden lg:block absolute top-[38rem] left-[30rem] '
-        initial={{ x:-500, scale:0.5, opacity:0 }}
+        className='hidden lg:block absolute top-[30rem] left-[15em] '
+        initial={{ x:500, scale:0.5, opacity:0 }}
         animate={{  x:0, scale: 1, opacity: 1 }}
         transition={{ duration: 1.5,  }}
         >
-          <video controls width="15%" autoPlay loop muted type='video/mp4' src='/video/sold.mp4' className='rounded-3xl'></video>
+          {/* <video controls width="15%" autoPlay loop muted type='video/mp4' src='/video/sold.mp4' className='rounded-3xl'></video> */}
+          <Image src='/image/key.png' width={300} height={300} alt='image' className='bg-transparent'/>
+        </motion.div>
+
+        {/* for small screen */}
+        <motion.div 
+        className='lg:hidden block absolute top-[20rem] right-0'
+        initial={{ x:500, scale:0.5, opacity:0 }}
+        animate={{  x:0, scale: 1, opacity: 1 }}
+        transition={{ duration: 1.5,  }}
+        >
+          {/* <video controls width="15%" autoPlay loop muted type='video/mp4' src='/video/sold.mp4' className='rounded-3xl'></video> */}
+          <Image src='/image/key.png' width={250} height={250} alt='image' className='bg-transparent'/>
         </motion.div>
 
        
@@ -281,7 +297,7 @@ const Home = () => {
 
         <div className='block md:grid md:grid-cols-3 gap-6'>
           <div className='hvr-float-shadow'>
-            <Image src='/image/img3.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
+            <Image src='/image/tjh.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
             <h3 className='flex items-center gap-3 py-3 justify-center cursor-pointer font-semibold text-blue-900/40 hover:text-blue-900'>Explore Our Homes <span className='animate-bounce text-xl '><PiArrowBendRightUpFill /></span></h3>
           </div>
 
@@ -303,7 +319,7 @@ const Home = () => {
 
       </div>
 
-      {/* ssection 5 our featured properties */}
+      {/* section 5 our featured properties */}
       <div id='section5' className='bg-gray-50 my-10 px-[1rem] md:px-[3rem] font-poppins pb-10'>
         <div className='flex flex-col items-center justify-center py-5 md:py-16'>
           <h1 className='flex text-base md:text-3xl font-bold tracking-[5px] items-center gap-3'>Our Featured Properties <span className='animate-bounce text-xl '><PiArrowBendRightDownFill /></span></h1>
@@ -328,16 +344,6 @@ const Home = () => {
                 <li>400sqm - 5.5M</li>
                 <li>500sqm - N6M</li>
               </ul>
-
-
-
-              {/* <ul className='ml-auto text-sm md:text-base'>
-                <li>Features</li>
-                <li>Perimeter Fencing</li>
-                <li>Security</li>
-                <li>CCTV</li>
-                <li>Asphalt Road</li>
-              </ul> */}
             </div>
 
 
@@ -350,33 +356,20 @@ const Home = () => {
 
           {/* 2 */}
           <div className='py-16 lg:py-0 flex flex-col items-center'>
-            <Image src='/image/img3.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
+            <Image src='/image/jemzy.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
 
             <div className='flex flex-col items-center py-5'>
-              <h1 className='text-xl md:text-3xl text-blue-900 font-bold'>Villa Ecclesia</h1>
-              <p className='text-base'>Location: Kuje Phase I, Abuja</p>
+              <h1 className='text-xl md:text-3xl text-blue-900 font-bold'>Jemzys Court</h1>
+              <p className='text-base'>Location: Guzape, Abuja</p>
             </div>
 
 
             <div className='flex items-center justify-center'>
               <ul className='text-sm md:text-base'>
                 <li>200sqm - N2.5M</li>
-                {/* <li>250sqm - 3.125M</li> */}
                 <li>300sqm - N3.750M</li>
-                {/* <li>350sqm - N4.375M</li> */}
-                {/* <li>450sqm - N5.625M</li> */}
                 <li>500sqm - N5.250M</li>
               </ul>
-
-
-
-              {/* <ul className='ml-auto text-sm md:text-base'>
-                <li>Features</li>
-                <li>Perimeter Fencing</li>
-                <li>Security</li>
-                <li>CCTV</li>
-                <li>Asphalt Road</li>
-              </ul> */}
             </div>
 
 
@@ -389,11 +382,11 @@ const Home = () => {
 
           {/* 3 */}
           <div className='flex flex-col items-center'>
-            <Image src='/image/img3.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
+            <Image src='/image/haven.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
 
             <div className='flex flex-col items-center py-5'>
-              <h1 className='text-xl md:text-3xl text-blue-900 font-bold'>Villa Ecclesia</h1>
-              <p className='text-base'>Location: Kuje Phase II, Abuja</p>
+              <h1 className='text-xl md:text-3xl text-blue-900 font-bold'>The Haven</h1>
+              <p className='text-base'>Location: Katampe Extension, Abuja</p>
             </div>
 
 
@@ -443,24 +436,12 @@ const Home = () => {
                 <li>350sqm - N4M</li>
                 <li>450sqm - N6M</li>
               </ul>
-
-
-
-              {/* <ul className='ml-auto text-sm md:text-base'>
-                <li>Features</li>
-                <li>Perimeter Fencing</li>
-                <li>Security</li>
-                <li>CCTV</li>
-                <li>Asphalt Road</li>
-              </ul> */}
             </div>
 
 
             <div className='flex items-center justify-center py-4'>
               <button className='bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer text-sm'>View more</button>
             </div>
-
-            {/* <p className='text-xs md:text-sm text-center'>Location: Chikakoree Kubwa</p> */}
         </div>
 
 
@@ -481,65 +462,37 @@ const Home = () => {
                 duplex with initial payment <br />
                 of N5,000,000.00
               </p>
-
-
-
-              {/* <ul className='ml-auto text-sm md:text-base'>
-                <li>Features</li>
-                <li>Perimeter Fencing</li>
-                <li>Security</li>
-                <li>CCTV</li>
-                <li>Asphalt Road</li>
-              </ul> */}
             </div>
 
 
             <div className='flex items-center justify-center py-4'>
               <button className='bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer text-sm'>View more</button>
             </div>
-
-            {/* <p className='text-xs md:text-sm text-center'>Location: Behind AMAC Marke FHA <br />
-            Lugbe close to Living Faith Church</p> */}
         </div>
 
 
         {/* 6 */}
         <div className='pb-10 flex flex-col items-center'>
-            <Image src='/image/img3.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
+            <Image src='/image/tj.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
 
             <div className='flex flex-col items-center py-5'>
-              <h1 className='text-xl md:text-3xl text-blue-900 font-bold'>The Havens</h1>
-              <p className='text-base'>Location: Katampe</p>
+              <h1 className='text-xl md:text-3xl text-blue-900 font-bold'>The Haven</h1>
+              <p className='text-base'>Location: Usuma District</p>
             </div>
 
 
             <div className='flex items-center justify-center'>
               <ul className='text-sm md:text-base'>
                 <li>250sqm - N36M</li>
-                {/* <li>350sqm - N44M</li> */}
                 <li>400sqm - N50M</li>
-                {/* <li>450sqm - N60M</li> */}
-                {/* <li>500sqm - N70M</li> */}
                 <li>700sqm - N90M</li>
               </ul>
-
-
-                  {/* 
-              <ul className='ml-auto text-sm md:text-base'>
-                <li>Perimeter Fencing</li>
-                <li>Security</li>
-                <li>CCTV</li>
-                <li>Asphalt Road</li>
-
-              </ul> */}
             </div>
 
 
             <div className='flex items-center justify-center py-4'>
               <button className='bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer text-sm'>View more</button>
             </div>
-
-            {/* <p className='text-xs md:text-sm text-center'>Location: ?????????</p> */}
         </div>
       </div>
 
@@ -572,11 +525,7 @@ const Home = () => {
             </div>
           </div>
 
-
-
-
-
-          {/* <div className='ml-auto shadow overflow-hidden'>
+          <div className='ml-auto shadow overflow-hidden'>
             {
               show1  && <YouTube videoId='oWgpYmVxaUY' opts={opts} className='rounded-lg shadow-lg '/>
             }
@@ -589,7 +538,7 @@ const Home = () => {
               show3 && <YouTube videoId='XCsmyQBcOCg' opts={opts} className='rounded-lg shadow-lg '/>
             }
 
-          </div> */}
+          </div>
         </div>
 
       </div>
@@ -769,13 +718,13 @@ const Home = () => {
           <h1 className='text-base md:text-4xl font-bold tracking-[5px] font-poppins'>Apartments Plan</h1>
         </div>
 
-        <ul className='grid grid-cols-2 gap-5 md:grid-cols-3 lg:flex items-center justify-center md:gap-12'>
-          <li className='cursor-pointer hvr-underline-from-center text-center'>Apartment 1</li>
-          <li className='cursor-pointer hvr-underline-from-center text-center'>Apartment 2</li>
-          <li className='cursor-pointer hvr-underline-from-center text-center'>Apartment 3</li>
-          <li className='cursor-pointer hvr-underline-from-center text-center'>Apartment 4</li>
-          <li className='cursor-pointer hvr-underline-from-center text-center'>Apartment 5</li>
-          <li className='cursor-pointer hvr-underline-from-center text-center'>Apartment 5</li>
+        <ul className='grid grid-cols-2 gap-5 md:grid-cols-3 lg:flex text-base items-center justify-center md:gap-12'>
+          <li className='cursor-pointer hvr-underline-from-center text-center'>Scepter City</li>
+          <li className='cursor-pointer hvr-underline-from-center text-center'>Jemzys Court</li>
+          <li className='cursor-pointer hvr-underline-from-center text-center'>The Haven</li>
+          <li className='cursor-pointer hvr-underline-from-center text-center'>Villa Ecclesia</li>
+          <li className='cursor-pointer hvr-underline-from-center text-center'>Rio Dominion Estate</li>
+          <li className='cursor-pointer hvr-underline-from-center text-center'>The Haven</li>
         </ul>
       </div>
 
