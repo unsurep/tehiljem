@@ -13,6 +13,8 @@ import { PiArrowBendRightDownFill } from "react-icons/pi";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 import axios from 'axios';
 import { HiArrowLongRight } from "react-icons/hi2";
+import { BiSolidQuoteAltLeft } from "react-icons/bi";
+import { BiSolidQuoteAltRight } from "react-icons/bi";
 
 // AOS animations
 import AOS from 'aos';
@@ -30,7 +32,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 // import required modules
-import { EffectFlip, Pagination, Navigation, Autoplay } from 'swiper/modules';
+import { EffectFlip, Pagination, Navigation, Autoplay,  } from 'swiper/modules';
 
 
 import YouTube from 'react-youtube';
@@ -40,7 +42,16 @@ import { FaDoorClosed } from 'react-icons/fa';
 
 
 
+
 const Home = () => {
+
+  // swiper auto
+  const progressCircle = useRef(null);
+  const progressContent = useRef(null);
+  const onAutoplayTimeLeft = (s, time, progress) => {
+    progressCircle.current.style.setProperty('--progress', 1 - progress);
+    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+  };
 
   // youtube player
   const opts = {
@@ -99,6 +110,70 @@ const Home = () => {
   }
 
   // show sketch on toggle
+  const [scepterCity, setScepterCity] =useState(true);
+  const [jemzys, setJemzys] =useState(false);
+  const [haven, setHaven] =useState(false);
+  const [villa, setVilla] =useState(false);
+  const [trio, setTrio]=useState(false); 
+  const [tjhomes, setTjhomes]  =useState(false);
+
+  const toggleScepterCity=()=>{
+    setScepterCity(true);
+    setJemzys(false);
+    setHaven(false);
+    setVilla(false);
+    setTrio(false);
+    setTjhomes(false);
+  };
+
+  const toggleJemzys=()=>{
+    setScepterCity(false);
+    setJemzys(true);
+    setHaven(false);
+    setVilla(false);
+    setTrio(false);
+    setTjhomes(false);
+  };
+
+  const toggleHaven=()=>{
+    setScepterCity(false);
+    setJemzys(false);
+    setHaven(true);
+    setVilla(false);
+    setTrio(false);
+    setTjhomes(false);
+  };
+
+
+  const toggleVilla=()=>{
+    setScepterCity(false);
+    setJemzys(false);
+    setHaven(false);
+    setVilla(true);
+    setTrio(false);
+    setTjhomes(false);
+  };
+
+  const toggleRio=()=>{
+    setScepterCity(false);
+    setJemzys(false);
+    setHaven(false);
+    setVilla(false);
+    setTrio(true);
+    setTjhomes(false);
+  };
+
+  const toggleTjhomes=()=>{
+    setScepterCity(false);
+    setJemzys(false);
+    setHaven(false);
+    setVilla(false);
+    setTrio(false);
+    setTjhomes(true);
+
+  }
+
+
   
 
 
@@ -717,21 +792,309 @@ const Home = () => {
       </div>
 
       {/* section 11 Apartment plan & sketch */}
-      <div id='section10' className='font-poppins px-[1rem] md:px-[3rem] py-8'>
+      <div id='section11' className='font-poppins px-[1rem] md:px-[3rem] py-8'>
         <div className='text-center py-8 flex flex-col gap-5'>
           <h3 className='text-xl flex mx-auto hvr-bubble-float-bottom px-3 py-1 bg-orange-200/60 text-orange-400 rounded w-fit tracking-[5px]'>Apartment Sketch</h3>
           <h1 className='text-base md:text-4xl font-bold tracking-[5px] font-poppins'>Apartments Plan</h1>
         </div>
 
-        <ul className='grid grid-cols-2 gap-5 md:grid-cols-3 lg:flex text-base items-center justify-center md:gap-12'>
-          <li className='cursor-pointer hvr-underline-from-center text-center'>Scepter City</li>
-          <li className='cursor-pointer hvr-underline-from-center text-center'>Jemzys Court</li>
-          <li className='cursor-pointer hvr-underline-from-center text-center'>The Haven</li>
-          <li className='cursor-pointer hvr-underline-from-center text-center'>Villa Ecclesia</li>
-          <li className='cursor-pointer hvr-underline-from-center text-center'>Rio Dominion Estate</li>
-          <li className='cursor-pointer hvr-underline-from-center text-center'>The Haven</li>
+        {/* toggle sketch */}
+        <ul className='grid grid-cols-2 gap-5 md:grid-cols-3 lg:flex text-base items-center font-poppins justify-center md:gap-12'>
+          <li onClick={toggleScepterCity} className='cursor-pointer hvr-underline-from-center text-center w-fit'>Scepter City</li>
+
+          <li onClick={toggleJemzys} className='cursor-pointer hvr-underline-from-center text-center w-fit'>Jemzys Court</li>
+
+          <li onClick={toggleHaven} className='cursor-pointer hvr-underline-from-center text-center w-fit'>The Haven</li>
+
+          <li onClick={toggleVilla} className='cursor-pointer hvr-underline-from-center text-center w-fit'>Villa Ecclesia</li>
+
+          <li onClick={toggleRio} className='cursor-pointer hvr-underline-from-center text-center w-fit'>Rio Dominion Estate</li>
+
+          <li onClick={toggleTjhomes} className='cursor-pointer hvr-underline-from-center text-center w-fit'>Tj homes</li>
+
         </ul>
+
+
+      
+        {/* specter city with sketch */}
+        {scepterCity && 
+          <div className='grid grid-cols-1 lg:flex gap-16 items-center justify-center pt-[3rem]'>
+
+          {/* skpecter city */}
+          <div className='bg-orange-200/60 px-[1rem] py-12 font-poppins palncolor'>
+            <h1  className='uppercase font-poppins text-2xl font-extrabold'>Scepter City</h1>
+            <p className='py-5'>Enimad minim veniam quis nostrud <br /> exercitation ullamco laboris. Lorem <br /> ipsum dolor sit amet cons aetetur <br /> adipisicing elit sedo eiusmod tempor. <br /> Incididunt labore et dolore magna <br /> aliqua. sed ayd minim veniam.</p>
+
+            <ul>
+              <li>Total Area:----------</li>
+              <li>Bedroom:----------</li>
+              <li>Bathroom:----------</li>
+              <li>Belcony/Pets:----------</li>
+              <li>Lounge:----------</li>
+            </ul>
+          </div>
+
+          {/* image  */}
+          <div> 
+           <Image src='/image/pl1.jpg' width={500} height={500} alt='plan sketch'/>
+          </div>
+          </div>
+        }
+
+
+        {/* jemzys with sketch */}
+        {jemzys && 
+          <div className='grid grid-cols-1 lg:flex gap-16 items-center justify-center pt-[3rem]'>
+
+          {/* jemzys court */}
+          <div className='bg-orange-200/60 px-[1rem] py-12 font-poppins palncolor'>
+            <h1  className='uppercase font-poppins text-2xl font-extrabold'>Jemzys Court</h1>
+            <p className='py-5'>Enimad minim veniam quis nostrud <br /> exercitation ullamco laboris. Lorem <br /> ipsum dolor sit amet cons aetetur <br /> adipisicing elit sedo eiusmod tempor. <br /> Incididunt labore et dolore magna <br /> aliqua. sed ayd minim veniam.</p>
+
+            <ul>
+              <li>Total Area:----------</li>
+              <li>Bedroom:----------</li>
+              <li>Bathroom:----------</li>
+              <li>Belcony/Pets:----------</li>
+              <li>Lounge:----------</li>
+            </ul>
+          </div>
+
+          {/* image  */}
+          <div> 
+           <Image src='/image/pl2.jpg' width={500} height={500} alt='plan sketch'/>
+          </div>
+          </div>
+        }
+
+         {/* The haven with sketch */}
+         {haven && 
+          <div className='grid grid-cols-1 lg:flex gap-16 items-center justify-center pt-[3rem]'>
+
+          {/* The Haven */}
+          <div className='bg-orange-200/60 px-[1rem] py-12 font-poppins palncolor'>
+            <h1  className='uppercase font-poppins text-2xl font-extrabold'>The Haven</h1>
+            <p className='py-5'>Enimad minim veniam quis nostrud <br /> exercitation ullamco laboris. Lorem <br /> ipsum dolor sit amet cons aetetur <br /> adipisicing elit sedo eiusmod tempor. <br /> Incididunt labore et dolore magna <br /> aliqua. sed ayd minim veniam.</p>
+
+            <ul>
+              <li>Total Area:----------</li>
+              <li>Bedroom:----------</li>
+              <li>Bathroom:----------</li>
+              <li>Belcony/Pets:----------</li>
+              <li>Lounge:----------</li>
+            </ul>
+          </div>
+
+          {/* image  */}
+          <div> 
+           <Image src='/image/pl3.jpg' width={500} height={500} alt='plan sketch'/>
+          </div>
+          </div>
+        }
+
+
+        {/* Villa Ecc with sketch */}
+        {villa && 
+          <div className='grid grid-cols-1 lg:flex gap-16 items-center justify-center pt-[3rem]'>
+
+          {/* Villa Ecc */}
+          <div className='bg-orange-200/60 px-[1rem] py-12 font-poppins palncolor'>
+            <h1  className='uppercase font-poppins text-2xl font-extrabold'>Villa Ecciesia</h1>
+            <p className='py-5'>Enimad minim veniam quis nostrud <br /> exercitation ullamco laboris. Lorem <br /> ipsum dolor sit amet cons aetetur <br /> adipisicing elit sedo eiusmod tempor. <br /> Incididunt labore et dolore magna <br /> aliqua. sed ayd minim veniam.</p>
+
+            <ul>
+              <li>Total Area:----------</li>
+              <li>Bedroom:----------</li>
+              <li>Bathroom:----------</li>
+              <li>Belcony/Pets:----------</li>
+              <li>Lounge:----------</li>
+            </ul>
+          </div>
+
+          {/* image  */}
+          <div> 
+           <Image src='/image/pl4.jpg' width={500} height={500} alt='plan sketch'/>
+          </div>
+          </div>
+        }
+
+
+        {/* Rio with sketch */}
+        {trio && 
+          <div className='grid grid-cols-1 lg:flex gap-16 items-center justify-center pt-[3rem]'>
+
+          {/* Rio Ecc */}
+          <div className='bg-orange-200/60 px-[1rem] py-12 font-poppins palncolor'>
+            <h1  className='uppercase font-poppins text-2xl font-extrabold'>Rio Dominion Estate</h1>
+            <p className='py-5'>Enimad minim veniam quis nostrud <br /> exercitation ullamco laboris. Lorem <br /> ipsum dolor sit amet cons aetetur <br /> adipisicing elit sedo eiusmod tempor. <br /> Incididunt labore et dolore magna <br /> aliqua. sed ayd minim veniam.</p>
+
+            <ul>
+              <li>Total Area:----------</li>
+              <li>Bedroom:----------</li>
+              <li>Bathroom:----------</li>
+              <li>Belcony/Pets:----------</li>
+              <li>Lounge:----------</li>
+            </ul>
+          </div>
+
+          {/* image  */}
+          <div> 
+           <Image src='/image/pl5.jpg' width={500} height={500} alt='plan sketch'/>
+          </div>
+          </div>
+        }
+
+
+
+        {/* TJ Homeswith sketch */}
+        {tjhomes && 
+          <div className='grid grid-cols-1 lg:flex gap-16 items-center justify-center pt-[3rem]'>
+
+          {/* TJ Homes */}
+          <div className='bg-orange-200/60 px-[1rem] py-12 font-poppins palncolor'>
+            <h1  className='uppercase font-poppins text-2xl font-extrabold'>TJ Homes</h1>
+            <p className='py-5'>Enimad minim veniam quis nostrud <br /> exercitation ullamco laboris. Lorem <br /> ipsum dolor sit amet cons aetetur <br /> adipisicing elit sedo eiusmod tempor. <br /> Incididunt labore et dolore magna <br /> aliqua. sed ayd minim veniam.</p>
+
+            <ul>
+              <li>Total Area:----------</li>
+              <li>Bedroom:----------</li>
+              <li>Bathroom:----------</li>
+              <li>Belcony/Pets:----------</li>
+              <li>Lounge:----------</li>
+            </ul>
+          </div>
+
+          {/* image  */}
+          <div> 
+           <Image src='/image/pl6.jpg' width={500} height={500} alt='plan sketch'/>
+          </div>
+          </div>
+        }
+
       </div>
+
+
+      {/* Section 12 Testimoney */}
+      <div id='section12' className='font-poppins px-[1rem] md:px-[3rem] py-8'>
+        <div className='text-center py-8 flex flex-col gap-5'>
+          <h3 className='text-xl flex mx-auto hvr-bubble-float-bottom px-3 py-1 bg-orange-200/60 text-orange-400 rounded w-fit tracking-[5px]'>Testimonials</h3>
+          <h1 className='text-base md:text-4xl font-bold tracking-[5px] font-poppins'>What our clients says..</h1>
+        </div>
+
+        <div className='flex items-center justify-center '>
+          <div>
+            <Image src='/image/websketch.webp' width={900} height={900} alt='image'/>
+          </div>
+
+
+          <div className='w-fit py-8 shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] mx-[2rem] md:px-[3rem]'>
+            <Swiper
+              spaceBetween={30}
+              centeredSlides={true}
+              autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+            }}
+            // pagination={{
+            // clickable: true,
+            // }}
+            navigation={true}
+            modules={[Autoplay, Pagination, Navigation]}
+            onAutoplayTimeLeft={onAutoplayTimeLeft}
+            className="mySwiper">
+
+            {/* 1 */}
+            <SwiperSlide className='px-4'>
+              <p ><BiSolidQuoteAltLeft />Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores quasi eaque rem voluptatibus reprehenderit dolorum vero veniam cumque.<BiSolidQuoteAltRight /></p>
+
+              <div className='flex items-center gap-5 w-full pt-16'>
+                <div><Image src='/image/me.jpg' width={50} height={50} alt='image' className='rounded-full'/></div>
+                <ul>
+                  <li><b>Name:</b> Louis Umukoro</li>
+                  <li><b>Location:</b> Port Harcourt</li>
+                </ul>
+              </div>
+            </SwiperSlide>
+
+             {/* 2 */}
+             <SwiperSlide className='px-4'>
+              <p><BiSolidQuoteAltLeft />Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores quasi eaque rem voluptatibus reprehenderit dolorum vero veniam cumque.<BiSolidQuoteAltRight /></p>
+
+              <div className='flex items-center gap-5 w-full pt-16'>
+                <div><Image src='/image/me.jpg' width={50} height={50} alt='image' className='rounded-full'/></div>
+                <ul>
+                  <li><b>Name:</b> Louis Umukoro</li>
+                  <li><b>Location:</b> Port Harcourt</li>
+                </ul>
+              </div>
+            </SwiperSlide>
+
+
+
+
+             {/* 3 */}
+             <SwiperSlide className='px-4'>
+              <p><BiSolidQuoteAltLeft />Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores quasi eaque rem voluptatibus reprehenderit dolorum vero veniam cumque.<BiSolidQuoteAltRight /></p>
+
+              <div className='flex items-center gap-5 w-full pt-16'>
+                <div><Image src='/image/me.jpg' width={50} height={50} alt='image' className='rounded-full'/></div>
+                <ul>
+                  <li><b>Name:</b> Louis Umukoro</li>
+                  <li><b>Location:</b> Port Harcourt</li>
+                </ul>
+              </div>
+            </SwiperSlide>
+
+
+
+             {/* 4 */}
+             <SwiperSlide className='px-4'>
+              <p><BiSolidQuoteAltLeft />Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores quasi eaque rem voluptatibus reprehenderit dolorum vero veniam cumque.<BiSolidQuoteAltRight /></p>
+
+              <div className='flex items-center gap-5 w-full pt-16'>
+                <div><Image src='/image/me.jpg' width={50} height={50} alt='image' className='rounded-full'/></div>
+                <ul>
+                  <li><b>Name:</b> Louis Umukoro</li>
+                  <li><b>Location:</b> Port Harcourt</li>
+                </ul>
+              </div>
+            </SwiperSlide>
+
+
+             {/* 5 */}
+             <SwiperSlide className='px-4'>
+              <p><BiSolidQuoteAltLeft /> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores quasi eaque rem voluptatibus reprehenderit dolorum veniam cumque.<BiSolidQuoteAltRight /></p>
+
+              <div className='flex items-center gap-5 w-full pt-16'>
+                <div><Image src='/image/me.jpg' width={50} height={50} alt='image' className='rounded-full'/></div>
+                <ul>
+                  <li><b>Name:</b> Louis Umukoro</li>
+                  <li><b>Location:</b> Port Harcourt</li>
+                </ul>
+              </div>
+            </SwiperSlide>
+
+            {/* <SwiperSlide>Slide 6</SwiperSlide>
+            <SwiperSlide>Slide 7</SwiperSlide>
+            <SwiperSlide>Slide 8</SwiperSlide>
+            <SwiperSlide>Slide 9</SwiperSlide> */}
+            <div className="autoplay-progress" slot="container-end">
+            <svg viewBox="0 0 48 48" ref={progressCircle}>
+            <circle cx="24" cy="24" r="20"></circle>
+            </svg>
+            <span ref={progressContent}></span>
+            </div>
+            </Swiper>
+          </div>
+
+
+
+        </div>
+        
+
+
+      </div>
+
 
 
 

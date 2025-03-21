@@ -257,4 +257,8 @@ body {
 }
 
 
-
+.palncolor {
+  -webkit-box-shadow: -14px 12px 0px 2px rgba(250,240,220,1);
+  -moz-box-shadow: -14px 12px 0px 2px rgba(250,240,220,1);
+  box-shadow: -14px 12px 0px 2px rgba(250,240,220,1);
+}
