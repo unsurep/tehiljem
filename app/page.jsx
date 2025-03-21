@@ -101,6 +101,11 @@ const Home = () => {
   // show sketch on toggle
   
 
+
+
+
+  
+
   // API real estate news fecth
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
