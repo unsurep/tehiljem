@@ -223,8 +223,8 @@ const Home = () => {
         <div className="absolute top-0 left-0 w-full h-full bg-black/60"></div>
         
         <div  className='flex flex-col gap-4 text-center md:justify-center items-center pt-28'>
-          <h1 data-aos="zoom-in"
-          data-aos-duration="1000" className='text-2xl md:text-5xl font-extrabold tracking-[5px] md:pt- '>Discover Your Dream Home <span className='text-red-500 tracking-wide font-extrabold'>{text} <Cursor cursorColor='red' /></span></h1>
+          <h3 data-aos="zoom-in"
+          data-aos-duration="1000" className='text-2xl md:text-5xl font-extrabold tracking-[5px] md:pt- '>Discover Your Dream Home <span className='text-red-500 tracking-wide font-extrabold'>{text} <Cursor cursorColor='red' /></span></h3>
 
           <p data-aos="zoom-in"
           data-aos-duration="1500"  className=' text-white md:text-xl leading-relaxed font-bold tracking-wide opacity-90  md:pt-8'>TehilJem owners of the brand TJ Homes, envisions a world where luxury meets affordability,  making exceptional living spaces accessible to all. Our mission  is to provide elegantly designed, high-quality homes that enhance  the lives of our clients and their families, ensuring comfort, style, and  long-term value. </p>
@@ -372,27 +372,27 @@ const Home = () => {
               </SwiperSlide>
               
               <SwiperSlide>
-                <img src="/image/eccvilla2.jpg" alt='image of eccvilla1' className='rounded-lg ring ring-orange-300/40' />
+                <img src="/image/eccvilla2.jpg" alt='image of eccvilla1' className='rounded-lg ring ring-orange-300/40' width={100} height={100} />
               </SwiperSlide>
 
               <SwiperSlide>
-                <img src="/image/rio.jpg" alt='image of primesite' className='rounded-lg ring ring-orange-300/40' />
+                <img src="/image/rio.jpg" alt='image of primesite' className='rounded-lg ring ring-orange-300/40' width={100} height={100} />
               </SwiperSlide>
 
               <SwiperSlide>
-                <img src="/image/scepter.jpg" alt='image of primesite' className='rounded-lg ring ring-orange-300/40' />
+                <img src="/image/scepter.jpg" alt='image of primesite' className='rounded-lg ring ring-orange-300/40' width={100} height={100}/>
               </SwiperSlide>
 
               <SwiperSlide>
-                <img src="/image/primesite.jpg" alt='image of primesite' className='rounded-lg ring ring-orange-300/40' />
+                <img src="/image/primesite.jpg" alt='image of primesite' className='rounded-lg ring ring-orange-300/40' width={100} height={100} />
               </SwiperSlide>
 
               <SwiperSlide>
-                <img src="/image/kp1.jpg" alt='image of primesite' className='rounded-lg ring ring-orange-300/40' />
+                <img src="/image/kp1.jpg" alt='image of primesite' className='rounded-lg ring ring-orange-300/40' width={100} height={100} />
               </SwiperSlide>
 
               <SwiperSlide>
-                <img src="/image/kp2.jpg" alt='image of primesite' className='rounded-lg ring ring-orange-300/40' />
+                <img src="/image/kp2.jpg" alt='image of primesite' className='rounded-lg ring ring-orange-300/40' width={100} height={100} />
               </SwiperSlide>
 
 
