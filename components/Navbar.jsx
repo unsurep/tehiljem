@@ -64,15 +64,11 @@ const Navbar = () => {
 
             </ul>
 
-            {/* <div>
-                <FaRegUserCircle className='text-2xl text-blue-900' />
-            </div> */}
-
         </nav>
         
 
 
-        {/* contact nav */}
+        {/* phone contact nav */}
         <ul className='flex gap-3 font-bold text-[10px] justify-center text-xl text-black/90 lg:hidden z-10 bg-gray-400 w-full fixed'>
             <li className='cursor-pointer'>Monday - Friday: 8:00am - 5:00pm</li>
             <li>|</li>

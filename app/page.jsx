@@ -290,7 +290,7 @@ const Home = () => {
         animate={{  x:0, scale: 1, opacity: 1 }}
         transition={{ duration: 1.5,  }}
         >
-          {/* <video controls width="15%" autoPlay loop muted type='video/mp4' src='/video/sold.mp4' className='rounded-3xl'></video> */}
+         
           <Image src='/image/key.png' width={300} height={300} alt='image' className='bg-transparent'/>
         </motion.div>
 
@@ -301,7 +301,7 @@ const Home = () => {
         animate={{  x:0, scale: 1, opacity: 1 }}
         transition={{ duration: 1.5,  }}
         >
-          {/* <video controls width="15%" autoPlay loop muted type='video/mp4' src='/video/sold.mp4' className='rounded-3xl'></video> */}
+        
           <Image src='/image/key.png' width={250} height={250} alt='image' className='bg-transparent'/>
         </motion.div>
 
@@ -399,7 +399,6 @@ const Home = () => {
             </Swiper>  
           </div>
 
-          {/* <div>video from youtube</div> */}
         </div>
       </div>
 
@@ -1005,13 +1004,10 @@ const Home = () => {
             <Swiper
               spaceBetween={30}
               centeredSlides={true}
-            //   autoplay={{
-            //   delay: 4000,
-            //   disableOnInteraction: false,
-            // }}
-            // pagination={{
-            // clickable: true,
-            // }}
+              autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+            }}
             navigation={true}
             modules={[Autoplay, Pagination, Navigation]}
             onAutoplayTimeLeft={onAutoplayTimeLeft}
@@ -1088,10 +1084,8 @@ const Home = () => {
               </div>
             </SwiperSlide>
 
-            {/* <SwiperSlide>Slide 6</SwiperSlide>
-            <SwiperSlide>Slide 7</SwiperSlide>
-            <SwiperSlide>Slide 8</SwiperSlide>
-            <SwiperSlide>Slide 9</SwiperSlide> */}
+            {/* <SwiperSlide>Slide 6</SwiperSlide> */}
+           
             <div className="autoplay-progress" slot="container-end">
             <svg viewBox="0 0 48 48" ref={progressCircle}>
             <circle cx="24" cy="24" r="20"></circle>
@@ -1114,7 +1108,6 @@ const Home = () => {
 
         <div className='text-center py-8 flex flex-col gap-5'>
           <h3 className='text-xl flex mx-auto hvr-bubble-float-bottom px-3 py-1 bg-orange-200/60 text-orange-400 rounded w-fit tracking-[5px]'>Our Trusted Clients</h3>
-          {/* <h1 className='text-base md:text-4xl font-bold tracking-[5px] font-poppins'>What our clients says..</h1> */}
         </div>
 
         <div className='grid grid-cols-2 md:grid-cols-4 lg:flex items-center justify-center'>
