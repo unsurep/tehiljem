@@ -223,8 +223,8 @@ const Home = () => {
         <div className="absolute top-0 left-0 w-full h-full bg-black/60"></div>
         
         <div  className='flex flex-col gap-4 text-center md:justify-center items-center pt-28'>
-          <h3 data-aos="zoom-in"
-          data-aos-duration="1000" className='text-2xl md:text-5xl font-extrabold tracking-[5px] md:pt- '>Discover Your Dream Home <span className='text-red-500 tracking-wide font-extrabold'>{text} <Cursor cursorColor='red' /></span></h3>
+          <h1 data-aos="zoom-in"
+          data-aos-duration="1000" className='text-2xl md:text-5xl font-extrabold tracking-[5px] md:pt- '>Discover Your Dream Home <span className='text-red-500 tracking-wide font-extrabold'>{text} <Cursor cursorColor='red' /></span></h1>
 
           <p data-aos="zoom-in"
           data-aos-duration="1500"  className=' text-white md:text-xl leading-relaxed font-bold tracking-wide opacity-90  md:pt-8'>TehilJem owners of the brand TJ Homes, envisions a world where luxury meets affordability,  making exceptional living spaces accessible to all. Our mission  is to provide elegantly designed, high-quality homes that enhance  the lives of our clients and their families, ensuring comfort, style, and  long-term value. </p>
