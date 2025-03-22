@@ -39,27 +39,27 @@ const Navbar = () => {
 
             <ul className='flex items-center gap-6'>
                 <Link href={'/'}>
-                    <li onClick={() => toggleElement("home")} className={`cursor-pointer text-black/90 font-semibold hvr-underline-from-center hover:text-white ${activeElement === "home" ? "text-blue-900 font-bold" : ""}`}>Home</li>
+                    <li onClick={() => toggleElement("home")} className={`cursor-pointer text-black/90 font-semibold hvr-underline-from-center  ${activeElement === "home" ? "text-blue-900 font-bold" : ""}`}>Home</li>
                 </Link>
 
                 <Link href={'/about'}>
-                    <li onClick={() => toggleElement("about")} className={`cursor-pointer text-black/90 font-semibold hvr-underline-from-center hover:text-white ${activeElement === "about" ? "text-blue-900 font-bold" : ""}`}>About Us</li>
+                    <li onClick={() => toggleElement("about")} className={`cursor-pointer text-black/90 font-semibold hvr-underline-from-center  ${activeElement === "about" ? "text-blue-900 font-bold" : ""}`}>About Us</li>
                 </Link>
 
                 <Link href={'/properties'}>
-                    <li onClick={() => toggleElement("properties")} className={`cursor-pointer text-black/90 font-semibold hvr-underline-from-center hover:text-white ${activeElement === "properties" ? "text-blue-900 font-bold" : ""}`}>Properties</li>
+                    <li onClick={() => toggleElement("properties")} className={`cursor-pointer text-black/90 font-semibold hvr-underline-from-center  ${activeElement === "properties" ? "text-blue-900 font-bold" : ""}`}>Properties</li>
                 </Link>
 
                 <Link href={'/serv'}>
-                    <li onClick={() => toggleElement("serv")} className={`cursor-pointer text-black/90 font-semibold hvr-underline-from-center hover:text-white ${activeElement === "serv" ? "text-blue-900 font-bold" : ""}`}>Services</li>
+                    <li onClick={() => toggleElement("serv")} className={`cursor-pointer text-black/90 font-semibold hvr-underline-from-center  ${activeElement === "serv" ? "text-blue-900 font-bold" : ""}`}>Services</li>
                 </Link>
 
                 <Link href={'/contact'}>
-                    <li onClick={() => toggleElement("contact")} className={`cursor-pointer text-black/90 font-semibold hvr-underline-from-center hover:text-white ${activeElement === "contact" ? "text-blue-900 font-bold" : ""}`}>Contact Us</li>
+                    <li onClick={() => toggleElement("contact")} className={`cursor-pointer text-black/90 font-semibold hvr-underline-from-center  ${activeElement === "contact" ? "text-blue-900 font-bold" : ""}`}>Contact Us</li>
                 </Link>
 
                 <Link href={'/blog'}>
-                <li onClick={() => toggleElement("blog")} className={`cursor-pointer text-black/90 font-semibold hvr-underline-from-center hover:text-white ${activeElement === "blog" ? "text-blue-900 font-bold" : ""}`}>Blog/News</li>
+                <li onClick={() => toggleElement("blog")} className={`cursor-pointer text-black/90 font-semibold hvr-underline-from-center  ${activeElement === "blog" ? "text-blue-900 font-bold" : ""}`}>Blog/News</li>
                 </Link>
 
             </ul>

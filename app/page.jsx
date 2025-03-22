@@ -1110,14 +1110,14 @@ const Home = () => {
       </div>
 
       {/* Section 13 Some of our big clients */}
-      <div id='section13'  className='py-8'>
+      <div id='section13'  className='py-8 px-[1rem] lg:px-0'>
 
         <div className='text-center py-8 flex flex-col gap-5'>
           <h3 className='text-xl flex mx-auto hvr-bubble-float-bottom px-3 py-1 bg-orange-200/60 text-orange-400 rounded w-fit tracking-[5px]'>Our Trusted Clients</h3>
           {/* <h1 className='text-base md:text-4xl font-bold tracking-[5px] font-poppins'>What our clients says..</h1> */}
         </div>
 
-        <div className='flex items-center justify-evenly'>
+        <div className='grid grid-cols-2 md:grid-cols-4 lg:flex items-center justify-center'>
           <Image src='/image/2.jpg' width={100} height={100} alt='company logo'/>
           <Image src='/image/3.jpg' width={100} height={100} alt='company logo'/>
           <Image src='/image/4.jpg' width={100} height={100} alt='company logo'/>
