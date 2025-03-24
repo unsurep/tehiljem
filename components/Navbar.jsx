@@ -6,6 +6,7 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { IoMdMenu } from "react-icons/io";
 import { RiCustomerService2Fill } from "react-icons/ri";
 import { SocialIcon } from 'react-social-icons'
+import { motion } from 'motion/react';
 
 const Navbar = () => {
     const [activeElement, setActiveElement]= useState('');
@@ -21,7 +22,24 @@ const Navbar = () => {
         <nav className='flex items-center justify-between bg-gray-400 w-full  font-montserrat px-[1rem]  fixed z-20'>
 
             {/* social icons */}
-            <div className='flex items-center gap-2 py-1'>
+            <motion.div 
+
+                initial={{
+                x:-500,
+                opacity:0,
+                scale:0.5}}
+
+                animate={{
+                x:0,
+                opacity:1,
+                scale:1
+                }}
+    
+                transition={{
+                duration:1.5,
+                }}
+
+                className='md:flex hidden items-center gap-2 py-1'>
                 <SocialIcon
                             url="https://facebook.com"
                             target="_blank"
@@ -78,17 +96,33 @@ const Navbar = () => {
                             style={{ height: 15, width: 15,}}
                             className="colorscheme animate-bounce" 
                           />
-            </div>
+            </motion.div>
 
 
 
 
 
-            <ul className='lg:flex items-center gap-5  text-base text-gray-600 hidden'>
+            <motion.ul 
+                initial={{
+                    x:500,
+                    opacity:0,
+                    scale:0.5}}
+    
+                    animate={{
+                    x:0,
+                    opacity:1,
+                    scale:1
+                    }}
+        
+                    transition={{
+                    duration:1.5,
+                    }}
+
+                className='lg:flex items-center gap-5  text-base text-gray-600 hidden'>
                 <li className='hover:text-blue-900 cursor-pointer hover:font-bold'>Monday - Friday: 8:00am - 5:00pm</li>
                 <li>|</li>
-                <li className='flex items-center gap-2  cursor-pointer'><RiCustomerService2Fill className='animate-bounce' /> <span className='hover:font-bold text-blue-900'>+234706-828-3250</span></li>
-            </ul>
+                <li className='flex items-center gap-2  cursor-pointer'><RiCustomerService2Fill className='animate-bounce' /> <span className='hover:font-bold text-blue-900 font-extrabold'>+234706-828-3250</span></li>
+            </motion.ul>
 
            
         </nav>
@@ -135,11 +169,27 @@ const Navbar = () => {
 
 
         {/* phone contact nav */}
-        <ul className='flex gap-3 font-bold text-[10px] justify-center text-xl text-black/90 lg:hidden z-10 bg-gray-400 w-full fixed'>
+        <motion.ul 
+            initial={{
+                x:500,
+                opacity:0,
+                scale:0.5}}
+
+                animate={{
+                x:0,
+                opacity:1,
+                scale:1
+                }}
+    
+                transition={{
+                duration:1.5,
+                }}
+
+        className='flex gap-3 font-bold text-[10px] justify-center text-xl text-black/90 lg:hidden z-10 bg-gray-400 w-full fixed'>
             <li className='cursor-pointer'>Monday - Friday: 8:00am - 5:00pm</li>
             <li>|</li>
             <li className='flex items-center gap-2  cursor-pointer'><RiCustomerService2Fill className='animate-bounce' /> +234706-828-3250</li>
-        </ul>
+        </motion.ul>
 
         {/* Phone View */}
         <nav className='lg:hidden flex items-center px-[1rem] md:px-[3rem] py-3 font-montserrat shadow-[0_8px_30px_rgb(0,0,0,0.12)] z-10 bg-white/60 bg-opacity-45 backdrop-blur-xl w-full fixed mt-3'>

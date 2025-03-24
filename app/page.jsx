@@ -114,19 +114,19 @@ const Home = () => {
   const [show3, setShow3] = useState(false);
 
   const toggle1=()=>{
-    setShow1(!show1)
+    setShow1(true)
     setShow2(false)
     setShow3(false)
   }
 
   const toggle2 =()=>{
-    setShow2(!show2)
+    setShow2(true)
     setShow1(false)
     setShow3(false)
   }
 
   const toggle3 =()=>{
-    setShow3(!show3)
+    setShow3(true)
     setShow2(false)
     setShow1(false)
   }
