@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import React, { useEffect } from 'react'
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-import { motion } from "motion/react"
 import { IoHomeOutline } from "react-icons/io5";
 import { IoFlowerOutline } from "react-icons/io5";
 import { CgStyle } from "react-icons/cg";
@@ -19,6 +18,8 @@ import { IoLogoWhatsapp } from "react-icons/io";
 import { RiRobot3Line } from "react-icons/ri";
 import { BiSolidPhoneCall } from "react-icons/bi";
 import { ImLocation } from "react-icons/im";
+import TextTransition, { presets } from 'react-text-transition';
+import { motion } from 'motion/react';
 
 
 // AOS animations
@@ -46,9 +47,25 @@ import { FaDoorClosed } from 'react-icons/fa';
 
 
 
-
+const TEXTS = ["Paradise", "Desires", "Residence"];
 
 const Home = () => {
+  // another typoeffect 
+  const [index, setIndex] = React.useState(0);
+  React.useEffect(() => {
+    const intervalId = setInterval(
+      () => setIndex((index) => index + 1),
+      3000, // every 3 seconds
+    );
+    return () => clearTimeout(intervalId);
+  }, []);
+
+  
+  
+
+
+
+
 
   // swiper auto
   const progressCircle = useRef(null);
@@ -77,18 +94,18 @@ const Home = () => {
       useClassNames: false,
       duration: 400,
       easing: 'ease',
-      once: false,
-      anchorPlacement: 'top-bottom',
+      once: true,
+      // anchorPlacement: 'top-bottom',
     });
   
   }, [])
 
   // use typewriter
-  const [text] =useTypewriter({
-    words: ['Paradise', 'Desires','Residence',],
-    loop: 2, 
-    onLoopDone: () => console.log(`loop completed after 2 runs.`)
-  })
+  // const [text] =useTypewriter({
+  //   words: ['Paradise','Desires','Residence',],
+  //   loop: 2, 
+  //   onLoopDone: () => console.log(`loop completed after 2 runs.`)
+  // })
 
 
   // Toggle youtube videos
@@ -224,32 +241,38 @@ const Home = () => {
         
         <div  className='flex flex-col gap-4 text-center md:justify-center items-center pt-28'>
           <h1 data-aos="zoom-in"
-          data-aos-duration="1000" className='text-2xl md:text-5xl font-extrabold tracking-[5px] md:pt- '>Discover Your Dream Home <span className='text-red-500 tracking-wide font-extrabold'>{text} <Cursor cursorColor='red' /></span></h1>
+          data-aos-duration="1000" className='text-2xl md:text-5xl font-extrabold tracking-[5px] flex gap-3 md:pt- '>Discover Your Dream Home <TextTransition springConfig={presets.wobbly} className='text-red-500 tracking-wide font-extrabold'>{TEXTS[index % TEXTS.length]} <Cursor cursorColor='red' /></TextTransition></h1>
 
           <p data-aos="zoom-in"
           data-aos-duration="1500"  className=' text-white md:text-xl leading-relaxed font-bold tracking-wide opacity-90  md:pt-8'>TehilJem owners of the brand TJ Homes, envisions a world where luxury meets affordability,  making exceptional living spaces accessible to all. Our mission  is to provide elegantly designed, high-quality homes that enhance  the lives of our clients and their families, ensuring comfort, style, and  long-term value. </p>
 
           <div className='flex flex-col gap-2 items-center pt-5 md:pt-8 z-10'>
-            {/* <motion.button 
-            onClick={() => window.open("https://wa.me/2347068283250", "_blank")}
-            className="bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer"
-            initial={{ x:500, scale:0.5, opacity:0 }}
-            animate={{  x:0, scale: 1, opacity: 1 }}
-            transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
-            
-            >Make an Enquiry</motion.button> */}
-
+          
             {/* modals */}
             {/* Open the modal using document.getElementById('ID').showModal() method */}
-            <button className="bt bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer" onClick={()=>document.getElementById('my_modal_1').showModal()}>Make an Enquiry</button>
+            <motion.button 
+              initial={{opacity:0, y:-50}}
+              animate={{opacity:1, y:0}}
+              transition={{duration:0.5}}
+              whileHover={{ scale:1.1}}
+              whileTap={{scale:0.9}}
+
+              className="hover:bg-blue-600/50 bg-gray-300 text-black font-semibold hover:text-white px-4 rounded-md cursor-pointer py-3" onClick={()=>document.getElementById('my_modal_1').showModal()}>Make an Enquiry
+            </motion.button>
+
+            
             <dialog id="my_modal_1" className="modal z-50 text-black">
               <div className="modal-box">
                <h3 className="font-bold text-lg">Hello! Select your mode of Enquiry</h3>
-                <ul className="space-y-4 pt-4">
-                  <li className='flex items-center gap-2'>Chat with our AI powered support bot 24/7 <RiRobot3Line className='text-blue-500 text-2xl'/></li>
-                  <li className='flex items-center gap-2'>Chat with us 24/7<IoLogoWhatsapp className='text-green-500 text-2xl' /></li>
-                  <li className='flex items-center gap-2'>Give us a call 24/7 <BiSolidPhoneCall className='text-green-500 text-2xl' /></li>
-                  <li className='flex items-center gap-2'>We are loacted at: <ImLocation className='text-red-500 text-2xl'/></li>
+                <ul className="space-y-6 py-12 flex flex-col font-poppins font-semibold text-base">
+                  
+                  <li className='flex gap-4  font-semibold '><RiRobot3Line className='text-blue-500 text-2xl animate-bounce'/> Have a chat with our AI-Bot below</li>
+
+                  <li onClick={() => window.open("https://wa.me/2347068283250", "_blank")} className='flex gap-4 hover:text-blue-700 font-semibold cursor-pointer'><IoLogoWhatsapp className='text-green-500 text-2xl animate-bounce' />Chat with TehilJem's representative </li>
+
+                  <li className='flex gap-4'><BiSolidPhoneCall className='text-green-500 text-2xl' /><span className=''>+2347068283250</span></li>
+                  
+                  <li className='flex  gap-4'><ImLocation className='text-red-500 text-2xl'/>Suit 315B DMB Plaza, Noakchott Street, Wuse Zone 1</li>
                 </ul>
                 {/* <h1>hello</h1> */}
               <div className="modal-action">
@@ -261,15 +284,7 @@ const Home = () => {
               </div>
             </dialog>
 
-
-
-
-
-
-
-
-
-            <i className='text-sm md:pt-3'>For swift enquiries, chat with our AI customer support bot now</i>
+            <i className='text-base md:pt-3 font-semibold'>For swift enquiries, chat with our AI customer support bot now</i>
         </div>
         </div>
       </section>
@@ -279,30 +294,32 @@ const Home = () => {
       <section data-aos="fade-up"
         data-aos-duration="1000" id='section2' className='bg-gray-300  pt-16 lg:flex gap-8 px-[1rem] md:px-[3rem] font-poppins relative'>
         {/* div A */}
-        <div className=''>
+        <motion.div 
+          whileHover={{scale:0.9}}
+          whileTap={{scale:0.9}}
+          className=''>
           <Image src='/image/chair.png' width={700} height={700} alt='image' className='rounded'/>
-        </div>
+        </motion.div>
 
         {/* display on big screen */}
         <motion.div 
-        className='hidden lg:block absolute top-[30rem] left-[15em] '
-        initial={{ x:500, scale:0.5, opacity:0 }}
-        animate={{  x:0, scale: 1, opacity: 1 }}
-        transition={{ duration: 1.5,  }}
+        className='hidden lg:block absolute top-[31rem] left-[1rem] '
+        initial={{ x:-100,   opacity:0 }}
+        animate={{  x:0,  opacity: 1 }}
+        transition={{ duration: 3 }}
         >
          
-          <Image src='/image/key.png' width={300} height={300} alt='image' className='bg-transparent'/>
+          <Image src='/image/key.png' width={200} height={200} alt='image' className='bg-transparent'/>
         </motion.div>
 
         {/* for small screen */}
         <motion.div 
-        className='lg:hidden block absolute top-[20rem] right-0'
-        initial={{ x:500, scale:0.5, opacity:0 }}
-        animate={{  x:0, scale: 1, opacity: 1 }}
-        transition={{ duration: 1.5,  }}
+        className='lg:hidden block absolute top-[22rem] left-2'
+        whileHover={{scale: 1.1}}
+        whileTap={{scsle:0.9}}
         >
         
-          <Image src='/image/key.png' width={250} height={250} alt='image' className='bg-transparent'/>
+          <Image src='/image/key.png' width={150} height={150} alt='image' className='bg-transparent'/>
         </motion.div>
 
        
@@ -316,32 +333,48 @@ const Home = () => {
 
           <div className='grid grid-cols-2 gap-6'>
 
-            <p data-aos="zoom-in"
-              data-aos-duration="2000" className='flex items-center gap-3 '><span className='bg-orange-400 tracking-wide p-3 rounded-full text-white font-bold text-2xl flip-vertical-left'><IoHomeOutline /></span>Smart Home Design</p>
+            <p data-aos="fade-left"
+              data-aos-duration="1000" className='flex items-center gap-3 '><span className='bg-orange-400 tracking-wide p-3 rounded-full text-white font-bold text-2xl flip-vertical-left'><IoHomeOutline /></span>Smart Home Design</p>
             
-            <p data-aos="zoom-in"
+            <p data-aos="fade-right"
               data-aos-duration="2000" className='flex items-center gap-3'><span  className='bg-orange-400 tracking-wide p-3 rounded-full text-white font-bold text-2xl flip-vertical-left'><IoFlowerOutline /></span>Beautiful Enviroment</p>
 
-            <p data-aos="zoom-in"
-              data-aos-duration="3000" className='flex items-center gap-3'><span  className='bg-orange-400 tracking-wide p-3 rounded-full text-white font-bold text-2xl flip-vertical-left'><CgStyle /></span>Exceptional Lifestyle</p>
+            <p data-aos="fade-left"
+              data-aos-duration="1000" className='flex items-center gap-3'><span  className='bg-orange-400 tracking-wide p-3 rounded-full text-white font-bold text-2xl flip-vertical-left'><CgStyle /></span>Exceptional Lifestyle</p>
 
-            <p data-aos="zoom-in"
-              data-aos-duration="3000" className='flex items-center gap-3'><span  className='bg-orange-400 v p-3 rounded-full text-white font-bold text-2xl flip-vertical-left'><MdMoreTime /></span>Complete 24/7 Security</p>
+            <p data-aos="fade-right"
+              data-aos-duration="2000" className='flex items-center gap-3'><span  className='bg-orange-400 v p-3 rounded-full text-white font-bold text-2xl flip-vertical-left'><MdMoreTime /></span>Complete 24/7 Security</p>
           </div>
 
           <div>
-            <p className='w-fit px-5 py-3 bg-orange-100 text-sm rounded'>" TEHILJEM Nig. Ltd is a proud member of the Real Estate Developers Association of Nigeria <b>(REDAN)</b> "</p>
+            <p className='w-fit px-5 py-3 bg-orange-100 hover:bg-orange-50/40 text-sm rounded'>" TEHILJEM Nig. Ltd is a proud member of the Real Estate Developers Association of Nigeria <b>(REDAN)</b> "</p>
           </div>
 
          <div className='flex items-center justify-center w-full my-5'>
-          <button className='bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer  '>Our Services</button>
+         <motion.button 
+              initial={{opacity:0, y:-50}}
+              animate={{opacity:1, y:0}}
+              transition={{duration:0.5}}
+              whileHover={{ scale:1.1}}
+              whileTap={{scale:0.9}}
+
+              className="hover:bg-gray-600/50 bg-blue-300 text-black hover:text-white px-4 font-semibold rounded-md cursor-pointer py-3" >Our Services
+            </motion.button>
          </div>
         </div>
       </section>
 
       {/* section 3 swiper */}
-      <div id='section3' className='grid grid-cols-1 md:flex gap-5 bg-gray-200 px-[1rem] md:px-[3rem] font-poppins mt-10'>
-        <div className=' py-5 md:py-16'>
+      <div 
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      
+        id='section3' className='grid grid-cols-1 md:flex gap-5 bg-gray-200 px-[1rem] md:px-[3rem] font-poppins mt-10'>
+        <div 
+           data-aos="fade-right"
+           data-aos-duration="3000"
+
+          className=' py-5 md:py-16'>
           <h1 className='md:text-2xl md:text-center font-semibold'>
             Tehiljem is a premier real estate <br /> platform in Nigeria, offering  an <br /> extensive range of property <br /> listings for sale, rent, and short-let.
           </h1>
@@ -351,7 +384,15 @@ const Home = () => {
           </p>
 
           <div className='flex items-center justify-center w-full my-3 md:my-5'>
-            <button className='bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer  '>EXPLORE THE OFFERS</button>
+          <motion.button 
+              initial={{opacity:0, y:-50}}
+              animate={{opacity:1, y:0}}
+              transition={{duration:0.5}}
+              whileHover={{ scale:1.1}}
+              whileTap={{scale:0.9}}
+
+              className="hover:bg-gray-600/50 bg-blue-300 text-black hover:text-white px-4 rounded-md font-semibold cursor-pointer py-3" >Explore Our Offer
+            </motion.button>
           </div>
 
         </div>
@@ -403,25 +444,45 @@ const Home = () => {
       </div>
 
       {/* section 4 Our services provided*/}
-      <div id='section4' className='bg-gray-100 my-10 px-[1rem] md:px-[3rem] font-poppins pb-10'>
-        <div className='flex flex-col items-center justify-center py-16'>
+      <div 
+        data-aos="fade-up"
+        data-aos-duration="1000"
+
+        id='section4' className='bg-gray-100 my-10 px-[1rem] md:px-[3rem] font-poppins pb-10'>
+        <div 
+          data-aos="fade-up"
+          data-aos-duration="2000"
+
+          className='flex flex-col items-center justify-center py-16'>
           <h3 className='text-base tracking-[5px] text-center'>HOUSES | LAND | CONSTRUCTION</h3>
           <h1 className='tracking-wide font-bold text-xl md:text-4xl pt-3 text-center'>The Future of Housing in Nigeria is Here.</h1>
         </div>
 
         <div className='block md:grid md:grid-cols-3 gap-6'>
-          <div className='hvr-float-shadow'>
+          <div 
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+          
+          className='hvr-float-shadow'>
             <Image src='/image/tjh.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
             <h3 className='flex items-center gap-3 py-3 justify-center cursor-pointer font-semibold text-blue-900/40 hover:text-blue-900'>Explore Our Homes <span className='animate-bounce text-xl '><PiArrowBendRightUpFill /></span></h3>
           </div>
 
-          <div className='hvr-float-shadow py-8 md:py-0'>
+          <div 
+            data-aos="zoom-in"
+            data-aos-duration="2000"
+
+          className='hvr-float-shadow py-8 md:py-0'>
             <Image src='/image/land.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
             <h3 className='flex items-center gap-3 py-3 justify-center cursor-pointer font-semibold text-blue-900/40 hover:text-blue-900'>Our Landed Properties <span className='animate-bounce text-xl '><PiArrowBendRightUpFill /></span></h3>
           </div>
 
 
-          <div className='hvr-float-shadow'>
+          <div
+            data-aos="zoom-in"
+            data-aos-duration="3000" 
+
+            className='hvr-float-shadow'>
             <Image src='/image/land2.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
             <h3 className='flex items-center gap-3 py-3 justify-center cursor-pointer font-semibold text-blue-900/40 hover:text-blue-900'>Learn About Our Construction <span className='animate-bounce text-xl '><PiArrowBendRightUpFill /></span></h3>
           </div>
@@ -429,8 +490,16 @@ const Home = () => {
       </div>
 
       {/* section 5 our featured properties */}
-      <div id='section5' className='bg-gray-50 my-10 px-[1rem] md:px-[3rem] font-poppins pb-10'>
-        <div className='flex flex-col items-center justify-center py-5 md:py-16'>
+      <div 
+        data-aos="fade-up"
+        data-aos-duration="1000"
+
+       id='section5' className='bg-gray-50 my-10 px-[1rem] md:px-[3rem] font-poppins pb-10'>
+        <div 
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        
+        className='flex flex-col items-center justify-center py-5 md:py-16'>
           <h1 className='flex text-base md:text-3xl font-bold tracking-[5px] items-center gap-3'>Our Featured Properties <span className='animate-bounce text-xl '><PiArrowBendRightDownFill /></span></h1>
           
         </div>
@@ -439,7 +508,10 @@ const Home = () => {
         <div className='lg:flex  gap-8'>
           {/* 1 */}
           <div className='flex flex-col items-center'>
-            <Image src='/image/img3.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
+            <Image src='/image/img3.png' width={500} height={500} alt='image of property' 
+             data-aos="zoom-in"
+             data-aos-duration="1000" 
+             className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
 
             <div className='flex flex-col items-center py-5'>
               <h1 className='text-xl md:text-3xl text-blue-900 font-bold'>Scepter City</h1>
@@ -457,13 +529,24 @@ const Home = () => {
 
 
             <div className='flex items-center justify-center py-4'>
-              <button className='bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer text-sm '>View more</button>
+            <motion.button 
+              initial={{opacity:0, y:-50}}
+              animate={{opacity:1, y:0}}
+              transition={{duration:0.5}}
+              whileHover={{ scale:1.1}}
+              whileTap={{scale:0.9}}
+
+              className="hover:bg-gray-600/50 bg-blue-300 text-black hover:text-white px-4 rounded-md font-semibold cursor-pointer py-3" >View More
+            </motion.button>
             </div>
           </div>
 
           {/* 2 */}
           <div className='py-16 lg:py-0 flex flex-col items-center'>
-            <Image src='/image/jemzy.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
+            <Image src='/image/jemzy.png' width={500} height={500} alt='image of property' 
+              data-aos="zoom-in"
+              data-aos-duration="2000" 
+              className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
 
             <div className='flex flex-col items-center py-5'>
               <h1 className='text-xl md:text-3xl text-blue-900 font-bold'>Jemzys Court</h1>
@@ -481,13 +564,24 @@ const Home = () => {
 
 
             <div className='flex items-center justify-center py-4'>
-              <button className='bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer text-sm'>View more</button>
+            <motion.button 
+              initial={{opacity:0, y:-50}}
+              animate={{opacity:1, y:0}}
+              transition={{duration:0.5}}
+              whileHover={{ scale:1.1}}
+              whileTap={{scale:0.9}}
+
+              className="hover:bg-gray-600/50 bg-blue-300 text-black hover:text-white px-4 rounded-md font-semibold cursor-pointer py-3" >View More
+            </motion.button>
             </div>
           </div>
 
           {/* 3 */}
           <div className='flex flex-col items-center'>
-            <Image src='/image/haven.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
+            <Image src='/image/haven.png' width={500} height={500} alt='image of property' 
+              data-aos="zoom-in"
+              data-aos-duration="3000" 
+              className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
 
             <div className='flex flex-col items-center py-5'>
               <h1 className='text-xl md:text-3xl text-blue-900 font-bold'>The Haven</h1>
@@ -505,7 +599,15 @@ const Home = () => {
 
 
             <div className='flex items-center justify-center py-4'>
-              <button className='bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer text-sm '>View more</button>
+            <motion.button 
+              initial={{opacity:0, y:-50}}
+              animate={{opacity:1, y:0}}
+              transition={{duration:0.5}}
+              whileHover={{ scale:1.1}}
+              whileTap={{scale:0.9}}
+
+              className="hover:bg-gray-600/50 bg-blue-300 text-black hover:text-white px-4 rounded-md font-semibold cursor-pointer py-3" >View More
+            </motion.button>
             </div>
           </div>
         </div>
@@ -515,7 +617,10 @@ const Home = () => {
       <div id='section6' className='lg:flex gap-8 px-[1rem] md:px-[3rem]'>
         {/* 4 */}
         <div className='flex flex-col items-center'>
-            <Image src='/image/img3.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
+            <Image src='/image/img3.png' width={500} height={500} alt='image of property' 
+              data-aos="zoom-in"
+              data-aos-duration="3000" 
+              className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
 
             <div className='flex flex-col items-center py-5'>
               <h1 className='text-xl md:text-3xl text-blue-900 font-bold'>Villa Ecclesia</h1>
@@ -533,14 +638,25 @@ const Home = () => {
 
 
             <div className='flex items-center justify-center py-4'>
-              <button className='bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer text-sm'>View more</button>
+            <motion.button 
+              initial={{opacity:0, y:-50}}
+              animate={{opacity:1, y:0}}
+              transition={{duration:0.5}}
+              whileHover={{ scale:1.1}}
+              whileTap={{scale:0.9}}
+
+              className="hover:bg-gray-600/50 bg-blue-300 text-black hover:text-white px-4 rounded-md font-semibold cursor-pointer py-3" >View More
+            </motion.button>
             </div>
         </div>
 
 
         {/* 5 */}
         <div className='py-16 lg:py-0 flex flex-col items-center'>
-            <Image src='/image/img3.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
+            <Image src='/image/img3.png' width={500} height={500} alt='image of property' 
+             data-aos="zoom-in"
+             data-aos-duration="2000" 
+             className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
 
             <div className='flex flex-col items-center py-5'>
               <h1 className='text-xl md:text-3xl text-blue-900 font-bold'>Rio Dominion Estate</h1>
@@ -559,14 +675,25 @@ const Home = () => {
 
 
             <div className='flex items-center justify-center py-4'>
-              <button className='bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer text-sm'>View more</button>
+            <motion.button 
+              initial={{opacity:0, y:-50}}
+              animate={{opacity:1, y:0}}
+              transition={{duration:0.5}}
+              whileHover={{ scale:1.1}}
+              whileTap={{scale:0.9}}
+
+              className="hover:bg-gray-600/50 bg-blue-300 text-black hover:text-white px-4 rounded-md font-semibold cursor-pointer py-3" >View More
+            </motion.button>
             </div>
         </div>
 
 
         {/* 6 */}
         <div className='pb-10 flex flex-col items-center'>
-            <Image src='/image/tj.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
+            <Image src='/image/tj.png' width={500} height={500} alt='image of property' 
+            data-aos="zoom-in"
+            data-aos-duration="1000"  
+            className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
 
             <div className='flex flex-col items-center py-5'>
               <h1 className='text-xl md:text-3xl text-blue-900 font-bold'>The Haven</h1>
@@ -584,20 +711,36 @@ const Home = () => {
 
 
             <div className='flex items-center justify-center py-4'>
-              <button className='bg-orange-500 text-white font-semibold px-6 py-3 rounded-md shadow-md hover:bg-orange-600 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:ring-orange-300 cursor-pointer text-sm'>View more</button>
+            <motion.button 
+              initial={{opacity:0, y:-50}}
+              animate={{opacity:1, y:0}}
+              transition={{duration:0.5}}
+              whileHover={{ scale:1.1}}
+              whileTap={{scale:0.9}}
+
+              className="hover:bg-gray-600/50 bg-blue-300 text-black hover:text-white px-4 rounded-md font-semibold cursor-pointer py-3" >View More
+            </motion.button>
             </div>
         </div>
       </div>
 
       {/* Section 7 why choose us / youtube videos*/}
-      <div id='section7' className='bg-gray-50  px-[1rem] md:px-[3rem] pb-12 font-poppins'>
+      <div id='section7' 
+        data-aos="fade-up"
+        data-aos-duration="1000"
+
+       className='bg-gray-50  px-[1rem] md:px-[3rem] pb-12 font-poppins'>
         <h1 className='text-center text-base md:text-3xl font-bold tracking-[5px] py-5 md:py-16'>WHY CHOOSE US ?</h1>
 
         <div className='lg:flex '>
           <div className='flex flex-col gap-8'>
             <h2 className='text-2xl font-bold'>Why Choose TehilJem Nig. Ltd?</h2>
 
-            <p className='tracking-wide'>For over a decade, Tehiljem Nig Ltd has been a pillar of <br /> excellence in the real estate industry, built on a <br /> foundation of integrity, innovation, and expertise. With <br /> a highly experienced team, we provide top-tier real <br /> estate solutions, ensuring quality, reliability, and value <br /> in every project. Whether residential, commercial, or <br /> investment properties, we are committed to delivering <br /> tailored services that meet and exceed our <br /> clients' expectations.</p>
+            <p 
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            
+            className='tracking-wide'>For over a decade, Tehiljem Nig Ltd has been a pillar of <br /> excellence in the real estate industry, built on a <br /> foundation of integrity, innovation, and expertise. With <br /> a highly experienced team, we provide top-tier real <br /> estate solutions, ensuring quality, reliability, and value <br /> in every project. Whether residential, commercial, or <br /> investment properties, we are committed to delivering <br /> tailored services that meet and exceed our <br /> clients' expectations.</p>
 
 
             <div className='flex justify-between'>
@@ -620,7 +763,7 @@ const Home = () => {
 
           <div className='ml-auto shadow overflow-hidden'>
             {
-              show1  && <YouTube videoId='oWgpYmVxaUY' opts={opts} className='rounded-lg shadow-lg '/>
+              show1  && <YouTube videoId='oWgpYmVxaUY' opts={opts}  className='rounded-lg shadow-lg '/>
             }
 
             {
@@ -637,7 +780,11 @@ const Home = () => {
       </div>
 
       {/* Section 8 Team Members */}
-      <div id='section8' className='bg-gray-50 font-poppins px-[1rem] pt-16 md:px-[3rem]'>
+      <div id='section8' 
+        data-aos="fade-up"
+        data-aos-duration="1000"
+
+        className='bg-gray-50 font-poppins px-[1rem] pt-16 md:px-[3rem]'>
         <div className='flex flex-col gap-6'>
           <h3 className='text-center text-base md:text-2xl font-bold tracking-[5px]'>TEAM MEMBERS</h3>
           <h1 className='text-center text-2xl md:text-4xl font-bold tracking-[5px]'>TehilJem Management Team</h1>
@@ -648,7 +795,10 @@ const Home = () => {
         <div className='grid grid-cols-1 md:flex gap-12 justify-between py-16'>
           {/* MD */}
           <div className='flex flex-col items-center justify-center shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]'>
-            <div className='bg-purple-200'>
+            <div 
+             data-aos="flip-down"
+             data-aos-duration="1000"
+             className='bg-purple-200'>
               <Image src='/image/unknown.svg' width={200} height={200} alt='image' className='rounded'/>
             </div>
 
@@ -661,7 +811,10 @@ const Home = () => {
           
           {/* Manager */}
           <div className='flex flex-col items-center justify-center shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]'>
-            <div className='bg-gray-200'>
+            <div 
+               data-aos="flip-down"
+              data-aos-duration="1000"
+              className='bg-gray-200'>
               <Image src='/image/unknown.svg' width={200} height={200} alt='image' className='rounded'/>
             </div>
 
@@ -674,7 +827,10 @@ const Home = () => {
 
           {/* Marketer 1 */}
           <div className='flex flex-col items-center justify-center shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]'>
-            <div className='bg-orange-200'>
+            <div 
+               data-aos="flip-down"
+              data-aos-duration="1000"
+              className='bg-orange-200'>
               <Image src='/image/unknown.svg' width={200} height={200} alt='image' className='rounded'/>
             </div>
 
@@ -687,7 +843,10 @@ const Home = () => {
 
           {/* Agent */}
           <div className='flex flex-col items-center justify-center shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]'>
-            <div className='bg-cyan-200'>
+            <div 
+               data-aos="flip-down"
+               data-aos-duration="1000" 
+               className='bg-cyan-200'>
               <Image src='/image/unknown.svg' width={200} height={200} alt='image' className='rounded'/>
             </div>
 
@@ -705,7 +864,11 @@ const Home = () => {
       </div>
 
       {/* Section 9 API Blog / News n real estate & other related news */}
-      <div id='section9' className=' font-poppins pt-16'>
+      <div id='section9'
+        data-aos="fade-up"
+        data-aos-duration="1000"
+
+        className=' font-poppins pt-16'>
         <h1 className=" font-bold mb-6 font-poppins tracking-[5px] justify-self-center flex items-center gap-2 text-base md:text-2xl px-[1rem] md:px-[3rem]">Lastest News Feed - <span><Image src='/image/news.svg' width={40} height={40} alt="new logo" className=""/></span></h1>
 
         {/* mapping */}
@@ -753,8 +916,16 @@ const Home = () => {
       </div>
 
       {/* section 10 Our services | Main focus */}
-      <div id='section10' className='font-poppins px-[1rem] md:px-[3rem] py-8'>
-        <div className='text-center py-8 flex flex-col gap-5'>
+      <div id='section10' 
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      
+        className='font-poppins px-[1rem] md:px-[3rem] py-8'>
+        <div 
+          data-aos="fade-up"
+          data-aos-duration="2000"
+
+          className='text-center py-8 flex flex-col gap-5'>
           <h3 className='text-xl flex mx-auto hvr-bubble-float-bottom px-3 py-1 bg-orange-200/60 text-orange-400 rounded w-fit tracking-[5px]'>Our Services</h3>
           <h1 className='text-base md:text-4xl font-bold tracking-[5px] font-poppins'>Our Main Focus</h1>
         </div>
@@ -762,7 +933,11 @@ const Home = () => {
        {/* the three provided services */}
         <div className='grid grid-cols-1 md:flex items-center justify-center gap-8 lg:gap-20'>
           {/* 1 buy a home */}
-          <div className='flex flex-col items-center justify-center bg-gray-50 px-6 py-12 shadow drop-shadow-lg hvr-underline-from-left'>
+          <motion.div 
+            whileHover={{ scale:1.1}}
+            whileTap={{scale:0.9}}
+
+            className='flex flex-col items-center justify-center bg-gray-50 px-6 py-12 shadow drop-shadow-lg hvr-underline-from-left'>
             <div className='border-dashed border-4 border-orange-200/60 px-4 py-7 rounded-full w-fit flex mx-auto'>
               <Image src='/image/house1.png' width={100} height={100} alt='buy a house image' className='animate-pulse'/>
             </div>
@@ -772,11 +947,15 @@ const Home = () => {
               <p className='text-sm'>over 1 million+ homes for sale available on the website, <br /> we can match you with a house you will want to call home.</p>
               <button className='flex items-center justify-center font-poppins pt-5 text-gray-400 hover:text-orange-600 cursor-pointer'>Find A Home <HiArrowLongRight /></button>
             </div>
-          </div>
+          </motion.div>
 
 
           {/* 2 Buy a Land  */}
-          <div className='flex flex-col items-center justify-center bg-gray-50 px-6 py-12 shadow drop-shadow-lg hvr-underline-from-left'>
+          <motion.div 
+             whileHover={{ scale:1.1}}
+             whileTap={{scale:0.9}}
+
+            className='flex flex-col items-center justify-center bg-gray-50 px-6 py-12 shadow drop-shadow-lg hvr-underline-from-left'>
             <div className='border-dashed border-4 border-orange-200/60 px-4 py-7 rounded-full w-fit flex mx-auto'>
               <Image src='/image/house2.png' width={100} height={100} alt='buy a house image' className='animate-pulse'/>
             </div>
@@ -786,11 +965,14 @@ const Home = () => {
               <p className='text-sm'>over 1 million+ homes for sale available on the website, <br /> we can match you with a house you will want to call home.</p>
               <button className='flex items-center justify-center font-poppins pt-5 text-gray-400 hover:text-orange-600 cursor-pointer'>Find A Home <HiArrowLongRight /></button>
             </div>
-          </div>
+          </motion.div>
 
 
           {/* 3 Buy a Land & Build  */}
-          <div className='flex flex-col items-center justify-center bg-gray-50 px-6 py-12 shadow drop-shadow-lg hvr-underline-from-left'>
+          <motion.div 
+             whileHover={{ scale:1.1}}
+             whileTap={{scale:0.9}}
+            className='flex flex-col items-center justify-center bg-gray-50 px-6 py-12 shadow drop-shadow-lg hvr-underline-from-left'>
             <div className='border-dashed border-4 border-orange-200/60 px-4 py-7 rounded-full w-fit flex mx-auto'>
               <Image src='/image/house3.png' width={100} height={100} alt='buy a house image' className='animate-pulse'/>
             </div>
@@ -800,19 +982,26 @@ const Home = () => {
               <p className='text-sm'>over 1 million+ homes for sale available on the website, <br /> we can match you with a house you will want to call home.</p>
               <button className='flex items-center justify-center font-poppins pt-5 text-gray-400 hover:text-orange-600 cursor-pointer'>Find A Home <span><HiArrowLongRight /></span></button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
       {/* section 11 Apartment plan & sketch */}
-      <div id='section11' className='font-poppins px-[1rem] md:px-[3rem] py-8'>
-        <div className='text-center py-8 flex flex-col gap-5'>
+      <div id='section11'
+        data-aos="fade-up"
+        data-aos-duration="1000"
+
+        className='font-poppins px-[1rem] md:px-[3rem] py-8'>
+        <div 
+          data-aos="fade-up"
+          data-aos-duration="2000"
+          className='text-center py-8 flex flex-col gap-5'>
           <h3 className='text-xl flex mx-auto hvr-bubble-float-bottom px-3 py-1 bg-orange-200/60 text-orange-400 rounded w-fit tracking-[5px]'>Apartment Sketch</h3>
           <h1 className='text-base md:text-4xl font-bold tracking-[5px] font-poppins'>Apartments Plan</h1>
         </div>
 
         {/* toggle sketch */}
-        <ul className='grid grid-cols-2 gap-5 md:grid-cols-3 lg:flex text-base items-center font-poppins justify-center md:gap-12'>
+        <ul className='grid grid-cols-2 gap-5 md:grid-cols-3 lg:flex text-base px-6 py-3 rounded-md text-orange-400 items-center font-poppins mx-auto justify-center md:gap-12 w-fit bg-orange-200/60'>
           <li onClick={toggleScepterCity} className='cursor-pointer hvr-underline-from-center text-center w-fit'>Scepter City</li>
 
           <li onClick={toggleJemzys} className='cursor-pointer hvr-underline-from-center text-center w-fit'>Jemzys Court</li>
@@ -831,7 +1020,11 @@ const Home = () => {
       
         {/* specter city with sketch */}
         {scepterCity && 
-          <div className='grid grid-cols-1 lg:flex gap-16 items-center justify-center pt-[3rem]'>
+          <div 
+           data-aos="zoom-in-down"
+           data-aos-duration="1000"
+           
+           className='grid grid-cols-1 lg:flex gap-16 items-center justify-center pt-[3rem]'>
 
           {/* skpecter city */}
           <div className='bg-orange-200/60 px-[1rem] py-12 font-poppins palncolor'>
@@ -857,7 +1050,10 @@ const Home = () => {
 
         {/* jemzys with sketch */}
         {jemzys && 
-          <div className='grid grid-cols-1 lg:flex gap-16 items-center justify-center pt-[3rem]'>
+          <div 
+            data-aos="zoom-in-down"
+            data-aos-duration="1000"
+            className='grid grid-cols-1 lg:flex gap-16 items-center justify-center pt-[3rem]'>
 
           {/* jemzys court */}
           <div className='bg-orange-200/60 px-[1rem] py-12 font-poppins palncolor'>
@@ -882,7 +1078,10 @@ const Home = () => {
 
          {/* The haven with sketch */}
          {haven && 
-          <div className='grid grid-cols-1 lg:flex gap-16 items-center justify-center pt-[3rem]'>
+          <div 
+            data-aos="zoom-in-down"
+            data-aos-duration="1000"
+            className='grid grid-cols-1 lg:flex gap-16 items-center justify-center pt-[3rem]'>
 
           {/* The Haven */}
           <div className='bg-orange-200/60 px-[1rem] py-12 font-poppins palncolor'>
@@ -908,7 +1107,10 @@ const Home = () => {
 
         {/* Villa Ecc with sketch */}
         {villa && 
-          <div className='grid grid-cols-1 lg:flex gap-16 items-center justify-center pt-[3rem]'>
+          <div 
+            data-aos="zoom-in-down"
+           data-aos-duration="1000"
+            className='grid grid-cols-1 lg:flex gap-16 items-center justify-center pt-[3rem]'>
 
           {/* Villa Ecc */}
           <div className='bg-orange-200/60 px-[1rem] py-12 font-poppins palncolor'>
@@ -934,7 +1136,10 @@ const Home = () => {
 
         {/* Rio with sketch */}
         {trio && 
-          <div className='grid grid-cols-1 lg:flex gap-16 items-center justify-center pt-[3rem]'>
+          <div 
+            data-aos="zoom-in-down"
+            data-aos-duration="1000"
+            className='grid grid-cols-1 lg:flex gap-16 items-center justify-center pt-[3rem]'>
 
           {/* Rio Ecc */}
           <div className='bg-orange-200/60 px-[1rem] py-12 font-poppins palncolor'>
@@ -961,7 +1166,10 @@ const Home = () => {
 
         {/* TJ Homeswith sketch */}
         {tjhomes && 
-          <div className='grid grid-cols-1 lg:flex gap-16 items-center justify-center pt-[3rem]'>
+          <div 
+            data-aos="zoom-in-down"
+            data-aos-duration="1000"
+            className='grid grid-cols-1 lg:flex gap-16 items-center justify-center pt-[3rem]'>
 
           {/* TJ Homes */}
           <div className='bg-orange-200/60 px-[1rem] py-12 font-poppins palncolor'>
@@ -989,13 +1197,20 @@ const Home = () => {
 
       {/* Section 12 Testimoney */}
       <div id='section12' className='font-poppins px-[1rem] md:px-[3rem] py-8'>
-        <div className='text-center py-8 flex flex-col gap-5'>
+        <div 
+          data-aos="fade-up"
+          data-aos-duration="2000"
+          className='text-center py-8 flex flex-col gap-5'>
           <h3 className='text-xl flex mx-auto hvr-bubble-float-bottom px-3 py-1 bg-orange-200/60 text-orange-400 rounded w-fit tracking-[5px]'>Testimonials</h3>
           <h1 className='text-base md:text-4xl font-bold tracking-[5px] font-poppins'>What our clients says..</h1>
         </div>
 
         <div className='flex items-center justify-center '>
-          <div>
+          <div 
+            data-aos="fade-right"
+            data-aos-offset="300"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-sine">
             <Image src='/image/websketch.webp' width={900} height={900} alt='image'/>
           </div>
 
@@ -1110,7 +1325,24 @@ const Home = () => {
           <h3 className='text-xl flex mx-auto hvr-bubble-float-bottom px-3 py-1 bg-orange-200/60 text-orange-400 rounded w-fit tracking-[5px]'>Our Trusted Clients</h3>
         </div>
 
-        <div className='grid grid-cols-2 md:grid-cols-4 lg:flex items-center justify-center'>
+        <motion.div
+          
+          initial={{
+            x:-500,
+            opacity:0,
+            scale:0.5}}
+    
+            animate={{
+            x:0,
+            opacity:1,
+            scale:1
+            }}
+            
+            transition={{
+                duration:1.5,
+            }}
+         
+         className='grid grid-cols-2 md:grid-cols-4 lg:flex lg:justify-between items-center justify-center'>
           <Image src='/image/2.jpg' width={100} height={100} alt='company logo'/>
           <Image src='/image/3.jpg' width={100} height={100} alt='company logo'/>
           <Image src='/image/4.jpg' width={100} height={100} alt='company logo'/>
@@ -1119,7 +1351,7 @@ const Home = () => {
           <Image src='/image/3.jpg' width={100} height={100} alt='company logo'/>
           <Image src='/image/4.jpg' width={100} height={100} alt='company logo'/>
           <Image src='/image/5.jpg' width={100} height={100} alt='company logo'/>
-        </div>
+        </motion.div>
 
 
       </div>

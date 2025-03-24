@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { FaRegUserCircle } from "react-icons/fa";
 import { IoMdMenu } from "react-icons/io";
 import { RiCustomerService2Fill } from "react-icons/ri";
+import { SocialIcon } from 'react-social-icons'
 
 const Navbar = () => {
     const [activeElement, setActiveElement]= useState('');
@@ -17,22 +18,87 @@ const Navbar = () => {
   return (
     <>   
         {/* small nav */}
-        <nav className='flex items-center justify-end bg-gray-400 w-full  font-montserrat px-[1rem]  fixed z-20'>
-            <ul className='lg:flex items-center gap-5 font-bold text-base text-gray-600 hidden'>
-                <li className='hover:text-black cursor-pointer '>Monday - Friday: 8:00am - 5:00pm</li>
+        <nav className='flex items-center justify-between bg-gray-400 w-full  font-montserrat px-[1rem]  fixed z-20'>
+
+            {/* social icons */}
+            <div className='flex items-center gap-2 py-1'>
+                <SocialIcon
+                            url="https://facebook.com"
+                            target="_blank"
+                            network="facebook"
+                            style={{ height: 15, width: 15,}}
+                            className="colorscheme animate-bounce" 
+                          />
+                         
+                
+                          <SocialIcon
+                            url="https://youtube.com"
+                            target="_blank"
+                            network="youtube"
+                            style={{ height: 15, width: 15,}}
+                            className="colorscheme animate-bounce" 
+                          />
+                
+                          <SocialIcon
+                            url="https://x.com"
+                            target="_blank"
+                            network="x"
+                            style={{ height: 15, width: 15,}}
+                            className="colorscheme animate-bounce" 
+                          />
+                
+                          <SocialIcon
+                            url="https://instagram.com"
+                            target="_blank"
+                            network="instagram"
+                            style={{ height: 15, width: 15,}}
+                            className="colorscheme animate-bounce" 
+                          />
+                
+                          <SocialIcon
+                            url="https://tiktok.com"
+                            target="_blank"
+                            network="tiktok"
+                            style={{ height: 15, width: 15,}}
+                            className="colorscheme animate-bounce" 
+                          />
+                
+                          <SocialIcon
+                            url="https://whatsapp.com"
+                            target="_blank"
+                            network="whatsapp"
+                            style={{ height: 15, width: 15,}}
+                            className="colorscheme animate-bounce" 
+                          />
+                
+                          <SocialIcon
+                            url="https://linkedin.com"
+                            target="_blank"
+                            network="linkedin"
+                            style={{ height: 15, width: 15,}}
+                            className="colorscheme animate-bounce" 
+                          />
+            </div>
+
+
+
+
+
+            <ul className='lg:flex items-center gap-5  text-base text-gray-600 hidden'>
+                <li className='hover:text-blue-900 cursor-pointer hover:font-bold'>Monday - Friday: 8:00am - 5:00pm</li>
                 <li>|</li>
-                <li className='flex items-center gap-2 hover:text-black cursor-pointer'><RiCustomerService2Fill className='animate-bounce' /> +234706-828-3250</li>
+                <li className='flex items-center gap-2  cursor-pointer'><RiCustomerService2Fill className='animate-bounce' /> <span className='hover:font-bold text-blue-900'>+234706-828-3250</span></li>
             </ul>
 
            
         </nav>
         
         {/* Desktop view */}
-        <nav className='hidden lg:flex items-center justify-between px-[1rem] md:px-[3rem] py-2 font-montserrat shadow-[0_8px_30px_rgb(0,0,0,0.12)] fixed z-50 bg-white/60 w-full bg-opacity-45 backdrop-blur-xl mt-5'>
+        <nav className='hidden lg:flex items-center justify-between px-[1rem] md:px-[3rem] py-1 font-montserrat ring ring-blue-700/40 bg-trans fixed z-50 bg-white/45 w-full  backdrop-blur-xl mt-5'>
 
             <Link href={'/'} className='flex items-center justify-center gap-4'>
                 <div>
-                    <Image src='/image/tjhomelogo.png' width={60} height={60} alt='tehiljems_logo' className=''/>
+                    <Image src='/image/tjhomelogo.png' width={50} height={50} alt='tehiljems_logo' className=''/>
                 </div>
                 <h1 className='text-xl font-semibold text-blue-900'>TehilJem Nig. Ltd</h1>
             </Link>

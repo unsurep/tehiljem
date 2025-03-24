@@ -112,11 +112,11 @@ const Footer = () => {
       {/* Customer Care */}
       <div className='font-poppins text-base pt-8'>
         <h1 className='text-base md:text-xl font-semibold hvr-underline-from-center'>Customer Care</h1>
-        <ul className='flex flex-col gap-3 pt-3 text-sm md:text-base'>
+        <ul className='flex flex-col gap-5 pt-3 text-sm md:text-base'>
 
-          <li className=' hvr-wobble-horizontal  items-center gap-2 hvr-wobble-horizontal cursor-pointer hover:text-blue-900 hover:font-bold'>Chat with our AI-bot<RiRobot3Line className='text-blue-500'/></li> 
+          <li className=' flex  items-center gap-2  cursor-pointer hover:text-blue-900 hover:font-bold'><RiRobot3Line className='text-blue-500 text-2xl'/> Chat with our AI-bot</li> 
 
-          <li className=' hvr-wobble-horizontal items-center gap-2 hvr-wobble-horizontal cursor-pointer hover:text-blue-900 hover:font-bold'>Chat with Us on <span className='text-green-500'><IoLogoWhatsapp /></span></li>
+          <li  className=' flex items-center gap-2  cursor-pointer hover:text-blue-900 hover:font-bold'><span className='text-green-500 text-2xl'><IoLogoWhatsapp /></span>Chat / Call Us +234706-828-3250 </li>
 
           <li className='hvr-wobble-horizontal cursor-pointer hover:text-blue-900 hover:font-bold'>Contact Us</li>
           <li className='hvr-wobble-horizontal cursor-pointer hover:text-blue-900 hover:font-bold'>Office Location</li>
