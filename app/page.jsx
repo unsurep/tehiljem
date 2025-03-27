@@ -20,6 +20,12 @@ import { BiSolidPhoneCall } from "react-icons/bi";
 import { ImLocation } from "react-icons/im";
 import TextTransition, { presets } from 'react-text-transition';
 import { motion } from 'motion/react';
+import { FaMapPin } from "react-icons/fa";
+import { LuFence } from "react-icons/lu";
+import { IoIosPeople } from "react-icons/io";
+import { GiCctvCamera } from "react-icons/gi";
+import { PiRoadHorizonFill } from "react-icons/pi";
+import { IoCheckmark } from "react-icons/io5";
 
 
 // AOS animations
@@ -464,8 +470,8 @@ const Home = () => {
             data-aos-duration="1000"
           
           className='hvr-float-shadow'>
-            <Image src='/image/tjh.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
-            <h3 className='flex items-center gap-3 py-3 justify-center cursor-pointer font-semibold text-blue-900/40 hover:text-blue-900'>Explore Our Homes <span className='animate-bounce text-xl '><PiArrowBendRightUpFill /></span></h3>
+            <Image src='/image/land3.png' width={500} height={500} alt='image of property' className='rounded-lg  transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
+            <h3 className='flex items-center gap-3 py-3 justify-center font-semibold text-blue-900/40 hover:text-blue-900'>Explore Our Homes <span className='animate-bounce text-xl '><PiArrowBendRightUpFill /></span></h3>
           </div>
 
           <div 
@@ -473,8 +479,8 @@ const Home = () => {
             data-aos-duration="2000"
 
           className='hvr-float-shadow py-8 md:py-0'>
-            <Image src='/image/land.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
-            <h3 className='flex items-center gap-3 py-3 justify-center cursor-pointer font-semibold text-blue-900/40 hover:text-blue-900'>Our Landed Properties <span className='animate-bounce text-xl '><PiArrowBendRightUpFill /></span></h3>
+            <Image src='/image/land.png' width={500} height={500} alt='image of property' className='rounded-lg  transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
+            <h3 className='flex items-center gap-3 py-3 justify-center  font-semibold text-blue-900/40 hover:text-blue-900'>Our Landed Properties <span className='animate-bounce text-xl '><PiArrowBendRightUpFill /></span></h3>
           </div>
 
 
@@ -483,8 +489,8 @@ const Home = () => {
             data-aos-duration="3000" 
 
             className='hvr-float-shadow'>
-            <Image src='/image/land2.png' width={500} height={500} alt='image of property' className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
-            <h3 className='flex items-center gap-3 py-3 justify-center cursor-pointer font-semibold text-blue-900/40 hover:text-blue-900'>Learn About Our Construction <span className='animate-bounce text-xl '><PiArrowBendRightUpFill /></span></h3>
+            <Image src='/image/land2.png' width={500} height={500} alt='image of property' className='rounded-lg  transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
+            <h3 className='flex items-center gap-3 py-3 justify-center  font-semibold text-blue-900/40 hover:text-blue-900'>Learn About Our Construction <span className='animate-bounce text-xl '><PiArrowBendRightUpFill /></span></h3>
           </div>
         </div>
       </div>
@@ -508,7 +514,7 @@ const Home = () => {
         <div className='lg:flex  gap-8'>
           {/* 1 */}
           <div className='flex flex-col items-center'>
-            <Image src='/image/img3.png' width={500} height={500} alt='image of property' 
+            <Image src='/image/scepter2.jpg' width={500} height={500} alt='image of property' 
              data-aos="zoom-in"
              data-aos-duration="1000" 
              className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
@@ -529,15 +535,45 @@ const Home = () => {
 
 
             <div className='flex items-center justify-center py-4'>
-            <motion.button 
-              initial={{opacity:0, y:-50}}
-              animate={{opacity:1, y:0}}
-              transition={{duration:0.5}}
-              whileHover={{ scale:1.1}}
-              whileTap={{scale:0.9}}
+              {/* You can open the modal using document.getElementById('ID').showModal() method */}
+              <motion.button 
+                whileHover={{scale:1.1}}
+                whileTap={{scale:0.9}}
+                className="bt hover:bg-gray-600/50 bg-blue-300 text-black hover:text-white px-4 rounded-md font-semibold cursor-pointer py-3" onClick={()=>document.getElementById('my_modal_3').showModal()}>view more</motion.button>
+              <dialog id="my_modal_3" className="modal">
+              <div className="modal-box ">
+                <form method="dialog">
+                {/* if there is a button in form, it will close the modal */}
+                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                </form>
+                <h3 className="font-bold text-lg text-center py-5">Scepter City</h3>
+                <h3><b>Location:</b> </h3>
+                <span className='flex items-center gap-1 '><FaMapPin />IDU, Abuja</span>
 
-              className="hover:bg-gray-600/50 bg-blue-300 text-black hover:text-white px-4 rounded-md font-semibold cursor-pointer py-3" >View More
-            </motion.button>
+                <ul className='py-2'>
+                  <li>250sqm - N3.5M</li>
+                  <li>400sqm - 5.5M</li>
+                  <li>500sqm - N6M</li>
+                </ul>
+
+                <h1 className='font-bold'>Features</h1>
+                <ul>
+                  <li className='flex items-center gap-1'><LuFence /> Perimeter Fencing</li>
+                  <li className='flex items-center gap-1'><IoIosPeople />Security</li>
+                  <li className='flex items-center gap-1'><GiCctvCamera />CCTV</li>
+                  <li className='flex items-center gap-1'><PiRoadHorizonFill />Asphalf Road</li>
+                </ul>
+
+                <h1 className='font-bold pt-2'>Landmarks</h1>
+                <ul>
+                  <li className='flex items-center gap-1'><IoCheckmark />Opposite Nigeris Army Estate, IDU</li>
+                  <li className='flex items-center gap-1'><IoCheckmark />Train Station</li>
+                </ul>
+
+                
+                
+              </div>
+              </dialog>
             </div>
           </div>
 
@@ -564,15 +600,45 @@ const Home = () => {
 
 
             <div className='flex items-center justify-center py-4'>
-            <motion.button 
-              initial={{opacity:0, y:-50}}
-              animate={{opacity:1, y:0}}
-              transition={{duration:0.5}}
-              whileHover={{ scale:1.1}}
-              whileTap={{scale:0.9}}
+              {/* You can open the modal using document.getElementById('ID').showModal() method */}
+              <motion.button 
+                whileHover={{scale:1.1}}
+                whileTap={{scale:0.9}}
+                className="bt hover:bg-gray-600/50 bg-blue-300 text-black hover:text-white px-4 rounded-md font-semibold cursor-pointer py-3" onClick={()=>document.getElementById('my_modal_2').showModal()}>view more</motion.button>
+              <dialog id="my_modal_2" className="modal">
+              <div className="modal-box ">
+                <form method="dialog">
+                {/* if there is a button in form, it will close the modal */}
+                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                </form>
+                <h3 className="font-bold text-lg text-center py-5">Jemzys Court</h3>
+                <h3><b>Location:</b> </h3>
+                <span className='flex items-center gap-1 '><FaMapPin />Guzape, Abuja</span>
 
-              className="hover:bg-gray-600/50 bg-blue-300 text-black hover:text-white px-4 rounded-md font-semibold cursor-pointer py-3" >View More
-            </motion.button>
+                <ul className='py-2'>
+                  {/* <li>250sqm - N1.925M</li>
+                  <li>400sqm - N3.080M</li>
+                  <li>500sqm - N3.850M</li> */}
+                </ul>
+
+                <h1 className='font-bold'>Features</h1>
+                <ul>
+                  {/* <li className='flex items-center gap-1'><LuFence /> Perimeter Fencing</li>
+                  <li className='flex items-center gap-1'><IoIosPeople />Security</li>
+                  <li className='flex items-center gap-1'><GiCctvCamera />CCTV</li>
+                  <li className='flex items-center gap-1'><PiRoadHorizonFill />Asphalf Road</li> */}
+                </ul>
+
+                <h1 className='font-bold pt-2'>Landmarks</h1>
+                <ul>
+                  {/* <li className='flex items-center gap-1'><IoCheckmark />Opposite Nigeris Army Estate, IDU</li>
+                  <li className='flex items-center gap-1'><IoCheckmark />Train Station</li> */}
+                </ul>
+
+                
+                
+              </div>
+              </dialog>
             </div>
           </div>
 
@@ -599,15 +665,45 @@ const Home = () => {
 
 
             <div className='flex items-center justify-center py-4'>
-            <motion.button 
-              initial={{opacity:0, y:-50}}
-              animate={{opacity:1, y:0}}
-              transition={{duration:0.5}}
-              whileHover={{ scale:1.1}}
-              whileTap={{scale:0.9}}
+              {/* You can open the modal using document.getElementById('ID').showModal() method */}
+              <motion.button 
+                whileHover={{scale:1.1}}
+                whileTap={{scale:0.9}}
+                className="bt hover:bg-gray-600/50 bg-blue-300 text-black hover:text-white px-4 rounded-md font-semibold cursor-pointer py-3" onClick={()=>document.getElementById('my_modal_4').showModal()}>view more</motion.button>
+              <dialog id="my_modal_4" className="modal">
+              <div className="modal-box ">
+                <form method="dialog">
+                {/* if there is a button in form, it will close the modal */}
+                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                </form>
+                <h3 className="font-bold text-lg text-center py-5">The Haven</h3>
+                <h3><b>Location:</b> </h3>
+                <span className='flex items-center gap-1 '><FaMapPin />Katampe Extension, Abuja</span>
 
-              className="hover:bg-gray-600/50 bg-blue-300 text-black hover:text-white px-4 rounded-md font-semibold cursor-pointer py-3" >View More
-            </motion.button>
+                <ul className='py-2'>
+                  {/* <li>250sqm - N1.925M</li>
+                  <li>400sqm - N3.080M</li>
+                  <li>500sqm - N3.850M</li> */}
+                </ul>
+
+                <h1 className='font-bold'>Features</h1>
+                <ul>
+                  {/* <li className='flex items-center gap-1'><LuFence /> Perimeter Fencing</li>
+                  <li className='flex items-center gap-1'><IoIosPeople />Security</li>
+                  <li className='flex items-center gap-1'><GiCctvCamera />CCTV</li>
+                  <li className='flex items-center gap-1'><PiRoadHorizonFill />Asphalf Road</li> */}
+                </ul>
+
+                <h1 className='font-bold pt-2'>Landmarks</h1>
+                <ul>
+                  {/* <li className='flex items-center gap-1'><IoCheckmark />Opposite Nigeris Army Estate, IDU</li>
+                  <li className='flex items-center gap-1'><IoCheckmark />Train Station</li> */}
+                </ul>
+
+                
+                
+              </div>
+              </dialog>
             </div>
           </div>
         </div>
@@ -619,7 +715,7 @@ const Home = () => {
         <div className='flex flex-col items-center'>
             <Image src='/image/img3.png' width={500} height={500} alt='image of property' 
               data-aos="zoom-in"
-              data-aos-duration="3000" 
+              data-aos-duration="1000" 
               className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
 
             <div className='flex flex-col items-center py-5'>
@@ -638,22 +734,52 @@ const Home = () => {
 
 
             <div className='flex items-center justify-center py-4'>
-            <motion.button 
-              initial={{opacity:0, y:-50}}
-              animate={{opacity:1, y:0}}
-              transition={{duration:0.5}}
-              whileHover={{ scale:1.1}}
-              whileTap={{scale:0.9}}
+              {/* You can open the modal using document.getElementById('ID').showModal() method */}
+              <motion.button 
+                whileHover={{scale:1.1}}
+                whileTap={{scale:0.9}}
+                className="bt hover:bg-gray-600/50 bg-blue-300 text-black hover:text-white px-4 rounded-md font-semibold cursor-pointer py-3" onClick={()=>document.getElementById('my_modal_5').showModal()}>view more</motion.button>
+              <dialog id="my_modal_5" className="modal">
+              <div className="modal-box ">
+                <form method="dialog">
+                {/* if there is a button in form, it will close the modal */}
+                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                </form>
+                <h3 className="font-bold text-lg text-center py-5">Villa Ecclesia Phase 1 & 2</h3>
+                <h3><b>Location:</b> </h3>
+                <span className='flex items-center gap-1 '><FaMapPin />Kuje Phase III, Abuja</span>
 
-              className="hover:bg-gray-600/50 bg-blue-300 text-black hover:text-white px-4 rounded-md font-semibold cursor-pointer py-3" >View More
-            </motion.button>
+                <ul className='py-2'>
+                  {/* <li>250sqm - N1.925M</li>
+                  <li>400sqm - N3.080M</li>
+                  <li>500sqm - N3.850M</li> */}
+                </ul>
+
+                <h1 className='font-bold'>Features</h1>
+                <ul>
+                  {/* <li className='flex items-center gap-1'><LuFence /> Perimeter Fencing</li>
+                  <li className='flex items-center gap-1'><IoIosPeople />Security</li>
+                  <li className='flex items-center gap-1'><GiCctvCamera />CCTV</li>
+                  <li className='flex items-center gap-1'><PiRoadHorizonFill />Asphalf Road</li> */}
+                </ul>
+
+                <h1 className='font-bold pt-2'>Landmarks</h1>
+                <ul>
+                  {/* <li className='flex items-center gap-1'><IoCheckmark />Opposite Nigeris Army Estate, IDU</li>
+                  <li className='flex items-center gap-1'><IoCheckmark />Train Station</li> */}
+                </ul>
+
+                
+                
+              </div>
+              </dialog>
             </div>
         </div>
 
 
         {/* 5 */}
         <div className='py-16 lg:py-0 flex flex-col items-center'>
-            <Image src='/image/img3.png' width={500} height={500} alt='image of property' 
+            <Image src='/image/rio2.png' width={500} height={500} alt='image of property' 
              data-aos="zoom-in"
              data-aos-duration="2000" 
              className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
@@ -675,15 +801,45 @@ const Home = () => {
 
 
             <div className='flex items-center justify-center py-4'>
-            <motion.button 
-              initial={{opacity:0, y:-50}}
-              animate={{opacity:1, y:0}}
-              transition={{duration:0.5}}
-              whileHover={{ scale:1.1}}
-              whileTap={{scale:0.9}}
+              {/* You can open the modal using document.getElementById('ID').showModal() method */}
+              <motion.button 
+                whileHover={{scale:1.1}}
+                whileTap={{scale:0.9}}
+                className="bt hover:bg-gray-600/50 bg-blue-300 text-black hover:text-white px-4 rounded-md font-semibold cursor-pointer py-3" onClick={()=>document.getElementById('my_modal_6').showModal()}>view more</motion.button>
+              <dialog id="my_modal_6" className="modal">
+              <div className="modal-box ">
+                <form method="dialog">
+                {/* if there is a button in form, it will close the modal */}
+                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                </form>
+                <h3 className="font-bold text-lg text-center py-5">Rio Dominion Estate</h3>
+                <h3><b>Location:</b> </h3>
+                <span className='flex items-center gap-1 '><FaMapPin />Lugbe, Abuja</span>
 
-              className="hover:bg-gray-600/50 bg-blue-300 text-black hover:text-white px-4 rounded-md font-semibold cursor-pointer py-3" >View More
-            </motion.button>
+                <ul className='py-2'>
+                  {/* <li>250sqm - N1.925M</li>
+                  <li>400sqm - N3.080M</li>
+                  <li>500sqm - N3.850M</li> */}
+                </ul>
+
+                <h1 className='font-bold'>Features</h1>
+                <ul>
+                  {/* <li className='flex items-center gap-1'><LuFence /> Perimeter Fencing</li>
+                  <li className='flex items-center gap-1'><IoIosPeople />Security</li>
+                  <li className='flex items-center gap-1'><GiCctvCamera />CCTV</li>
+                  <li className='flex items-center gap-1'><PiRoadHorizonFill />Asphalf Road</li> */}
+                </ul>
+
+                <h1 className='font-bold pt-2'>Landmarks</h1>
+                <ul>
+                  {/* <li className='flex items-center gap-1'><IoCheckmark />Opposite Nigeris Army Estate, IDU</li>
+                  <li className='flex items-center gap-1'><IoCheckmark />Train Station</li> */}
+                </ul>
+
+                
+                
+              </div>
+              </dialog>
             </div>
         </div>
 
@@ -692,12 +848,12 @@ const Home = () => {
         <div className='pb-10 flex flex-col items-center'>
             <Image src='/image/tj.png' width={500} height={500} alt='image of property' 
             data-aos="zoom-in"
-            data-aos-duration="1000"  
+            data-aos-duration="3000"  
             className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
 
             <div className='flex flex-col items-center py-5'>
-              <h1 className='text-xl md:text-3xl text-blue-900 font-bold'>The Haven</h1>
-              <p className='text-base'>Location: Usuma District</p>
+              <h1 className='text-xl md:text-3xl text-blue-900 font-bold'>TJ Homes</h1>
+              <p className='text-base'>Location: </p>
             </div>
 
 
@@ -711,15 +867,45 @@ const Home = () => {
 
 
             <div className='flex items-center justify-center py-4'>
-            <motion.button 
-              initial={{opacity:0, y:-50}}
-              animate={{opacity:1, y:0}}
-              transition={{duration:0.5}}
-              whileHover={{ scale:1.1}}
-              whileTap={{scale:0.9}}
+              {/* You can open the modal using document.getElementById('ID').showModal() method */}
+              <motion.button 
+                whileHover={{scale:1.1}}
+                whileTap={{scale:0.9}}
+                className="bt hover:bg-gray-600/50 bg-blue-300 text-black hover:text-white px-4 rounded-md font-semibold cursor-pointer py-3" onClick={()=>document.getElementById('my_modal_7').showModal()}>view more</motion.button>
+              <dialog id="my_modal_7" className="modal">
+              <div className="modal-box ">
+                <form method="dialog">
+                {/* if there is a button in form, it will close the modal */}
+                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                </form>
+                <h3 className="font-bold text-lg text-center py-5">TJ Homes</h3>
+                <h3><b>Location:</b> </h3>
+                <span className='flex items-center gap-1 '><FaMapPin /></span>
 
-              className="hover:bg-gray-600/50 bg-blue-300 text-black hover:text-white px-4 rounded-md font-semibold cursor-pointer py-3" >View More
-            </motion.button>
+                <ul className='py-2'>
+                  {/* <li>250sqm - N1.925M</li>
+                  <li>400sqm - N3.080M</li>
+                  <li>500sqm - N3.850M</li> */}
+                </ul>
+
+                <h1 className='font-bold'>Features</h1>
+                <ul>
+                  {/* <li className='flex items-center gap-1'><LuFence /> Perimeter Fencing</li>
+                  <li className='flex items-center gap-1'><IoIosPeople />Security</li>
+                  <li className='flex items-center gap-1'><GiCctvCamera />CCTV</li>
+                  <li className='flex items-center gap-1'><PiRoadHorizonFill />Asphalf Road</li> */}
+                </ul>
+
+                <h1 className='font-bold pt-2'>Landmarks</h1>
+                <ul>
+                  {/* <li className='flex items-center gap-1'><IoCheckmark />Opposite Nigeris Army Estate, IDU</li>
+                  <li className='flex items-center gap-1'><IoCheckmark />Train Station</li> */}
+                </ul>
+
+                
+                
+              </div>
+              </dialog>
             </div>
         </div>
       </div>
@@ -734,7 +920,7 @@ const Home = () => {
 
         <div className='lg:flex '>
           <div className='flex flex-col gap-8'>
-            <h2 className='text-2xl font-bold'>Why Choose TehilJem Nig. Ltd?</h2>
+            <h2 className='text-2xl font-bold underline'>Why Choose TehilJem Nig. Ltd?</h2>
 
             <p 
             data-aos="fade-right"
@@ -743,20 +929,20 @@ const Home = () => {
             className='tracking-wide'>For over a decade, Tehiljem Nig Ltd has been a pillar of <br /> excellence in the real estate industry, built on a <br /> foundation of integrity, innovation, and expertise. With <br /> a highly experienced team, we provide top-tier real <br /> estate solutions, ensuring quality, reliability, and value <br /> in every project. Whether residential, commercial, or <br /> investment properties, we are committed to delivering <br /> tailored services that meet and exceed our <br /> clients' expectations.</p>
 
 
-            <div className='flex justify-between'>
-              <p onClick={toggle1} className={`font-bold text-4xl px-6 py-4 ${
+            <div className=''>
+              <p onClick={toggle1} className={`font-bold text-2xl px-4 py-3 ${
                 show1 ? "bg-orange-400" : "bg-orange-300/50"
-                } hover:bg-orange-400 border border-black cursor-pointer text-white rounded`}>1
+                } hover:bg-orange-400 border border-black cursor-pointer text-white rounded`}>Jemzys Court, Guzape, Abuja
               </p>
 
-              <p onClick={toggle2} className={`font-bold text-4xl px-6 py-4 ${
+              <p onClick={toggle2} className={`font-bold text-2xl px-4 py-3 ${
                 show1 ? "bg-orange-400" : "bg-orange-300/50"
-                } hover:bg-orange-400 border border-black cursor-pointer text-white rounded`}>2
+                } hover:bg-orange-400 border border-black cursor-pointer text-white rounded`}>Rio Dominion Estate, Abuja
               </p>
 
-              <p onClick={toggle3} className={`font-bold text-4xl px-6 py-4 ${
+              <p onClick={toggle3} className={`font-bold text-2xl px-4 py-3 ${
                 show1 ? "bg-orange-400" : "bg-orange-300/50"
-                } hover:bg-orange-400 border border-black cursor-pointer text-white rounded`}>3
+                } hover:bg-orange-400 border border-black cursor-pointer text-white rounded`}>TJ Homes Idu, Abuja
               </p>
             </div>
           </div>
@@ -1205,17 +1391,14 @@ const Home = () => {
           <h1 className='text-base md:text-4xl font-bold tracking-[5px] font-poppins'>What our clients says..</h1>
         </div>
 
-        <div className='flex items-center justify-center '>
+        <div className='grid grid-cols-1 lg:flex items-center justify-center '>
           <div 
-            data-aos="fade-right"
-            data-aos-offset="300"
-            data-aos-duration="1000"
-            data-aos-easing="ease-in-sine">
+            data-aos="fade-right">
             <Image src='/image/websketch.webp' width={900} height={900} alt='image'/>
           </div>
 
 
-          <div className='w-fit py-8 shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] bg-orange-200/60 palncolor mx-[2rem] md:px-[3rem]'>
+          <div className='w-fit py-8 shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] bg-orange-200/60 palncolor  md:px-[3rem] flex flex-col mx-auto pt-5'>
             <Swiper
               spaceBetween={30}
               centeredSlides={true}

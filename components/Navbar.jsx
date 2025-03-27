@@ -39,63 +39,55 @@ const Navbar = () => {
                 duration:1.5,
                 }}
 
-                className='md:flex hidden items-center gap-2 py-1'>
+                className='md:flex hidden items-center gap-2 py-'>
                 <SocialIcon
-                            url="https://facebook.com"
-                            target="_blank"
-                            network="facebook"
-                            style={{ height: 15, width: 15,}}
-                            className="colorscheme animate-bounce" 
-                          />
+                    url="https://www.facebook.com/profile.php?id=61567110009668&mibextid=ZbWKwL"
+                    target="_blank"
+                    network="facebook"
+                    style={{ height: 23, width:23,}}
+                    className="colorscheme " 
+                />
                          
                 
-                          <SocialIcon
-                            url="https://youtube.com"
-                            target="_blank"
-                            network="youtube"
-                            style={{ height: 15, width: 15,}}
-                            className="colorscheme animate-bounce" 
-                          />
+                <SocialIcon
+                    url="https://www.youtube.com/@tehiljemgroup"
+                    target="_blank"
+                    network="youtube"
+                    style={{ height: 23, width: 23,}}
+                    className="colorscheme" 
+                />
                 
-                          <SocialIcon
-                            url="https://x.com"
-                            target="_blank"
-                            network="x"
-                            style={{ height: 15, width: 15,}}
-                            className="colorscheme animate-bounce" 
-                          />
+                <SocialIcon
+                    url="https://www.instagram.com/tehiljemgroup?igsh=MWd1Zjl2dWllbTR5bw%3D%3D&utm_source=qr"
+                    target="_blank"
+                    network="instagram"
+                    style={{ height: 23, width: 23,}}
+                    className="colorscheme" 
+                />
                 
-                          <SocialIcon
-                            url="https://instagram.com"
-                            target="_blank"
-                            network="instagram"
-                            style={{ height: 15, width: 15,}}
-                            className="colorscheme animate-bounce" 
-                          />
+                <SocialIcon
+                    url="https://www.tiktok.com/@tehiljemgroup?_t=ZM-8v1vApItbN9&_r=1"
+                    target="_blank"
+                    network="tiktok"
+                    style={{ height: 23, width: 23,}}
+                    className="colorscheme" 
+                />
                 
-                          <SocialIcon
-                            url="https://tiktok.com"
-                            target="_blank"
-                            network="tiktok"
-                            style={{ height: 15, width: 15,}}
-                            className="colorscheme animate-bounce" 
-                          />
+                <SocialIcon
+                    url="https://wa.me/2348068645460 "
+                    target="_blank"
+                    network="whatsapp"
+                    style={{ height: 23, width: 23,}}
+                    className="colorscheme" 
+                />
                 
-                          <SocialIcon
-                            url="https://whatsapp.com"
-                            target="_blank"
-                            network="whatsapp"
-                            style={{ height: 15, width: 15,}}
-                            className="colorscheme animate-bounce" 
-                          />
-                
-                          <SocialIcon
-                            url="https://linkedin.com"
-                            target="_blank"
-                            network="linkedin"
-                            style={{ height: 15, width: 15,}}
-                            className="colorscheme animate-bounce" 
-                          />
+                {/* <SocialIcon
+                    url="https://linkedin.com"
+                    target="_blank"
+                    network="linkedin"
+                    style={{ height: 23, width: 23,}}
+                    className="colorscheme" 
+                /> */}
             </motion.div>
 
 
@@ -118,17 +110,17 @@ const Navbar = () => {
                     duration:1.5,
                     }}
 
-                className='lg:flex items-center gap-5  text-base text-gray-600 hidden'>
+                className='lg:flex items-center gap-5 text-base text-gray-600 hidden'>
                 <li className='hover:text-blue-900 cursor-pointer hover:font-bold'>Monday - Friday: 8:00am - 5:00pm</li>
                 <li>|</li>
-                <li className='flex items-center gap-2  cursor-pointer'><RiCustomerService2Fill className='animate-bounce' /> <span className='hover:font-bold text-blue-900 font-extrabold'>+234706-828-3250</span></li>
+                <li className='flex items-center gap-2  cursor-pointer'><RiCustomerService2Fill className='animate-bounce' /> <span className='hover:font-bold text-blue-900 '>+234706-828-3250</span></li>
             </motion.ul>
 
            
         </nav>
         
         {/* Desktop view */}
-        <nav className='hidden lg:flex items-center justify-between px-[1rem] md:px-[3rem] py-1 font-montserrat ring ring-blue-700/40 bg-trans fixed z-50 bg-white/45 w-full  backdrop-blur-xl mt-5'>
+        <nav className='hidden lg:flex items-center justify-between px-[1rem] md:px-[3rem] py-1 font-montserrat ring ring-blue-700/40 bg-trans fixed z-50 bg-white/45 w-full  backdrop-blur-xl mt-6'>
 
             <Link href={'/'} className='flex items-center justify-center gap-4'>
                 <div>
@@ -137,10 +129,10 @@ const Navbar = () => {
                 <h1 className='text-xl font-semibold text-blue-900'>TehilJem Nig. Ltd</h1>
             </Link>
 
-            <ul className='flex items-center gap-6'>
-                <Link href={'/'}>
+            <ul className='flex items-center gap-8'>
+                {/* <Link href={'/'}>
                     <li onClick={() => toggleElement("home")} className={`cursor-pointer text-black/90 font-semibold hvr-underline-from-center  ${activeElement === "home" ? "text-blue-900 font-bold" : ""}`}>Home</li>
-                </Link>
+                </Link> */}
 
                 <Link href={'/about'}>
                     <li onClick={() => toggleElement("about")} className={`cursor-pointer text-black/90 font-semibold hvr-underline-from-center  ${activeElement === "about" ? "text-blue-900 font-bold" : ""}`}>About Us</li>
@@ -148,6 +140,7 @@ const Navbar = () => {
 
                 <Link href={'/properties'}>
                     <li onClick={() => toggleElement("properties")} className={`cursor-pointer text-black/90 font-semibold hvr-underline-from-center  ${activeElement === "properties" ? "text-blue-900 font-bold" : ""}`}>Properties</li>
+                   
                 </Link>
 
                 <Link href={'/serv'}>
@@ -216,9 +209,9 @@ const Navbar = () => {
                         <li className='text-blue-900 font-semibold'>Home</li>
                     </Link>
 
-                    <Link href={'/about'}>
+                    {/* <Link href={'/about'}>
                         <li >About Us</li>
-                    </Link>
+                    </Link> */}
 
                     <Link href={'/properties'}>
                         <li>Properties</li>

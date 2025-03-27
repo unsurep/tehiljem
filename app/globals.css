@@ -245,7 +245,7 @@ body {
   left: 0;
   right: 100%;
   bottom: 0;
-  background: #ea580c;
+  background: #1d4ed8;
   height: 4px;
   -webkit-transition-property: right;
   transition-property: right;
@@ -377,6 +377,15 @@ body {
   transform: scaleX(1);
   -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
   transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+
+.propertiesbg {
+  background: linear-gradient(45deg, #f3c66a 33%, #ffcb91 46%, #8e966a 75%);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 
