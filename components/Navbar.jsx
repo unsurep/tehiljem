@@ -129,10 +129,10 @@ const Navbar = () => {
                 <h1 className='text-xl font-semibold text-blue-900'>TehilJem Nig. Ltd</h1>
             </Link>
 
-            <ul className='flex items-center gap-8'>
-                {/* <Link href={'/'}>
+            <ul className='flex items-center gap-10'>
+                <Link href={'/'}>
                     <li onClick={() => toggleElement("home")} className={`cursor-pointer text-black/90 font-semibold hvr-underline-from-center  ${activeElement === "home" ? "text-blue-900 font-bold" : ""}`}>Home</li>
-                </Link> */}
+                </Link>
 
                 <Link href={'/about'}>
                     <li onClick={() => toggleElement("about")} className={`cursor-pointer text-black/90 font-semibold hvr-underline-from-center  ${activeElement === "about" ? "text-blue-900 font-bold" : ""}`}>About Us</li>
