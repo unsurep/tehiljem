@@ -8,7 +8,7 @@ import { HiArrowLongRight } from "react-icons/hi2";
 
 const About = () => {
   return (
-    <div>
+    <div className='font-montserrat'>
       <main className="py-28  bg-cover bg-center bg-no-repeat h-[90vh] px-[1rem] md:px-[3rem]" style={{ backgroundImage: "url('/image/tjh1.jpg')"}}>
         <div className='font-poppins text-white flex flex-col pt-32'>
           <h3 className='text-5xl uppercase font-bold propertiesbg z-10 tracking-[5px]'>About Us</h3>

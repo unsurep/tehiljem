@@ -28,7 +28,7 @@ const Footer = () => {
           <li className='items-center flex gap-3 font-poppins'><span><BiSolidPhoneCall /></span>+234706-828-3250</li>
           <li className='items-center flex gap-3 font-poppins'><span><MdEmail /></span>info@tehiljem.com | obasanmileo81@gmail.com</li>
         </ul>
-
+        
         <div className='flex gap-3'>
           <SocialIcon
             url="https://facebook.com"

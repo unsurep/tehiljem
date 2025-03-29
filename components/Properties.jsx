@@ -9,7 +9,7 @@ import { RiWhatsappFill } from "react-icons/ri";
 const Properties = () => {
   return (
     <div>
-      <main className="py-28  bg-cover bg-center bg-no-repeat h-[90vh] px-[1rem] md:px-[3rem]" style={{ backgroundImage: "url('/image/tjh.png')"}}>
+      <main className="py-28  bg-cover bg-center bg-no-repeat font-montserrat h-[90vh] px-[1rem] md:px-[3rem]" style={{ backgroundImage: "url('/image/tjh.png')"}}>
         <div className='font-poppins text-white flex flex-col pt-32'>
           <h3 className='text-5xl uppercase font-bold propertiesbg z-10 tracking-[5px]'>Properties</h3>
           <ul className='flex gap-5 items-center'>
@@ -29,12 +29,12 @@ const Properties = () => {
         <h1 className='text-2xl lg:text-4xl font-bold tracking-[5px] text-center lg:pb-8  pt-8'>Properties of TehilJem Nigeria Limited</h1>
 
         <ul className='grid grid-cols-1 md:grid-cols-3 px-[2rem]  lg:flex gap-5 text-center items-center w-full justify-between py-8 md:shadow-[0_3px_10px_rgb(0,0,0,0.2)]'>
-          <li className='hvr-shutter-in-vertical px-3 py-1 cursor-pointer font-bold w-fit flex mx-auto'>Scepter City</li>
-          <li className='hvr-shutter-in-vertical px-3 py-1 cursor-pointer font-bold w-fit flex mx-auto'>Jemzys Court</li>
-          <li className='hvr-shutter-in-vertical px-3 py-1 cursor-pointer font-bold w-fit flex mx-auto'>The Haven</li>
-          <li className='hvr-shutter-in-vertical px-3 py-1 cursor-pointer font-bold w-fit flex mx-auto'>Villa Ecclesia</li>
-          <li className='hvr-shutter-in-vertical px-3 py-1 cursor-pointer font-bold w-fit flex mx-auto'>Rio Dominion Estate</li>
-          <li className='hvr-shutter-in-vertical px-3 py-1 cursor-pointer font-bold w-fit flex mx-auto'>TJ Homes</li>
+          <li className='hvr-shutter-in-vertical px-3 border-[2px] border-blue-600 py-1 cursor-pointer font-bold w-fit flex mx-auto'>Scepter City</li>
+          <li className='hvr-shutter-in-vertical px-3 border-[2px] border-blue-600 py-1 cursor-pointer font-bold w-fit flex mx-auto'>Jemzys Court</li>
+          <li className='hvr-shutter-in-vertical px-3 border-[2px] border-blue-600 py-1 cursor-pointer font-bold w-fit flex mx-auto'>The Haven</li>
+          <li className='hvr-shutter-in-vertical px-3 border-[2px] border-blue-600 py-1 cursor-pointer font-bold w-fit flex mx-auto'>Villa Ecclesia</li>
+          <li className='hvr-shutter-in-vertical px-3 border-[2px] border-blue-600 py-1 cursor-pointer font-bold w-fit flex mx-auto'>Rio Dominion Estate</li>
+          <li className='hvr-shutter-in-vertical px-3 border-[2px] border-blue-600 py-1 cursor-pointer font-bold w-fit flex mx-auto'>TJ Homes</li>
         </ul>
 
         <div className='grid grid-cols-1 lg:flex pt-8 '>

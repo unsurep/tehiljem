@@ -113,7 +113,7 @@ const Navbar = () => {
                 className='lg:flex items-center gap-5 text-base text-gray-600 hidden'>
                 <li className='hover:text-blue-900 cursor-pointer hover:font-bold'>Monday - Friday: 8:00am - 5:00pm</li>
                 <li>|</li>
-                <li className='flex items-center gap-2  cursor-pointer'><RiCustomerService2Fill className='animate-bounce' /> <span className='hover:font-bold text-blue-900 '>+234706-828-3250</span></li>
+                <li className='flex items-center gap-2  cursor-pointer'><RiCustomerService2Fill className='animate-bounce' /> <span className='hover:font-bold text-blue-900 '>+234 706-828-3250</span></li>
             </motion.ul>
 
            

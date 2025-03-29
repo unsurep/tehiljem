@@ -229,7 +229,7 @@ const Home = () => {
 
 
   return (
-    <div>
+    <div className='font-montserrat'>
 
       {/* Section 1  */}
       <section id='section1' className='h-[85vh] md:h-screen text-white bg-cover bg-center bg-no-repeat flex items-center  px-[1rem] md:px-[3rem] font-poppins relative'>
