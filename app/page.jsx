@@ -243,7 +243,7 @@ const Home = () => {
         </video>
 
         {/* Overlay to make text readable */}
-        <div className="absolute top-0 left-0 w-full h-full bg-black/60"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-black/40"></div>
         
         <div  className='flex flex-col gap-4 text-center md:justify-center items-center pt-28'>
           <h1 data-aos="zoom-in"
@@ -929,7 +929,7 @@ const Home = () => {
             className='tracking-wide'>For over a decade, Tehiljem Nig Ltd has been a pillar of <br /> excellence in the real estate industry, built on a <br /> foundation of integrity, innovation, and expertise. With <br /> a highly experienced team, we provide top-tier real <br /> estate solutions, ensuring quality, reliability, and value <br /> in every project. Whether residential, commercial, or <br /> investment properties, we are committed to delivering <br /> tailored services that meet and exceed our <br /> clients' expectations.</p>
 
 
-            <div className=''>
+            <div className='space-y-5'>
               <p onClick={toggle1} className={`font-bold text-2xl px-4 py-3 ${
                 show1 ? "bg-orange-400" : "bg-orange-300/50"
                 } hover:bg-orange-400 border border-black cursor-pointer text-white rounded`}>Jemzys Court, Guzape, Abuja
@@ -947,7 +947,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className='ml-auto shadow overflow-hidden'>
+          <div className='ml-auto shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] h-[70vh] shadow-orange-400  overflow-hidden'>
             {
               show1  && <YouTube videoId='oWgpYmVxaUY' opts={opts}  className='rounded-lg shadow-lg '/>
             }
@@ -988,9 +988,9 @@ const Home = () => {
               <Image src='/image/unknown.svg' width={200} height={200} alt='image' className='rounded'/>
             </div>
 
-            <div>
-              <h3>Leo RD.</h3>
-              <h2>MD/CEO</h2>
+            <div className='py-4'>
+              <h3 className='font-extrabold text-center'>Obasanmi Leo</h3>
+              <h2 className='text-center'>MD/CEO</h2>
             </div>
             
           </div>
@@ -1004,14 +1004,14 @@ const Home = () => {
               <Image src='/image/unknown.svg' width={200} height={200} alt='image' className='rounded'/>
             </div>
 
-            <div>
-              <h3>Korofo Q.</h3>
-              <h2>CFO</h2>
+            <div className='py-4'>
+              <h3 className='font-extrabold text-center'>Koso Grace</h3>
+              <h2 className='text-center'>Admin Manager</h2>
             </div>
             
           </div>
 
-          {/* Marketer 1 */}
+          {/* IT Support */}
           <div className='flex flex-col items-center justify-center shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]'>
             <div 
                data-aos="flip-down"
@@ -1020,14 +1020,14 @@ const Home = () => {
               <Image src='/image/unknown.svg' width={200} height={200} alt='image' className='rounded'/>
             </div>
 
-            <div>
-              <h3>Toro RD.</h3>
-              <h2>Marketer</h2>
+            <div className='py-4'>
+              <h3 className='font-extrabold text-center'>Ella</h3>
+              <h2 className='text-center'>IT Support</h2>
             </div>
             
           </div>
 
-          {/* Agent */}
+          {/* IT Support */}
           <div className='flex flex-col items-center justify-center shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]'>
             <div 
                data-aos="flip-down"
@@ -1036,9 +1036,9 @@ const Home = () => {
               <Image src='/image/unknown.svg' width={200} height={200} alt='image' className='rounded'/>
             </div>
 
-            <div>
-              <h3>Zoro RD.</h3>
-              <h2>Agent</h2>
+            <div className='py-4'>
+              <h3 className='font-extrabold text-center'>Umukoro Louis</h3>
+              <h2 className='text-center'>IT Support </h2>
             </div>
             
           </div>
@@ -1055,7 +1055,7 @@ const Home = () => {
         data-aos-duration="1000"
 
         className=' font-poppins pt-16'>
-        <h1 className=" font-bold mb-6 font-poppins tracking-[5px] justify-self-center flex items-center gap-2 text-base md:text-2xl px-[1rem] md:px-[3rem]">Lastest News Feed - <span><Image src='/image/news.svg' width={40} height={40} alt="new logo" className=""/></span></h1>
+        <h1 className=" font-bold mb-6 font-poppins tracking-[5px] justify-self-center flex items-center gap-2 text-base md:text-2xl px-[1rem] md:px-[3rem]">News Article - <span><Image src='/image/news.svg' width={40} height={40} alt="new logo" className=""/></span></h1>
 
         {/* mapping */}
         <div className='  p-4 md:p-6">'>

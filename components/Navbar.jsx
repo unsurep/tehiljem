@@ -131,7 +131,7 @@ const Navbar = () => {
 
             <ul className='flex items-center gap-10'>
                 <Link href={'/'}>
-                    <li onClick={() => toggleElement("home")} className={`cursor-pointer text-black/90 font-semibold hvr-underline-from-center  ${activeElement === "home" ? "text-blue-900 font-bold" : ""}`}>Home</li>
+                    <li onClick={() => toggleElement("home")} className={`cursor-pointer text-black/90 font-semibold hvr-underline-from-center  ${activeElement === "home" ? "text-blue-900 font-bold  " : ""}`}>Home</li>
                 </Link>
 
                 <Link href={'/about'}>
