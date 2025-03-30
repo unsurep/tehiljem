@@ -246,8 +246,23 @@ const Home = () => {
         <div className="absolute top-0 left-0 w-full h-full bg-black/40"></div>
         
         <div  className='flex flex-col gap-4 text-center md:justify-center items-center pt-28'>
-          <h1 data-aos="zoom-in"
-          data-aos-duration="1000" className='text-2xl md:text-5xl font-extrabold tracking-[5px] flex gap-3 md:pt- '>Discover Your Dream Home <TextTransition springConfig={presets.wobbly} className='text-red-500 tracking-wide font-extrabold'>{TEXTS[index % TEXTS.length]} <Cursor cursorColor='red' /></TextTransition></h1>
+           {/* welcome write up shows only on lg screen upward */}
+          <div data-aos="zoom-in"
+          data-aos-duration="1000" className='text-2xl flex-col md:text-5xl font-extrabold tracking-[5px] flex gap-3   '>
+            <p>Discover Your Dream </p>
+            <p className='text-red-500 items-center flex justify-center'><TextTransition springConfig={presets.soft} className='text-red-500 text-center tracking-wide text-2xl md:text-5xl font-extrabold'> {TEXTS[index % TEXTS.length]} <Cursor cursorColor='red' /></TextTransition> </p> 
+            
+          </div>
+
+
+          {/* welcome write up shows only on lg screen upward */}
+          {/* <h1 data-aos="zoom-in"
+          data-aos-duration="1000" className='text-2xl md:text-5xl font-extrabold tracking-[5px] lg:flex gap-3  hidden '>Discover Your Dream Home <TextTransition springConfig={presets.wobbly} className='text-red-500 tracking-wide font-extrabold'>{TEXTS[index % TEXTS.length]} <Cursor cursorColor='red' /></TextTransition></h1> */}
+
+          {/* welcome note shows only on small n tablet devices */}
+          {/* <h1 data-aos="zoom-in"
+          data-aos-duration="1000" className='text-2xl md:text-5xl font-extrabold tracking-[5px] flex gap-3  lg:hidden '>Discover Your br Dream <TextTransition springConfig={presets.wobbly} className='text-red-500 tracking-wide font-extrabold'> {TEXTS[index % TEXTS.length]} <Cursor cursorColor='red' /></TextTransition>  </h1> */}
+          
 
           <p data-aos="zoom-in"
           data-aos-duration="1500"  className=' text-white md:text-xl leading-relaxed font-bold tracking-wide opacity-90  md:pt-8'>TehilJem owners of the brand TJ Homes, envisions a world where luxury meets affordability,  making exceptional living spaces accessible to all. Our mission  is to provide elegantly designed, high-quality homes that enhance  the lives of our clients and their families, ensuring comfort, style, and  long-term value. </p>
