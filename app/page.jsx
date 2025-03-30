@@ -947,7 +947,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className='ml-auto shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] h-[70vh] shadow-orange-400  overflow-hidden'>
+          <div className='ml-auto shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] pt-5 h-[60vh] shadow-orange-400  overflow-hidden'>
             {
               show1  && <YouTube videoId='oWgpYmVxaUY' opts={opts}  className='rounded-lg shadow-lg '/>
             }
