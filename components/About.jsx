@@ -120,67 +120,67 @@ const About = () => {
                 {/* Members of Tehiljem */}
                 <div className='grid grid-cols-1 md:flex gap-12 justify-between py-16'>
                   {/* MD */}
-                  <div className='flex flex-col items-center justify-center shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]'>
-                    <div 
-                     data-aos="flip-down"
-                     data-aos-duration="1000"
-                     className='bg-purple-200'>
-                      <Image src='/image/unknown.svg' width={200} height={200} alt='image' className='rounded'/>
+                    <div className='flex flex-col items-center justify-center shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]'>
+                        <div 
+                          data-aos="flip-down"
+                          data-aos-duration="1000"
+                          className='bg-purple-200'>
+                          <Image src='/image/unknown.svg' width={200} height={200} alt='image' className='rounded'/>
+                        </div>
+                  
+                        <div className='py-4'>
+                          <h3 className='font-extrabold text-center'>Obasanmi Leo</h3>
+                          <h2 className='text-center'>MD/CEO</h2>
+                        </div>
+                              
                     </div>
-        
-                    <div>
-                      <h3>Leo RD.</h3>
-                      <h2>MD/CEO</h2>
-                    </div>
-                    
-                  </div>
                   
                   {/* Manager */}
                   <div className='flex flex-col items-center justify-center shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]'>
                     <div 
-                       data-aos="flip-down"
+                      data-aos="flip-down"
                       data-aos-duration="1000"
                       className='bg-gray-200'>
                       <Image src='/image/unknown.svg' width={200} height={200} alt='image' className='rounded'/>
                     </div>
-        
-                    <div>
-                      <h3>Korofo Q.</h3>
-                      <h2>CFO</h2>
+                  
+                    <div className='py-4'>
+                      <h3 className='font-extrabold text-center'>Koso Grace</h3>
+                      <h2 className='text-center'>Admin Manager</h2>
                     </div>
-                    
+                              
                   </div>
         
-                  {/* Marketer 1 */}
+                  {/* IT Support */}
                   <div className='flex flex-col items-center justify-center shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]'>
                     <div 
-                       data-aos="flip-down"
+                      data-aos="flip-down"
                       data-aos-duration="1000"
                       className='bg-orange-200'>
-                      <Image src='/image/unknown.svg' width={200} height={200} alt='image' className='rounded'/>
+                        <Image src='/image/unknown.svg' width={200} height={200} alt='image' className='rounded'/>
                     </div>
-        
-                    <div>
-                      <h3>Toro RD.</h3>
-                      <h2>Marketer</h2>
-                    </div>
-                    
+                  
+                    <div className='py-4'>
+                      <h3 className='font-extrabold text-center'>Ella</h3>
+                      <h2 className='text-center'>IT Support</h2>
+                      </div>
+                              
                   </div>
         
-                  {/* Agent */}
+                  {/* IT Support */}
                   <div className='flex flex-col items-center justify-center shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]'>
                     <div 
-                       data-aos="flip-down"
-                       data-aos-duration="1000" 
-                       className='bg-cyan-200'>
+                      data-aos="flip-down"
+                      data-aos-duration="1000" 
+                      className='bg-cyan-200'>
                       <Image src='/image/unknown.svg' width={200} height={200} alt='image' className='rounded'/>
                     </div>
-        
-                    <div>
-                      <h3>Zoro RD.</h3>
-                      <h2>Agent</h2>
+                  
+                    <div className='py-4'>
+                      <h3 className='font-extrabold text-center'>Umukoro Louis</h3>
+                      <h2 className='text-center'>IT Support </h2>
                     </div>
-                    
+                              
                   </div>
         
                 </div>

@@ -181,7 +181,7 @@ const Navbar = () => {
         className='flex gap-3 font-bold text-[10px] justify-center text-xl text-black/90 lg:hidden z-10 bg-gray-400 w-full fixed'>
             <li className='cursor-pointer'>Monday - Friday: 8:00am - 5:00pm</li>
             <li>|</li>
-            <li className='flex items-center gap-2  cursor-pointer'><RiCustomerService2Fill className='animate-bounce' /> +234706-828-3250</li>
+            <li className='flex items-center gap-2  cursor-pointer'><RiCustomerService2Fill className='animate-bounce' /> +234806-864-5460</li>
         </motion.ul>
 
         {/* Phone View */}
@@ -209,9 +209,9 @@ const Navbar = () => {
                         <li className='text-blue-900 font-semibold'>Home</li>
                     </Link>
 
-                    {/* <Link href={'/about'}>
+                    <Link href={'/about'}>
                         <li >About Us</li>
-                    </Link> */}
+                    </Link>
 
                     <Link href={'/properties'}>
                         <li>Properties</li>

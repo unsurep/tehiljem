@@ -202,12 +202,7 @@ const Home = () => {
   }
 
 
-  
-
-
-
-
-  
+   
 
   // API real estate news fecth
   const [data, setData] = useState(null);
@@ -249,8 +244,9 @@ const Home = () => {
            {/* welcome write up shows only on lg screen upward */}
           <div data-aos="zoom-in"
           data-aos-duration="1000" className='text-2xl flex-col md:text-5xl font-extrabold tracking-[5px] flex gap-3   '>
-            <p>Discover Your Dream </p>
-            <p className='text-red-500 items-center flex justify-center'><TextTransition springConfig={presets.soft} className='text-red-500 text-center tracking-wide text-2xl md:text-5xl font-extrabold'> {TEXTS[index % TEXTS.length]} <Cursor cursorColor='red' /></TextTransition> </p> 
+            <div>Discover Your Dream </div>
+            <div className='text-red-500 items-center flex justify-center'><TextTransition springConfig={presets.soft} className='text-red-500 text-center tracking-wide text-4
+            xl md:text-5xl font-extrabold'> {TEXTS[index % TEXTS.length]} <Cursor cursorColor='red' /></TextTransition> </div> 
             
           </div>
 
@@ -1595,7 +1591,7 @@ const Home = () => {
       <script defer src="https://app.fastbots.ai/embed.js" data-bot-id="cm86ym9i40txwrik9ubvobt41"></script>
       </div>
 
-{/* <elevenlabs-convai agent-id="whfruZeeMzvIgUehZ7py"></elevenlabs-convai><script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script> */}
+      {/* <elevenlabs-convai agent-id="whfruZeeMzvIgUehZ7py"></elevenlabs-convai><script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script> */}
 
 
 
