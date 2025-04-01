@@ -10,6 +10,7 @@ import { motion } from 'motion/react';
 
 const Navbar = () => {
     const [activeElement, setActiveElement]= useState('');
+    const [menu, setMenu] = useState(true);
 
     const toggleElement=(color)=>{
         setActiveElement(color);
@@ -18,7 +19,7 @@ const Navbar = () => {
    
   return (
     <>   
-        {/* small nav */}
+        {/* desktop small nav */}
         <nav className='flex items-center justify-between bg-gray-400 w-full  font-montserrat px-[1rem]  fixed z-20'>
 
             {/* social icons */}
@@ -80,14 +81,6 @@ const Navbar = () => {
                     style={{ height: 23, width: 23,}}
                     className="colorscheme" 
                 />
-                
-                {/* <SocialIcon
-                    url="https://linkedin.com"
-                    target="_blank"
-                    network="linkedin"
-                    style={{ height: 23, width: 23,}}
-                    className="colorscheme" 
-                /> */}
             </motion.div>
 
 
@@ -110,10 +103,10 @@ const Navbar = () => {
                     duration:1.5,
                     }}
 
-                className='lg:flex items-center gap-5 text-base text-gray-600 hidden'>
+                className='md:flex items-center gap-5 text-base text-gray-600 hidden'>
                 <li className='hover:text-blue-900 cursor-pointer hover:font-bold'>Monday - Friday: 8:00am - 5:00pm</li>
                 <li>|</li>
-                <li className='flex items-center gap-2  cursor-pointer'><RiCustomerService2Fill className='animate-bounce' /> <span className='font-bold text-blue-900 '>+234 706-828-3250</span></li>
+                <li className='flex items-center gap-2  cursor-pointer'><RiCustomerService2Fill className='animate-bounce' /> <span className='font-bold text-blue-900 '>+234 806-864-5460</span></li>
             </motion.ul>
 
            
@@ -162,9 +155,9 @@ const Navbar = () => {
 
 
         {/* phone contact nav */}
-        <motion.ul 
+        <motion.div 
             initial={{
-                x:500,
+                x:-500,
                 opacity:0,
                 scale:0.5}}
 
@@ -179,32 +172,35 @@ const Navbar = () => {
                 }}
 
         className='flex gap-3 font-bold text-[10px] justify-center text-xl text-black/90 lg:hidden z-10 bg-gray-400 w-full fixed'>
-            <li className='cursor-pointer'>Monday - Friday: 8:00am - 5:00pm</li>
-            <li>|</li>
-            <li className='flex items-center gap-2  cursor-pointer'><RiCustomerService2Fill className='animate-bounce' /> +234806-864-5460</li>
-        </motion.ul>
+            <div className='cursor-pointer'>Monday - Friday: 8:00am - 5:00pm</div>
+            <div>|</div>
+            <div className='flex items-center gap-2  cursor-pointer'><RiCustomerService2Fill className='animate-bounce' /> +234806-864-5460</div>
+        </motion.div>
 
         {/* Phone View */}
-        <nav className='lg:hidden flex items-center px-[1rem] md:px-[3rem] py-3 font-montserrat shadow-[0_8px_30px_rgb(0,0,0,0.12)] z-10 bg-white/60 bg-opacity-45 backdrop-blur-xl w-full fixed mt-3'>
+        <nav className='lg:hidden flex items-center px-[1rem] md:px-[3rem] py-5 font-montserrat shadow-[0_8px_30px_rgb(0,0,0,0.12)] z-10 bg-white/60 bg-opacity-45 backdrop-blur-xl w-full fixed mt-3'>
             <Link href={'/'} className='flex items-center justify-center'>
             <div>
                 <Image src='/image/tjhomelogo.png' width={40} height={40} alt='tehiljems_logo' className=''/>
             </div>
             <h1 className='text-sm font-semibold text-blue-900'>TehilJem Nig. Ltd</h1>
             </Link>
+
+
+            {/* Drawer */}
         
             <div className='flex flex-col ml-auto'>
-            <div className="drawer  drawer-end">
+                {/* <div className="drawer  drawer-end">
                 <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content">
-                    {/* Page content here */}
+                   
                     <label htmlFor="my-drawer-4" className="drawer-button bt btn-primary"><IoMdMenu className='text-2xl text-blue-700 hover:text-blue-900 transition-color duration-300' /></label>
                 </div>
                 <div className="drawer-side">
 
                     <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
                     <ul className="menu bg-base-200 text-base-content min-h-full w-44 px-4 space-y-5 pt-8 ">
-                    {/* Sidebar content here */}
+                   
                     <Link href={'/'}>
                         <li className='text-blue-900 font-semibold'>Home</li>
                     </Link>
@@ -231,7 +227,22 @@ const Navbar = () => {
 
                     </ul>
                 </div>
-            </div>
+                </div> */}
+
+                <div>
+                    <Image src='/image/menu.svg' width={30} height={30} alt='menu icon' className='text-blue-700 flex md:hidden'/>
+                    <Image src='/image/menu.svg' width={40} height={40} alt='menu icon' className='text-blue-700 hidden lg:hidden md:flex'/>
+                </div>
+
+                <ul>
+                    
+                </ul>
+
+
+
+
+
+
             </div>
         </nav>
     </>

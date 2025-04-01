@@ -140,7 +140,7 @@ const Contact = () => {
 
           {/* Google map  */}
       
-          <div>
+          <div id='contactgps'>
             <iframe
               className="w-full h-screen border-0"
               src={`https://maps.google.com/maps?q=Suit+315B+DMB+PLAZA%2C+WUSE+ZONE+1&output=embed`}

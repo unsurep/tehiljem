@@ -9,7 +9,7 @@ const Services = () => {
   return (
     <div>
       
-      <main className="py-28  bg-cover bg-center bg-no-repeat font-montserrat h-[80vh] px-[1rem] md:px-[3rem]" style={{ backgroundImage: "url('/image/047.jpg')"}}>
+      <main id='#serv' className="py-28  bg-cover bg-center bg-no-repeat font-montserrat h-[80vh] px-[1rem] md:px-[3rem]" style={{ backgroundImage: "url('/image/047.jpg')"}}>
         <div className='font-poppins text-white flex flex-col pt-32'>
           <h3 className='text-5xl uppercase font-bold propertiesbg z-10 tracking-[5px]'>Our Services</h3>
           <ul className='flex gap-5 items-center'>

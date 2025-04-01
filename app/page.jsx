@@ -26,6 +26,8 @@ import { IoIosPeople } from "react-icons/io";
 import { GiCctvCamera } from "react-icons/gi";
 import { PiRoadHorizonFill } from "react-icons/pi";
 import { IoCheckmark } from "react-icons/io5";
+import Link from 'next/link';
+import { GrPowerShutdown } from "react-icons/gr";
 
 
 // AOS animations
@@ -53,7 +55,7 @@ import { FaDoorClosed } from 'react-icons/fa';
 
 
 
-const TEXTS = ["Paradise", "Desires", "Residence"];
+const TEXTS = ["Luxury", "Empathy", "Affordability", "Dependability"];
 
 const Home = () => {
   // another typoeffect 
@@ -68,11 +70,6 @@ const Home = () => {
 
   
   
-
-
-
-
-
   // swiper auto
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
@@ -101,17 +98,11 @@ const Home = () => {
       duration: 400,
       easing: 'ease',
       once: true,
-      // anchorPlacement: 'top-bottom',
     });
   
   }, [])
 
-  // use typewriter
-  // const [text] =useTypewriter({
-  //   words: ['Paradise','Desires','Residence',],
-  //   loop: 2, 
-  //   onLoopDone: () => console.log(`loop completed after 2 runs.`)
-  // })
+ 
 
 
   // Toggle youtube videos
@@ -227,7 +218,7 @@ const Home = () => {
     <div className='font-montserrat'>
 
       {/* Section 1  */}
-      <section id='section1' className='h-[85vh] md:h-screen text-white bg-cover bg-center bg-no-repeat flex items-center  px-[1rem] md:px-[3rem] font-poppins relative'>
+      <section id='section1' className='h-[90vh] md:h-screen text-white bg-cover bg-center bg-no-repeat flex items-center  px-[1rem] md:px-[3rem] font-poppins relative'>
         <video 
           className="absolute top-0 left-0 w-full h-full object-cover"
           autoPlay 
@@ -240,28 +231,17 @@ const Home = () => {
         {/* Overlay to make text readable */}
         <div className="absolute top-0 left-0 w-full h-full bg-black/40"></div>
         
-        <div  className='flex flex-col gap-4 text-center md:justify-center items-center pt-28'>
+        <div  className='flex flex-col gap-4 text-center md:justify-center items-center pt-20'>
            {/* welcome write up shows only on lg screen upward */}
           <div data-aos="zoom-in"
           data-aos-duration="1000" className='text-2xl flex-col md:text-5xl font-extrabold tracking-[5px] flex gap-3   '>
             <div>Discover Your Dream </div>
-            <div className='text-red-500 items-center flex justify-center'><TextTransition springConfig={presets.soft} className='text-red-500 text-center tracking-wide text-4
-            xl md:text-5xl font-extrabold'> {TEXTS[index % TEXTS.length]} <Cursor cursorColor='red' /></TextTransition> </div> 
+            <div className='text-red-500 items-center flex justify-center'><TextTransition springConfig={presets.soft} className='text-red-500 text-center tracking-wide text-2xl md:text-5xl font-extrabold'> {TEXTS[index % TEXTS.length]} <Cursor cursorColor='red' /></TextTransition> </div> 
             
           </div>
 
-
-          {/* welcome write up shows only on lg screen upward */}
-          {/* <h1 data-aos="zoom-in"
-          data-aos-duration="1000" className='text-2xl md:text-5xl font-extrabold tracking-[5px] lg:flex gap-3  hidden '>Discover Your Dream Home <TextTransition springConfig={presets.wobbly} className='text-red-500 tracking-wide font-extrabold'>{TEXTS[index % TEXTS.length]} <Cursor cursorColor='red' /></TextTransition></h1> */}
-
-          {/* welcome note shows only on small n tablet devices */}
-          {/* <h1 data-aos="zoom-in"
-          data-aos-duration="1000" className='text-2xl md:text-5xl font-extrabold tracking-[5px] flex gap-3  lg:hidden '>Discover Your br Dream <TextTransition springConfig={presets.wobbly} className='text-red-500 tracking-wide font-extrabold'> {TEXTS[index % TEXTS.length]} <Cursor cursorColor='red' /></TextTransition>  </h1> */}
-          
-
           <p data-aos="zoom-in"
-          data-aos-duration="1500"  className=' text-white md:text-xl leading-relaxed font-bold tracking-wide opacity-90  md:pt-8'>TehilJem owners of the brand TJ Homes, envisions a world where luxury meets affordability,  making exceptional living spaces accessible to all. Our mission  is to provide elegantly designed, high-quality homes that enhance  the lives of our clients and their families, ensuring comfort, style, and  long-term value. </p>
+          data-aos-duration="1500"  className=' text-white md:text-xl leading-relaxed font-bold tracking-wide opacity-90 pt-5  md:pt-8'>TehilJem specializes in acquiring prime land and transforming it into exceptional homes. We don’t just sell land, we help build your dream home. From securing the perfect location to designing and constructing high-quality homes, we make homeownership seamless, valuable, and rewarding. </p>
 
           <div className='flex flex-col gap-2 items-center pt-5 md:pt-8 z-10'>
           
@@ -274,23 +254,23 @@ const Home = () => {
               whileHover={{ scale:1.1}}
               whileTap={{scale:0.9}}
 
-              className="hover:bg-blue-600/50 bg-gray-300 text-black font-semibold hover:text-white px-4 rounded-md cursor-pointer py-3" onClick={()=>document.getElementById('my_modal_1').showModal()}>Make an Enquiry
+              className="hover:bg-blue-600/50 bg-zinc-300 text-black font-semibold hover:text-white px-4 rounded-md cursor-pointer py-3" onClick={()=>document.getElementById('my_modal_1').showModal()}>Make an Enquiry
             </motion.button>
 
             
             <dialog id="my_modal_1" className="modal z-50 text-black">
               <div className="modal-box">
-               <h3 className="font-bold text-lg">Hello! Select your mode of Enquiry</h3>
-                <ul className="space-y-6 py-12 flex flex-col font-poppins font-semibold text-base">
+               <h3 className="font-bold text-lg">Mode of Enquiry</h3>
+                <div className="space-y-6 py-12 flex flex-col font-poppins font-semibold text-base">
                   
-                  <li className='flex gap-4  font-semibold '><RiRobot3Line className='text-blue-500 text-2xl animate-bounce'/> Have a chat with our AI-Bot below</li>
+                  <div className='flex gap-4 text-left font-semibold '><RiRobot3Line className='text-blue-500 text-2xl animate-bounce'/> Have a chat with our Support Bot</div>
 
-                  <li onClick={() => window.open("https://wa.me/2347068283250", "_blank")} className='flex gap-4 hover:text-blue-700 font-semibold cursor-pointer'><IoLogoWhatsapp className='text-green-500 text-2xl animate-bounce' />Chat with TehilJem's representative </li>
+                  <div onClick={() => window.open("https://wa.me/2348068645460", "_blank")} className='flex gap-4 text-left font-semibold cursor-pointer'><IoLogoWhatsapp className='text-green-500 text-2xl animate-bounce' />Chat with a Staff</div>
 
-                  <li className='flex gap-4'><BiSolidPhoneCall className='text-green-500 text-2xl' /><span className=''>+2347068283250</span></li>
+                  <div className='flex gap-4 text-left'><BiSolidPhoneCall className='text-green-500 text-2xl' /><span className=''>+234806-864-5460</span></div>
                   
-                  <li className='flex  gap-4'><ImLocation className='text-red-500 text-2xl'/>Suit 315B DMB Plaza, Noakchott Street, Wuse Zone 1</li>
-                </ul>
+                  <Link href='/contact#contactgps' className='flex text-left gap-4'><ImLocation className='text-red-500 text-2xl'/>Suit 315B DBM Plaza, Noakchott Street, Wuse Zone 1</Link>
+                </div>
                 {/* <h1>hello</h1> */}
               <div className="modal-action">
               <form method="dialog">
@@ -354,10 +334,10 @@ const Home = () => {
               data-aos-duration="1000" className='flex items-center gap-3 '><span className='bg-orange-400 tracking-wide p-3 rounded-full text-white font-bold text-2xl flip-vertical-left'><IoHomeOutline /></span>Smart Home Design</p>
             
             <p data-aos="fade-right"
-              data-aos-duration="2000" className='flex items-center gap-3'><span  className='bg-orange-400 tracking-wide p-3 rounded-full text-white font-bold text-2xl flip-vertical-left'><IoFlowerOutline /></span>Beautiful Enviroment</p>
+              data-aos-duration="2000" className='flex items-center gap-3'><span  className='bg-orange-400 tracking-wide p-3 rounded-full text-white font-bold text-2xl flip-vertical-left'><IoFlowerOutline /></span>Centralized Water System</p>
 
             <p data-aos="fade-left"
-              data-aos-duration="1000" className='flex items-center gap-3'><span  className='bg-orange-400 tracking-wide p-3 rounded-full text-white font-bold text-2xl flip-vertical-left'><CgStyle /></span>Exceptional Lifestyle</p>
+              data-aos-duration="1000" className='flex items-center gap-3'><span  className='bg-orange-400 tracking-wide p-3 rounded-full text-white font-bold text-2xl flip-vertical-left'><CgStyle /></span>Independent Power Providers</p>
 
             <p data-aos="fade-right"
               data-aos-duration="2000" className='flex items-center gap-3'><span  className='bg-orange-400 v p-3 rounded-full text-white font-bold text-2xl flip-vertical-left'><MdMoreTime /></span>Complete 24/7 Security</p>
@@ -367,8 +347,8 @@ const Home = () => {
             <p className='w-fit px-5 py-3 bg-orange-100 hover:bg-orange-50/40 text-sm rounded'>" TEHILJEM Nig. Ltd is a proud member of the Real Estate Developers Association of Nigeria <b>(REDAN)</b> "</p>
           </div>
 
-         <div className='flex items-center justify-center w-full my-5'>
-         <motion.button 
+         <Link href='/serv' className='flex items-center justify-center w-full my-5'>
+            <motion.button 
               initial={{opacity:0, y:-50}}
               animate={{opacity:1, y:0}}
               transition={{duration:0.5}}
@@ -377,7 +357,7 @@ const Home = () => {
 
               className="hover:bg-gray-600/50 bg-blue-300 text-black hover:text-white px-4 font-semibold rounded-md cursor-pointer py-3" >Our Services
             </motion.button>
-         </div>
+         </Link>
         </div>
       </section>
 
@@ -392,16 +372,16 @@ const Home = () => {
            data-aos-duration="3000"
 
           className=' py-5 md:py-16'>
-          <h1 className='md:text-2xl md:text-center font-semibold'>
+          <h1 className='md:text-2xl  font-semibold'>
             Tehiljem is a premier real estate <br /> platform in Nigeria, offering  an <br /> extensive range of property <br /> listings for sale, rent, and short-let.
           </h1>
 
-          <p className='py-6 text-base md:text-center'>
+          <p className='py-6 text-base '>
           Land ownership is not just about buying property. It is about <br /> investing in your future, creating generational wealth, and <br /> securing financial stability. For years, smart investors have <br />understood the power of real estate, using land as a wealth <br /> -building tool that appreciates over time. With Tehiljem Nig Ltd, <br /> you are not just purchasing a land, you are making a strategic <br /> investment in prime locations with high growth potential.
           </p>
 
-          <div className='flex items-center justify-center w-full my-3 md:my-5'>
-          <motion.button 
+          <Link href='/properties'  className='flex items-center justify-center w-full my-3 md:my-5'>
+            <motion.button 
               initial={{opacity:0, y:-50}}
               animate={{opacity:1, y:0}}
               transition={{duration:0.5}}
@@ -410,7 +390,7 @@ const Home = () => {
 
               className="hover:bg-gray-600/50 bg-blue-300 text-black hover:text-white px-4 rounded-md font-semibold cursor-pointer py-3" >Explore Our Offer
             </motion.button>
-          </div>
+          </Link>
 
         </div>
 
@@ -471,37 +451,47 @@ const Home = () => {
           data-aos-duration="2000"
 
           className='flex flex-col items-center justify-center py-16'>
-          <h3 className='text-base tracking-[5px] text-center'>HOUSES | LAND | CONSTRUCTION</h3>
+          <h3 className='text-base tracking-[5px] text-center'>LAND | HOUSES | CONSTRUCTION</h3>
           <h1 className='tracking-wide font-bold text-xl md:text-4xl pt-3 text-center'>The Future of Housing in Nigeria is Here.</h1>
         </div>
 
         <div className='block md:grid md:grid-cols-3 gap-6'>
+
+           {/* Land */}
+           <div 
+            data-aos="zoom-in"
+            data-aos-duration="2000"
+
+            className='hvr-float-shadow py-8 md:py-0'>
+            <Image src='/image/land.png' width={500} height={500} alt='image of property' className='rounded-lg  transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
+
+            <Link href='#section5' className='flex items-center gap-3 py-3 justify-center  font-semibold text-blue-900/40 hover:text-blue-900'>Our Landed Properties <span className='animate-bounce text-xl '><PiArrowBendRightUpFill /></span></Link>
+          </div>
+
+
+
+          {/* Home */}
           <div 
             data-aos="zoom-in"
             data-aos-duration="1000"
           
-          className='hvr-float-shadow'>
+            className='hvr-float-shadow'>
+
             <Image src='/image/land3.png' width={500} height={500} alt='image of property' className='rounded-lg  transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
-            <h3 className='flex items-center gap-3 py-3 justify-center font-semibold text-blue-900/40 hover:text-blue-900'>Explore Our Homes <span className='animate-bounce text-xl '><PiArrowBendRightUpFill /></span></h3>
-          </div>
 
-          <div 
-            data-aos="zoom-in"
-            data-aos-duration="2000"
-
-          className='hvr-float-shadow py-8 md:py-0'>
-            <Image src='/image/land.png' width={500} height={500} alt='image of property' className='rounded-lg  transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
-            <h3 className='flex items-center gap-3 py-3 justify-center  font-semibold text-blue-900/40 hover:text-blue-900'>Our Landed Properties <span className='animate-bounce text-xl '><PiArrowBendRightUpFill /></span></h3>
+            <Link href='/properties' className='flex items-center gap-3 py-3 justify-center font-semibold text-blue-900/40 hover:text-blue-900'>Explore Our Homes <span className='animate-bounce text-xl '><PiArrowBendRightUpFill /></span></Link>
           </div>
 
 
+          {/* Construction */}
           <div
             data-aos="zoom-in"
             data-aos-duration="3000" 
 
             className='hvr-float-shadow'>
             <Image src='/image/land2.png' width={500} height={500} alt='image of property' className='rounded-lg  transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
-            <h3 className='flex items-center gap-3 py-3 justify-center  font-semibold text-blue-900/40 hover:text-blue-900'>Learn About Our Construction <span className='animate-bounce text-xl '><PiArrowBendRightUpFill /></span></h3>
+
+            <Link href='#apartmentsketch' className='flex items-center gap-3 py-3 justify-center  font-semibold text-blue-900/40 hover:text-blue-900'>Learn About Our Construction <span className='animate-bounce text-xl '><PiArrowBendRightUpFill /></span></Link>
           </div>
         </div>
       </div>
@@ -567,15 +557,15 @@ const Home = () => {
                   <li>500sqm - N6M</li>
                 </ul>
 
-                <h1 className='font-bold'>Features</h1>
+                <h1 className='font-bold'>Features:</h1>
                 <ul>
                   <li className='flex items-center gap-1'><LuFence /> Perimeter Fencing</li>
-                  <li className='flex items-center gap-1'><IoIosPeople />Security</li>
-                  <li className='flex items-center gap-1'><GiCctvCamera />CCTV</li>
-                  <li className='flex items-center gap-1'><PiRoadHorizonFill />Asphalf Road</li>
+                  <li className='flex items-center gap-1'><IoIosPeople />Security / CCTV</li>
+                  <li className='flex items-center gap-1'><GrPowerShutdown />Independent Power & Water Providers</li>
+                  <li className='flex items-center gap-1'><PiRoadHorizonFill />Green Areas</li>
                 </ul>
 
-                <h1 className='font-bold pt-2'>Landmarks</h1>
+                <h1 className='font-bold pt-2'>Landmarks:</h1>
                 <ul>
                   <li className='flex items-center gap-1'><IoCheckmark />Opposite Nigeris Army Estate, IDU</li>
                   <li className='flex items-center gap-1'><IoCheckmark />Train Station</li>
@@ -596,7 +586,7 @@ const Home = () => {
               className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
 
             <div className='flex flex-col items-center py-5'>
-              <h1 className='text-xl md:text-3xl text-blue-900 font-bold'>Jemzys Court</h1>
+              <h1 className='text-xl md:text-3xl text-red-900 font-bold'>Jemzys Court</h1>
               <p className='text-base'>Location: Guzape, Abuja</p>
             </div>
 
@@ -661,7 +651,7 @@ const Home = () => {
               className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
 
             <div className='flex flex-col items-center py-5'>
-              <h1 className='text-xl md:text-3xl text-blue-900 font-bold'>The Haven</h1>
+              <h1 className='text-xl md:text-3xl text-red-900 font-bold'>The Haven</h1>
               <p className='text-base'>Location: Katampe Extension, Abuja</p>
             </div>
 
@@ -730,16 +720,16 @@ const Home = () => {
               className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
 
             <div className='flex flex-col items-center py-5'>
-              <h1 className='text-xl md:text-3xl text-blue-900 font-bold'>Villa Ecclesia</h1>
-              <p className='text-base'>Location: Kuje Phase III, Abuja</p>
+              <h1 className='text-xl md:text-3xl text-blue-900 font-bold'>Villa Ecclesia Phase 1</h1>
+              <p className='text-base'>Location: Kuje, Abuja</p>
             </div>
 
 
             <div className='flex items-center justify-center'>
               <ul className='text-sm md:text-base'>
-                <li>250sqm - N3M</li>
-                <li>350sqm - N4M</li>
-                <li>450sqm - N6M</li>
+                <li>200sqm - N2.5M</li>
+                <li>250sqm - N3.125M</li>
+                <li>300sqm - N3.750M</li>
               </ul>
             </div>
 
@@ -756,25 +746,29 @@ const Home = () => {
                 {/* if there is a button in form, it will close the modal */}
                 <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                 </form>
-                <h3 className="font-bold text-lg text-center py-5">Villa Ecclesia Phase 1 & 2</h3>
+                <h3 className="font-bold text-lg text-center py-5">Villa Ecclesia Phase 1</h3>
                 <h3><b>Location:</b> </h3>
-                <span className='flex items-center gap-1 '><FaMapPin />Kuje Phase III, Abuja</span>
+                <span className='flex items-center gap-1 '><FaMapPin />Kuje, Abuja</span>
 
                 <ul className='py-2'>
-                  {/* <li>250sqm - N1.925M</li>
-                  <li>400sqm - N3.080M</li>
-                  <li>500sqm - N3.850M</li> */}
+                  <li>200sqm - N2.5M</li>
+                  <li>250sqm - N3.125M</li>
+                  <li>300sqm - N3.750M</li>
+                  <li>350sqm - N4.375M</li>
+                  <li>450sqm - 5.625M</li>
+                  <li>500sqm - 6.250M</li>
+                
                 </ul>
 
-                <h1 className='font-bold'>Features</h1>
+                <h1 className='font-bold'>Features:</h1>
                 <ul>
-                  {/* <li className='flex items-center gap-1'><LuFence /> Perimeter Fencing</li>
-                  <li className='flex items-center gap-1'><IoIosPeople />Security</li>
-                  <li className='flex items-center gap-1'><GiCctvCamera />CCTV</li>
-                  <li className='flex items-center gap-1'><PiRoadHorizonFill />Asphalf Road</li> */}
+                  <li className='flex items-center gap-1'><LuFence /> Perimeter Fencing</li>
+                  <li className='flex items-center gap-1'><IoIosPeople />Security / CCTV</li>
+                  <li className='flex items-center gap-1'><GrPowerShutdown />Independent Power & Water Providers</li>
+                  <li className='flex items-center gap-1'><PiRoadHorizonFill />Green Areas</li>
                 </ul>
 
-                <h1 className='font-bold pt-2'>Landmarks</h1>
+                {/* <h1 className='font-bold pt-2'>Landmarks</h1> */}
                 <ul>
                   {/* <li className='flex items-center gap-1'><IoCheckmark />Opposite Nigeris Army Estate, IDU</li>
                   <li className='flex items-center gap-1'><IoCheckmark />Train Station</li> */}
@@ -796,7 +790,7 @@ const Home = () => {
              className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
 
             <div className='flex flex-col items-center py-5'>
-              <h1 className='text-xl md:text-3xl text-blue-900 font-bold'>Rio Dominion Estate</h1>
+              <h1 className='text-xl md:text-3xl text-red-900 font-bold'>Rio Dominion Estate</h1>
               <p className='text-base'>Location: Lugbe, Abuja</p>
             </div>
 
@@ -863,16 +857,16 @@ const Home = () => {
             className='rounded-lg cursor-pointer transition duration-300 hover:brightness-75 ring ring-orange-300/40' />
 
             <div className='flex flex-col items-center py-5'>
-              <h1 className='text-xl md:text-3xl text-blue-900 font-bold'>TJ Homes</h1>
-              <p className='text-base'>Location: </p>
+              <h1 className='text-xl md:text-3xl text-blue-900 font-bold'>Villa Ecclesia Phase 2</h1>
+              <p className='text-base'>Location: Kuje, Abuja </p>
             </div>
 
 
             <div className='flex items-center justify-center'>
               <ul className='text-sm md:text-base'>
-                <li>250sqm - N36M</li>
-                <li>400sqm - N50M</li>
-                <li>700sqm - N90M</li>
+                <li>250sqm - N1.925M</li>
+                <li>400sqm - N3.080M</li>
+                <li>500sqm - N3.850M</li>
               </ul>
             </div>
 
@@ -889,25 +883,25 @@ const Home = () => {
                 {/* if there is a button in form, it will close the modal */}
                 <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                 </form>
-                <h3 className="font-bold text-lg text-center py-5">TJ Homes</h3>
+                <h3 className="font-bold text-lg text-center py-5">Villa Ecclesia Phase 2</h3>
                 <h3><b>Location:</b> </h3>
-                <span className='flex items-center gap-1 '><FaMapPin /></span>
+                <span className='flex items-center gap-1 '><FaMapPin /> Kuje, Abuja</span>
 
                 <ul className='py-2'>
-                  {/* <li>250sqm - N1.925M</li>
+                  <li>250sqm - N1.925M</li>
                   <li>400sqm - N3.080M</li>
-                  <li>500sqm - N3.850M</li> */}
+                  <li>500sqm - N3.850M</li>
                 </ul>
 
                 <h1 className='font-bold'>Features</h1>
                 <ul>
-                  {/* <li className='flex items-center gap-1'><LuFence /> Perimeter Fencing</li>
-                  <li className='flex items-center gap-1'><IoIosPeople />Security</li>
-                  <li className='flex items-center gap-1'><GiCctvCamera />CCTV</li>
-                  <li className='flex items-center gap-1'><PiRoadHorizonFill />Asphalf Road</li> */}
+                  <li className='flex items-center gap-1'><LuFence /> Perimeter Fencing</li>
+                  <li className='flex items-center gap-1'><IoIosPeople />Security / CCTV</li>
+                  <li className='flex items-center gap-1'><GrPowerShutdown />Independent Power & Water Providers</li>
+                  <li className='flex items-center gap-1'><PiRoadHorizonFill />Green Areas</li>
                 </ul>
 
-                <h1 className='font-bold pt-2'>Landmarks</h1>
+                {/* <h1 className='font-bold pt-2'>Landmarks</h1> */}
                 <ul>
                   {/* <li className='flex items-center gap-1'><IoCheckmark />Opposite Nigeris Army Estate, IDU</li>
                   <li className='flex items-center gap-1'><IoCheckmark />Train Station</li> */}
@@ -927,31 +921,31 @@ const Home = () => {
         data-aos-duration="1000"
 
        className='bg-gray-50  px-[1rem] md:px-[3rem] pb-12 font-poppins'>
-        <h1 className='text-center text-base md:text-3xl font-bold tracking-[5px] py-5 md:py-16'>WHY CHOOSE US ?</h1>
+        <h1 className='text-center text-base md:text-3xl font-bold tracking-[5px] py-5 md:py-10'>WHY CHOOSE US ?</h1>
 
         <div className='lg:flex '>
-          <div className='flex flex-col gap-8'>
+          <div className='flex flex-col gap-5'>
             <h2 className='text-2xl font-bold underline'>Why Choose TehilJem Nig. Ltd?</h2>
 
             <p 
             data-aos="fade-right"
             data-aos-duration="1000"
             
-            className='tracking-wide'>For over a decade, Tehiljem Nig Ltd has been a pillar of <br /> excellence in the real estate industry, built on a <br /> foundation of integrity, innovation, and expertise. With <br /> a highly experienced team, we provide top-tier real <br /> estate solutions, ensuring quality, reliability, and value <br /> in every project. Whether residential, commercial, or <br /> investment properties, we are committed to delivering <br /> tailored services that meet and exceed our <br /> clients' expectations.</p>
+            className='tracking-wide'>For over a decade, Tehiljem Nig Ltd has been a pillar of <br /> excellence in the Real Estate sector, built on a <br /> foundation of integrity, innovation, and expertise. With <br /> a highly experienced team, we provide top-tier real <br /> estate solutions, ensuring quality, reliability, and value <br /> in every project. Whether residential, commercial, or <br /> investment properties, we are committed to delivering <br /> tailored services that meet and exceed our <br /> clients' expectations.</p>
 
 
             <div className='space-y-5'>
-              <p onClick={toggle1} className={`font-bold text-2xl px-4 py-3 ${
+              <p onClick={toggle1} className={`font-bold text-xl px-4 py-3 ${
                 show1 ? "bg-orange-400" : "bg-orange-300/50"
                 } hover:bg-orange-400 border border-black cursor-pointer text-white rounded`}>Jemzys Court, Guzape, Abuja
               </p>
 
-              <p onClick={toggle2} className={`font-bold text-2xl px-4 py-3 ${
+              <p onClick={toggle2} className={`font-bold text-xl px-4 py-3 ${
                 show1 ? "bg-orange-400" : "bg-orange-300/50"
                 } hover:bg-orange-400 border border-black cursor-pointer text-white rounded`}>Rio Dominion Estate, Abuja
               </p>
 
-              <p onClick={toggle3} className={`font-bold text-2xl px-4 py-3 ${
+              <p onClick={toggle3} className={`font-bold text-xl px-4 py-3 ${
                 show1 ? "bg-orange-400" : "bg-orange-300/50"
                 } hover:bg-orange-400 border border-black cursor-pointer text-white rounded`}>TJ Homes Idu, Abuja
               </p>
@@ -1129,7 +1123,7 @@ const Home = () => {
 
        {/* the three provided services */}
         <div className='grid grid-cols-1 md:flex items-center justify-center gap-8 lg:gap-20'>
-          {/* 1 buy a home */}
+          {/* 1 buy  */}
           <motion.div 
             whileHover={{ scale:1.1}}
             whileTap={{scale:0.9}}
@@ -1140,14 +1134,14 @@ const Home = () => {
             </div>
            
             <div className='flex flex-col gap-3 pt-8 font-poppins'>
-              <h3 className=' text-center font-extrabold text-base md:text-2xl'>Buy a home</h3>
-              <p className='text-sm'>over 1 million+ homes for sale available on the website, <br /> we can match you with a house you will want to call home.</p>
-              <button className='flex items-center justify-center font-poppins pt-5 text-gray-400 hover:text-orange-600 cursor-pointer'>Find A Home <HiArrowLongRight /></button>
+              <h3 className=' text-center font-semibold text-base md:text-2xl'>Buy</h3>
+              <p className='text-sm'>TehilJem helps you secure prime land in the best locations, setting the foundation for your dream home or investment.</p>
+              {/* <button className='flex items-center justify-center font-poppins pt-5 text-gray-400 hover:text-orange-600 cursor-pointer'>Find <HiArrowLongRight /></button> */}
             </div>
           </motion.div>
 
 
-          {/* 2 Buy a Land  */}
+          {/* 2 Build  */}
           <motion.div 
              whileHover={{ scale:1.1}}
              whileTap={{scale:0.9}}
@@ -1158,14 +1152,14 @@ const Home = () => {
             </div>
 
             <div className='flex flex-col gap-3 pt-8 font-poppins'>
-              <h3 className='font-extrabold text-center text-base md:text-2xl'>Buy a Land</h3>
-              <p className='text-sm'>over 1 million+ homes for sale available on the website, <br /> we can match you with a house you will want to call home.</p>
-              <button className='flex items-center justify-center font-poppins pt-5 text-gray-400 hover:text-orange-600 cursor-pointer'>Find A Home <HiArrowLongRight /></button>
+              <h3 className='font-semibold text-center text-base md:text-2xl'>Build</h3>
+              <p className='text-sm'>We go beyond land acquisition, offering expert design and construction services to create high-quality, exceptional homes.</p>
+              {/* <button className='flex items-center justify-center font-poppins pt-5 text-gray-400 hover:text-orange-600 cursor-pointer'>Find <HiArrowLongRight /></button> */}
             </div>
           </motion.div>
 
 
-          {/* 3 Buy a Land & Build  */}
+          {/* 3 sell  */}
           <motion.div 
              whileHover={{ scale:1.1}}
              whileTap={{scale:0.9}}
@@ -1175,16 +1169,16 @@ const Home = () => {
             </div>
 
             <div className='flex flex-col gap-3 pt-8 font-poppins'>
-              <h3 className='font-extrabold text-center text-base md:text-2xl'>Buy a Land & Build</h3>
-              <p className='text-sm'>over 1 million+ homes for sale available on the website, <br /> we can match you with a house you will want to call home.</p>
-              <button className='flex items-center justify-center font-poppins pt-5 text-gray-400 hover:text-orange-600 cursor-pointer'>Find A Home <span><HiArrowLongRight /></span></button>
+              <h3 className='font-semibold text-center text-base md:text-2xl'>Live | Sell</h3>
+              <p className='text-sm'> Move into your dream home seamlessly or maximize your investment by selling a well crafted high value property.</p>
+              {/* <button className='flex items-center justify-center font-poppins pt-5 text-gray-400 hover:text-orange-600 cursor-pointer'>Find <span><HiArrowLongRight /></span></button> */}
             </div>
           </motion.div>
         </div>
       </div>
 
       {/* section 11 Apartment plan & sketch */}
-      <div id='section11'
+      <div id='apartmentsketch'
         data-aos="fade-up"
         data-aos-duration="1000"
 
@@ -1193,7 +1187,7 @@ const Home = () => {
           data-aos="fade-up"
           data-aos-duration="2000"
           className='text-center py-8 flex flex-col gap-5'>
-          <h3 className='text-xl flex mx-auto hvr-bubble-float-bottom px-3 py-1 bg-orange-200/60 text-orange-400 rounded w-fit tracking-[5px]'>Apartment Sketch</h3>
+          <h3 className='text-xl flex mx-auto hvr-bubble-float-bottom px-3 py-1 bg-orange-200/60 text-orange-400 rounded w-fit tracking-[5px]'>Sketch</h3>
           <h1 className='text-base md:text-4xl font-bold tracking-[5px] font-poppins'>Apartments Plan</h1>
         </div>
 
@@ -1228,13 +1222,13 @@ const Home = () => {
             <h1  className='uppercase font-poppins text-2xl font-extrabold'>Scepter City</h1>
             <p className='py-5'>Enimad minim veniam quis nostrud <br /> exercitation ullamco laboris. Lorem <br /> ipsum dolor sit amet cons aetetur <br /> adipisicing elit sedo eiusmod tempor. <br /> Incididunt labore et dolore magna <br /> aliqua. sed ayd minim veniam.</p>
 
-            <ul>
+            {/* <ul>
               <li>Total Area:----------</li>
               <li>Bedroom:----------</li>
               <li>Bathroom:----------</li>
               <li>Belcony/Pets:----------</li>
               <li>Lounge:----------</li>
-            </ul>
+            </ul> */}
           </div>
 
           {/* image  */}
