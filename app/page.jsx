@@ -215,7 +215,7 @@ const Home = () => {
 
 
   return (
-    <div className='font-montserrat'>
+    <div className='font-montserrat custom-tablet-style'>
 
       {/* Section 1  */}
       <section id='section1' className='h-[90vh] md:h-screen text-white bg-cover bg-center bg-no-repeat flex items-center  px-[1rem] md:px-[3rem] font-poppins relative'>

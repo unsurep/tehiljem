@@ -122,7 +122,9 @@ const Footer = () => {
     </div>
 
 
-    <h1 className='text-center text-xs md:text-sm font-poppins px-[2rem]'>© 2025 |  TehilJem Nigeria Limited  | All Rights Reserved. | Developer: <span className='font-bold text-blue-800'>Loukama Tech Solutions</span></h1>
+    <h1 className='text-center text-xs md:text-sm font-poppins px-[2rem]'>© 2025 |  TehilJem Nigeria Limited  | All Rights Reserved. </h1>
+
+    {/* | Developer: <span className='font-bold text-blue-800'>Loukama Tech Solutions</span> */}
 
 
     </div>

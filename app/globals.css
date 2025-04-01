@@ -4,6 +4,15 @@
   themes: light --default, dark --prefersdark;
 }
 
+@layer utilities {
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .custom-tablet-style {
+      background-color: red !important;
+      font-size: 18px !important;
+    }
+  }
+}
+
 
 
 :root {
