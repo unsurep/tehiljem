@@ -218,7 +218,7 @@ const Home = () => {
     <div className='font-montserrat'>
 
       {/* Section 1  */}
-      <section id='section1' className='h-[90vh] md:h-screen text-white bg-cover bg-center bg-no-repeat flex items-center  px-[1rem] md:px-[3rem] font-poppins relative custom-tablet-style'>
+      <section id='section1' className='h-[90vh] md:h-screen text-white bg-cover bg-center bg-no-repeat flex items-center  px-[1rem] md:px-[3rem] font-poppins relative '>
         <video 
           className="absolute top-0 left-0 w-full h-full object-cover"
           autoPlay 
