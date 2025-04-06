@@ -235,13 +235,13 @@ const Home = () => {
            {/* welcome write up shows only on lg screen upward */}
           <div data-aos="zoom-in"
           data-aos-duration="1000" className='text-2xl flex-col md:text-5xl font-extrabold tracking-[5px] flex gap-3   '>
-            <div>Discover Your Dream </div>
-            <div className='text-red-500 items-center flex justify-center'><TextTransition springConfig={presets.soft} className='text-red-500 text-center tracking-wide text-2xl md:text-5xl font-extrabold'> {TEXTS[index % TEXTS.length]} <Cursor cursorColor='red' /></TextTransition> </div> 
+            <div className='font-montserrat'>Discover Your Dream </div>
+            <div className='text-red-500 items-center flex justify-center'><TextTransition springConfig={presets.soft} className='text-red-500 text-center font-montserrat tracking-wide text-2xl md:text-5xl font-extrabold'> {TEXTS[index % TEXTS.length]} <Cursor cursorColor='red' /></TextTransition> </div> 
             
           </div>
 
           <p data-aos="zoom-in"
-          data-aos-duration="1500"  className=' text-white md:text-xl leading-relaxed font-bold tracking-wide opacity-90 pt-5  md:pt-8'>TehilJem specializes in acquiring prime land and transforming it into exceptional homes. We don’t just sell land, we help build your dream home. From securing the perfect location to designing and constructing high-quality homes, we make homeownership seamless, valuable, and rewarding. </p>
+          data-aos-duration="1500"  className=' text-white md:text-xl leading-relaxed font-bold tracking-wide opacity-90 pt-5  md:pt-8 font-montserrat'>TehilJem specializes in acquiring prime land and transforming it into exceptional homes. We don’t just sell land, we help build your dream home. From securing the perfect location to designing and constructing high-quality homes, we make homeownership seamless, valuable, and rewarding. </p>
 
           <div className='flex flex-col gap-2 items-center pt-5 md:pt-8 z-10'>
           
@@ -254,7 +254,7 @@ const Home = () => {
               whileHover={{ scale:1.1}}
               whileTap={{scale:0.9}}
 
-              className="hover:bg-blue-600/50 bg-zinc-300 text-black font-semibold hover:text-white px-4 rounded-md cursor-pointer py-3" onClick={()=>document.getElementById('my_modal_1').showModal()}>Make an Enquiry
+              className="hover:bg-blue-600/50 bg-zinc-300 text-black font-semibold hover:text-white px-4 rounded-md cursor-pointer py-3 font-montserrat" onClick={()=>document.getElementById('my_modal_1').showModal()}>Make an Enquiry
             </motion.button>
 
             
@@ -281,7 +281,7 @@ const Home = () => {
               </div>
             </dialog>
 
-            <i className='text-base md:pt-3 font-semibold'>For swift enquiries, chat with our AI customer support bot now</i>
+            <i className='text-base md:pt-3 font-semibold font-montserrat'>For swift enquiries, chat with our AI customer support bot now</i>
         </div>
         </div>
       </section>
@@ -323,28 +323,28 @@ const Home = () => {
         {/* div B */}
         <div className='flex flex-col gap-5'>
           <h3 className='text-xl hvr-bubble-float-bottom px-3 py-1 bg-orange-200/60 text-orange-400 rounded w-fit tracking-[5px]'>About Us</h3>
-          <h1 className='text-4xl font-bold tracking-[5px]'>The Leading Real Estate <br /> Marketplace.</h1>
-          <p className='text-base tracking-wide'>We started with a passionate team, focusing on residential <br /> developments in Abuja. As our vision grew, so did our reach, <br /> expanding into Edo State and diversifying into commercial <br /> projects. In 2015, we introduced TJ Homes, a brand dedicated <br /> to delivering excellence and affordability in real estate.
+          <h1 className='text-4xl font-bold tracking-[5px] font-montserrat'>The Leading Real Estate <br /> Marketplace.</h1>
+          <p className='text-base tracking-wide font-montserrat'>We started with a passionate team, focusing on residential <br /> developments in Abuja. As our vision grew, so did our reach, <br /> expanding into Edo State and diversifying into commercial <br /> projects. In 2015, we introduced TJ Homes, a brand dedicated <br /> to delivering excellence and affordability in real estate.
 
           Today, <br /> TEHILJEM Nig. Ltd stands as a trusted name in Nigeria’s real <br /> estate sector, renowned for innovative housing solutions and <br /> a customer-first approach. Our commitment remains <br /> unwavering—building homes, shaping communities, and <br /> redefining excellence in real estate development.</p>
 
           <div className='grid grid-cols-2 gap-6'>
 
             <p data-aos="fade-left"
-              data-aos-duration="1000" className='flex items-center gap-3 '><span className='bg-orange-400 tracking-wide p-3 rounded-full text-white font-bold text-2xl flip-vertical-left'><IoHomeOutline /></span>Smart Home Design</p>
+              data-aos-duration="1000" className='flex items-center gap-3 '><span className='bg-orange-400 tracking-wide p-3 rounded-full text-white font-bold text-2xl flip-vertical-left font-poppins'><IoHomeOutline /></span>Smart Home Design</p>
             
             <p data-aos="fade-right"
-              data-aos-duration="2000" className='flex items-center gap-3'><span  className='bg-orange-400 tracking-wide p-3 rounded-full text-white font-bold text-2xl flip-vertical-left'><IoFlowerOutline /></span>Centralized Water System</p>
+              data-aos-duration="2000" className='flex items-center gap-3'><span  className='bg-orange-400 tracking-wide p-3 rounded-full text-white font-bold text-2xl flip-vertical-left font-poppins'><IoFlowerOutline /></span>Centralized Water System</p>
 
             <p data-aos="fade-left"
-              data-aos-duration="1000" className='flex items-center gap-3'><span  className='bg-orange-400 tracking-wide p-3 rounded-full text-white font-bold text-2xl flip-vertical-left'><CgStyle /></span>Independent Power Providers</p>
+              data-aos-duration="1000" className='flex items-center gap-3'><span  className='bg-orange-400 tracking-wide p-3 rounded-full text-white font-bold text-2xl flip-vertical-left font-poppins'><CgStyle /></span>Independent Power Providers</p>
 
             <p data-aos="fade-right"
-              data-aos-duration="2000" className='flex items-center gap-3'><span  className='bg-orange-400 v p-3 rounded-full text-white font-bold text-2xl flip-vertical-left'><MdMoreTime /></span>Complete 24/7 Security</p>
+              data-aos-duration="2000" className='flex items-center gap-3'><span  className='bg-orange-400 v p-3 rounded-full text-white font-bold text-2xl flip-vertical-left font-poppins'><MdMoreTime /></span>Complete 24/7 Security</p>
           </div>
 
           <div>
-            <p className='w-fit px-5 py-3 bg-orange-100 hover:bg-orange-50/40 text-sm rounded'>" TEHILJEM Nig. Ltd is a proud member of the Real Estate Developers Association of Nigeria <b>(REDAN)</b> "</p>
+            <p className='w-fit px-5 py-3 bg-orange-100 hover:bg-orange-50/40 text-sm rounded font-montserrat'>" TEHILJEM Nig. Ltd is a proud member of the Real Estate Developers Association of Nigeria <b>(REDAN)</b> "</p>
           </div>
 
          <Link href='/serv' className='flex items-center justify-center w-full my-5'>
@@ -355,7 +355,7 @@ const Home = () => {
               whileHover={{ scale:1.1}}
               whileTap={{scale:0.9}}
 
-              className="hover:bg-gray-600/50 bg-blue-300 text-black hover:text-white px-4 font-semibold rounded-md cursor-pointer py-3" >Our Services
+              className="hover:bg-gray-600/50 bg-blue-300 text-black hover:text-white px-4 font-semibold rounded-md cursor-pointer py-3 font-montserrat" >Our Services
             </motion.button>
          </Link>
         </div>
@@ -372,12 +372,12 @@ const Home = () => {
            data-aos-duration="3000"
 
           className=' py-5 md:py-16'>
-          <h1 className='md:text-2xl  font-semibold'>
+          <h1 className='md:text-2xl  font-semibold font-montserrat'>
             Tehiljem is a premier real estate <br /> platform in Nigeria, offering  an <br /> extensive range of property <br /> listings for sale, rent, and short-let.
           </h1>
 
-          <p className='py-6 text-base '>
-          Land ownership is not just about buying property. It is about <br /> investing in your future, creating generational wealth, and <br /> securing financial stability. For years, smart investors have <br />understood the power of real estate, using land as a wealth <br /> -building tool that appreciates over time. With Tehiljem Nig Ltd, <br /> you are not just purchasing a land, you are making a strategic <br /> investment in prime locations with high growth potential.
+          <p className='py-6 text-base font-montserrat tracking-wide'>
+          Land ownership is not just about buying property. It is about <br /> investing in your future, creating generational wealth, and <br /> securing financial stability. For years, smart investors have <br />understood the power of real estate, using land as a wealth <br /> building tool that appreciates over time. With Tehiljem Nig Ltd, <br /> you are not just purchasing a land, you are making a strategic <br /> investment in prime locations with high growth potential.
           </p>
 
           <Link href='/properties'  className='flex items-center justify-center w-full my-3 md:my-5'>
@@ -388,7 +388,7 @@ const Home = () => {
               whileHover={{ scale:1.1}}
               whileTap={{scale:0.9}}
 
-              className="hover:bg-gray-600/50 bg-blue-300 text-black hover:text-white px-4 rounded-md font-semibold cursor-pointer py-3" >Explore Our Offer
+              className="hover:bg-gray-600/50 bg-blue-300 text-black hover:text-white px-4 rounded-md font-semibold cursor-pointer py-3 font-montserrat" >Explore Our Offer
             </motion.button>
           </Link>
 

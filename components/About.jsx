@@ -5,6 +5,8 @@ import { FiPlus } from "react-icons/fi";
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import { HiArrowLongRight } from "react-icons/hi2";
+import { BsRocketFill } from "react-icons/bs";
+import { TbTargetArrow } from "react-icons/tb";
 
 const About = () => {
   return (
@@ -29,27 +31,28 @@ const About = () => {
 
          {/* About Tehiljem */}
         <div className='flex flex-col gap-2'>
-          <p className='tracking-wide'>TEHILJEM Nigeria Limited is a premier real estate development company committed to delivering high quality, affordable and luxurious housing solutions across Nigeria. As the proud owners of the TJ Homes brand, we specialize in developing both residential and commercial properties that meet the diverse needs of homeowners and investors. With a strong presence in Abuja and Edo State, TEHILJEM Nigeria Limited blends innovation, sustainability, and customer centric services to create communities that inspire and elevate living standards.</p>
+          <p className='tracking-wide font-montserrat'>TEHILJEM Nigeria Limited is a premier real estate development company committed to delivering high quality, affordable and luxurious housing solutions across Nigeria. As the proud owners of the TJ Homes brand, we specialize in developing both residential and commercial properties that meet the diverse needs of homeowners and investors. With a strong presence in Abuja and Edo State, TEHILJEM Nigeria Limited blends innovation, sustainability, and customer centric services to create communities that inspire and elevate living standards.</p>
 
-          <p className='tracking-wide'> Our core values :- Luxury, Empathy, Affordability, Dependability, and Discipline, guide our mission to make homeownership a reality for individuals and families while offering valuable investment opportunities. As a registered member of the Real Estate Developers Association of Nigeria (REDAN) and fully compliant with regulatory standards, we maintain industry excellence in every project we undertake. From high-end residential estates to commercial hubs, we integrate cutting-edge designs, sustainable building practices, and strategic partnerships to deliver unmatched real estate solutions. Whether you're looking to own a dream home or invest in real estate or explore property development opportunities, TEHILJEM Nigeria Limited is your trusted partner in building a better future. Visit our ongoing and upcoming projects in Kubwa, Katampe, and Ekpoma to experience firsthand the excellence that defines TEHILJEM Nigeria Limited.</p>
+          <p className='tracking-wide font-montserrat'> Our core values :- Luxury, Empathy, Affordability, Dependability, and Discipline, guide our mission to make homeownership a reality for individuals and families while offering valuable investment opportunities. As a registered member of the Real Estate Developers Association of Nigeria (REDAN) and fully compliant with regulatory standards, we maintain industry excellence in every project we undertake. From high-end residential estates to commercial hubs, we integrate cutting-edge designs, sustainable building practices, and strategic partnerships to deliver unmatched real estate solutions. Whether you're looking to own a dream home or invest in real estate or explore property development opportunities, TEHILJEM Nigeria Limited is your trusted partner in building a better future. Visit our ongoing and upcoming projects in Kubwa, Katampe, and Ekpoma to experience firsthand the excellence that defines TEHILJEM Nigeria Limited.</p>
 
           <p className='font-bold tracking-wide'>Your dream home starts with us!</p>
         </div>
 
         {/* Our Mission Vision & Experience */}
-        <div className='grid grid-cols-1 lg:flex items-center py-12 justify-center gap-8 '>
+        <div className='grid grid-cols-1 lg:flex items-center py-12 justify-center gap-16 '>
           {/* Our Mission */}
           <motion.div 
             whileHover={{ scale:1.1}}
             whileTap={{scale:0.9}}
 
-            className='flex flex-col items-center justify-center bg-gray-50 px-6 py-12 shadow drop-shadow-lg hvr-underline-from-left'>
+            className='flex flex-col items-center justify-center bg-gray-50 p-6 shadow drop-shadow-lg hvr-underline-from-left'>
               
            
            
-            <div className='flex flex-col gap-3 font-poppins'>
-              <h3 className=' text-center font-extrabold text-base md:text-2xl'>OUR MISSION STATEMENT</h3>
-              <p className='tracking-wide text-sm'>Our mission at TEHILJEM Nig. Ltd is to revolutionize the real estate industry in Nigeria by providing exceptional housing solutions that combine excellence with affordable luxury. We are committed to delivering personalized services, building long-term relationships, and continuously improving our processes to exceed customer expectations. Through our dedication to quality, integrity, and customer satisfaction, we aim to be the leading real estate development company in Nigeria, making a positive impact on the lives of our clients and the communities we serve.</p>
+            <div className='flex flex-col gap-3 font-montserrat'>
+              <div className='flex items-center justify-center text-blue-700 text-4xl'><BsRocketFill /></div>
+              <h3 className=' text-center font-extrabold text-base md:text-2xl font-poppins'>OUR MISSION STATEMENT</h3>
+              <p className='tracking-wide text-sm'>Revolutionize Nigeria's Real Estate Sector with Affordable Luxury Housing Solutions with personalized services driven by Quality, and Customer Satisfaction.</p>
              
             </div>
           </motion.div>
@@ -60,20 +63,21 @@ const About = () => {
             whileHover={{ scale:1.1}}
             whileTap={{scale:0.9}}
 
-            className='flex flex-col items-center justify-center bg-gray-50 px-6 py-12 shadow drop-shadow-lg hvr-underline-from-left'>
+            className='flex flex-col items-center justify-center bg-gray-50 p-6 shadow drop-shadow-lg hvr-underline-from-left'>
               
            
            
-            <div className='flex flex-col gap-3 font-poppins'>
-              <h3 className=' text-center font-extrabold text-base md:text-2xl'>OUR VISION STATEMENT</h3>
-              <p className='tracking-wide text-sm'>Our vision at TEHILJEM Nig. Ltd is to be the most trusted and respected real estate development company in Nigeria, renowned for our exceptional housing solutions, unparalleled customer service, and unwavering commitment to quality and integrity. We envision a future where every individual and family have access to affordable luxury housing, and where our developments become vibrant communities that enhance the quality of life for our clients and the nation at large.</p>
+            <div className='flex flex-col gap-3 font-montserrat'>
+              <div className='flex items-center justify-center text-blue-700 text-4xl'><TbTargetArrow /></div>
+              <h3 className=' text-center font-extrabold text-base md:text-2xl font-poppins'>OUR VISION STATEMENT</h3>
+              <p className='tracking-wide text-sm'>To be the most Trusted Real Estate Developer by distorting the processes with top of the art  affordable luxury housing solutions to create robust  and vibrant communities.</p>
              
             </div>
           </motion.div>
 
 
           {/* 3 Our Goals  */}
-          <motion.div 
+          {/* <motion.div 
             whileHover={{ scale:1.1}}
             whileTap={{scale:0.9}}
 
@@ -81,8 +85,8 @@ const About = () => {
               
            
            
-            <div className='flex flex-col gap-3 font-poppins'>
-              <h3 className=' text-center font-extrabold text-base md:text-2xl'>OUR GOAL</h3>
+            <div className='flex flex-col gap-3 font-montserrat'>
+              <h3 className=' text-center font-extrabold text-base md:text-2xl font-poppins'>OUR GOAL</h3>
               <p className='tracking-wide text-sm'>At TEHILJEM Nig. Ltd, our goal is to be the leading real estate development company in Nigeria, delivering exceptional housing solutions that exceed customer expectations while promoting sustainable growth, innovation, and community development. We aim to:
 
               - Provide high-quality, affordable housing options for Nigerians
@@ -93,7 +97,7 @@ const About = () => {
               .</p>
              
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
 
         {/* Get intouch with us */}
